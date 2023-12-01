@@ -1,6 +1,16 @@
 import Image from 'next/image'
+import {MongoClient} from 'mongodb'
 
-export default function Home() {
+export default async function Home() {
+
+const client = new MongoClient("mongodb+srv://jardeljasse:jardeljasse18@cluster0.otcsboc.mongodb.net/");
+
+await client.connect();
+const db = client.db("first-online-database");
+
+const users = await db.collection("autenticacao").find().toArray();
+console.log(users)
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
