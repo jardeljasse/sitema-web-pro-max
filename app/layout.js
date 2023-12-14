@@ -1,19 +1,20 @@
+"use client"
+import "./globals.css";
+import { SessionProvider } from "next-auth/react";
 
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Sidebar from "@/components/Sidebar"
+export default function RootLayout({children, session}){
+    return(
+        <html>
+            <head>
+                <title>Sistema Web Pro Max</title>
+            </head>
 
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="pt">
-      <body>
-        <div className='relative'>
-          <Sidebar />
-        </div>
-        
-        <div></div>
-      </body>
-    </html>
-  )
+            {/* Providor de sessao que sera acessado por toda a nossa aplicacao*/}
+            <SessionProvider session={session}>
+            <body>
+                {children}
+            </body>
+            </SessionProvider>
+        </html>
+    )
 }

@@ -3,10 +3,11 @@ import Link from "next/link"
 import Image from "next/image"
 import { faCartShopping, faChevronDown, faMoneyBill, faTruckFast, faUsers, faWarehouse } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import SidebarItem from "./SidebarItem"
 
 export default function Sidebar(){
     return(
-        <aside className="bg-zinc-900 h-full p-4 w-[250px] text-white fixed">
+        <aside className="bg-green-900 h-full p-4 w-[250px] text-white fixed">
             <Link href="/">
               <Image src="/images/logo-sistema-web-pro-max.png" 
               width={150} 
@@ -20,15 +21,7 @@ export default function Sidebar(){
                 {
                  items.map((item, i) => {
                     return (
-                        <li className="border-b border-dashed cursor-pointer">
-                            <p className="p-2 flex justify-between hover:bg-zinc-800">
-                                <span className="flex items-center gap-1">
-                                    <FontAwesomeIcon icon={item.icon} className="w-5"/>
-                                    {item.name}
-                                </span>
-                                <FontAwesomeIcon icon={faChevronDown} className="w-4"/>
-                            </p>
-                        </li>
+                        <SidebarItem item={item}/>
                     )
                  })   
                 }
@@ -40,22 +33,74 @@ export default function Sidebar(){
 const items = [
     {
         name: "Usuários",
-        icon: faUsers
+        icon: faUsers,
+        //criando sub-menus
+        subMenus: [
+            {
+                name: "-Criar Usuário",
+                href: "/users/create"
+            },
+            {
+                name: "-Listar Usuários",
+                href: "/users"
+            }
+        ]
     },
     {
-        name: "Productos",
-        icon: faCartShopping
+        name: "Produção",
+        icon: faCartShopping,
+        subMenus: [
+            {
+                name: "-Diária",
+                //name: "-Semanal",
+                href: "/products/create"
+            },
+            {
+                name: "-Listar Productos",
+                href: "/products"
+            }
+        ]
     },
     {
-        name: "Vendas",
-        icon: faMoneyBill
+        name: "Facturas",
+        icon: faMoneyBill,
+        subMenus: [
+            {
+                name: "-Criar Productos",
+                href: "/user/creat"
+            },
+            {
+                name: "-Listar Usuários",
+                href: "/users"
+            }
+        ]
     },
     {
         name: "Fornecedores",
-        icon: faTruckFast
+        icon: faTruckFast,
+        subMenus: [
+            {
+                name: "-Criar Usuário",
+                href: "/user/creat"
+            },
+            {
+                name: "-Listar Usuários",
+                href: "/users"
+            }
+        ]
     },
     {
         name: "Armázens",
-        icon: faWarehouse
+        icon: faWarehouse,
+        subMenus: [
+            {
+                name: "-Criar Usuário",
+                href: "/user/creat"
+            },
+            {
+                name: "-Listar Usuários",
+                href: "/users"
+            }
+        ]
     }
 ]

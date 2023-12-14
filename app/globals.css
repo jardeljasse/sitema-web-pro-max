@@ -2,3 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* componentes do CSS */
+@layer components{
+    form input,
+    form textarea,
+    form select{
+        @apply border border-zinc-800 py-1 px-2;
+    }
+    label{
+        @apply font-bold;
+    }
+    .form-group{
+        @apply w-full mb-2;
+    }
+    .form-group input{
+        @apply w-full;
+    }
+    .form-group input[type="radio"]{
+        @apply w-[unset];
+    }
+}
