@@ -9,7 +9,7 @@ export default function RootLayout({children, session}){
                 <title>Sistema Web Pro Max</title>
             </head>
 
-            {/* Providor de sessao que sera acessado por toda a nossa aplicacao*/}
+            {/* Providor de sessao que sera acessado por toda a nossa aplicacao jjj*/}
             <SessionProvider session={session}>
             <body>
                 {children}
