@@ -27,7 +27,7 @@ export default function layout({ children }) {
     );
   } else if(status === "authenticated"){
     
-    console.log(data)
+    
     return ( 
         <body className='grid [grid-template-columns:250px_1fr] min-h[100vh]'>
           <div className='relative'>

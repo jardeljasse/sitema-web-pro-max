@@ -1,3 +1,5 @@
+//"use client"
+
 import CredentialsProvider from "next-auth/providers/credentials"
 import NextAuth from "next-auth/next";
 import { connectToDB } from "@/utils/DAO";
@@ -6,7 +8,7 @@ import bcrypt from "bcrypt"
 
 export const nextAuthOptions = {
     session: {
-        strategy: "jwc", //token do JSON - Json Web Tokens
+        strategy: "jwt", //token do JSON - Json Web Tokens
     },
     providers: [CredentialsProvider({ 
         async authorize(credentials, request){
@@ -30,7 +32,17 @@ export const nextAuthOptions = {
            }
         },
     }),
-],
+],//modificando a 'session' para mudar o icon do usuario com a sua funcao
+callbacks: {
+    async jwt ({token, user}){
+        user && (token.user = user)
+        return token;
+    },
+    async session({session, token}){
+        session.user.role = token.user.role;
+        return session;
+    }
+},
 
 };
 

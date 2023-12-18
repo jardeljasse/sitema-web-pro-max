@@ -1,13 +1,14 @@
 "use client"
 
-import { faCalendar, faRightFromBracket, faUserShield } from "@fortawesome/free-solid-svg-icons"
+import { faCalendar, faRightFromBracket, faUser, faUserShield } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 import Link from "next/link"
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 export default function Navbar(){
 
+    const {data: session} = useSession()
     const date = new Date();
 
     return(
@@ -27,9 +28,11 @@ export default function Navbar(){
             <div className="flex items-center gap-4"> 
                 <p className="flex items-center">
                     <span className="flex mr-1 bg-zinc-900 rounded-full text-sky-500 w-8 h-8 items-center justify-center">
-                        <FontAwesomeIcon icon={faUserShield} className="w-5"/>
+                        <FontAwesomeIcon
+                        //mudancas de icones para os =! niveis de acesso 
+                        icon={session?.user.role == "admin" ? faUserShield : faUser} className="w-5"/>
                     </span>
-                    <Link href="/users" className="hover:text-sky-500 transition-all hover:-translate-y-[2px]">Jardel Jasse</Link>
+                    <Link href={"/users/" + session?.user.email} className="hover:text-sky-500 transition-all hover:-translate-y-[2px]">{session?.user.name}</Link>
                 </p>
                 <button
                 //chamdando a função para o LogOut

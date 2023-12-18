@@ -1,7 +1,10 @@
-import Image from 'next/image'
-import {MongoClient} from 'mongodb'
+"use client"
 
-export default async function Home() {
+import Image from 'next/image'
+import { useSession } from 'next-auth/react'
+
+export default function Home() {
+  const {data: session} = useSession()
 
   return (
     <div className='flex flex-col h-[100vh] items-center'>
@@ -12,7 +15,7 @@ export default async function Home() {
         
         />
       </div>
-      <p className='mt-8'>Olá Jardel Jasse, seja bem vindo de volta!</p>
+      <p className='mt-8'>Olá <strong>{session?.user.name}</strong>       , seja bem vindo de volta!</p>
     </div>
   )
 }

@@ -4,16 +4,16 @@ import PageHeader from "@/components/PageHeader";
 export default function page(){
     return(
         <>
-            <PageHeader title="Criar um novo Producto">
-            <p>Aqui voçê pode criar um novo producto</p>
+            <PageHeader title="Registo da Produção">
+            <p>Aqui voçê pode Registar a Produção diária da Empresa</p>
             </PageHeader>
 
             <section className="mt-8">
                 <form className="max-w-md">
                     <div className="flex gap-4">
                         <div className="form-group">
-                            <label htmlFor="iName">Nome</label>
-                            <input type="text" name="name" id="iName" required />
+                            <label htmlFor="               ">Nome</label>
+                            <input type="text" name="name" id="name" required />
                         </div>
                         <div className="form-group">
                             <label htmlFor="iBrand">Marca/Fabricante</label>
