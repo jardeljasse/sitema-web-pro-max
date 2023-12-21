@@ -6,26 +6,54 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 
+
 export default function UsersTable(){
 
     //pegando dados na base de dados
     const [users, setUsers] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoadingUsers, setIsLoadingUsers] = useState(false)
+    
 
     //evitar efeitos colaterais (side effects) 'useEffect'
    useEffect(() =>{
-    setIsLoading(true);
+    setIsLoadingUsers(true);
     fetch("/api/users").then((response) => response.json()).then((data) => {
         setUsers(data.users)
-        setIsLoading(false);
+        setIsLoadingUsers(false);
         // console.log(data.users)
     }).catch((error) => {
         alert("Ocorreu um erro, tentando listar os usuários")
-        setIsLoading(false);
+        setIsLoadingUsers(false);
     });
 
-   }, [])
-      
+   }, []);
+
+    //   METHOD TO DELETE
+   const handleDeleteUser = (email, setIsDeleting) => {
+    
+    setIsDeleting(true);
+
+        fetch("/api/users/" + email,{ 
+            method: "DELETE",
+        }).then( (res) => {
+            if(!res.ok){
+                throw new Error("Ocorreu um erro deletando o usuário com o Email: " + email)
+            } else{
+                return res;
+                //return res.json()
+            }
+        }).then((data) => {
+            // alert("Usuário "+ email + " foi deletado com Sucesso!")
+            setIsDeleting(false)//desativar apos o cadastro
+            //router.push("/users")
+            //RELOAD da página apos deletar usuario
+            const newUsers = users.filter((user) => user.email !== email);
+            setUsers(newUsers);
+        }).catch(err => {
+            alert("Ocorreu um erro ao deletar o usuário com o Email: "+ email)
+            setIsDeleting(false);
+        }) 
+   }
       
     return (
     <>
@@ -44,15 +72,21 @@ export default function UsersTable(){
                 </tr>
             </thead>
             <tbody>
+                {/* CRUD: READING */}
                 {/* mapeando os dados na BD */}
                {
                 users.map((user, i) => {
-                    return <UserTableRow user={user} i={i + 1}/>
+                    return (
+                    <UserTableRow user={user} 
+                    key={user._id}// chave do React que utiliza para controlar 'chaves' semelhantes
+                    i={i + 1} 
+                    handleDeleteUser={handleDeleteUser}/>
+                    )
                 })
                }
             </tbody>
         </table>
-        {isLoading && (
+        {isLoadingUsers && (
             <p className="mt-16 text-center">
                 <FontAwesomeIcon icon={faCircleNotch} 
                 className="animate-spin w-6"/>

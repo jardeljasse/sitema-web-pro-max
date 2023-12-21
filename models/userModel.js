@@ -48,7 +48,7 @@ const userSchema = new Schema({
         required: true
     }
 });
-   //creating user
+   //creating crypted password with 'bycrypt'
 userSchema.pre("save", async function(){
     if(!this.isModified("password")) return;
     //mas se a palavra passe nao for igual ele vai encriptar

@@ -6,7 +6,7 @@ export default function page(){
  //criando um 'FRAGMENTO EM REACT <>...</> OU <React.Fragment></React.Fragment>'   
  return (
     <>
-    <PageHeader title="Lista de Usuário">
+    <PageHeader title="Lista de Usuários">
     <p>Aqui voçê pode listar e visulizar os usuários registados no sistema</p>
     </PageHeader>
 

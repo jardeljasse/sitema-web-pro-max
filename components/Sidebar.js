@@ -75,11 +75,11 @@ const items = [
         subMenus: [
              {
                  name: "-Cadastrato de Frota",
-                 href: "/user/creat"
+                 href: "/trucks/create"
              },
              {
                  name: "-Lista de Frotas",
-                 href: "/users"
+                 href: "/trucks"
              }
          ]
      },

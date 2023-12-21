@@ -4,64 +4,57 @@ import PageHeader from "@/components/PageHeader";
 export default function page(){
     return(
         <>
-            <PageHeader title="Registo da Produção">
-            <p>Aqui voçê pode Registar a Produção diária da Empresa</p>
+            <PageHeader title="Frota de Camiões">
+            <p>Aqui voçê pode cadastrar qualquer tipo de Frota de camião!</p>
             </PageHeader>
 
             <section className="mt-8">
                 <form className="max-w-md">
                     <div className="flex gap-4">
                         <div className="form-group">
-                            <label htmlFor="               ">Nome</label>
-                            <input type="text" name="name" id="name" required />
+                            <label htmlFor="truckId">
+                            Id do Camião</label>
+                            <input type="number" name="truckId" id="truckId" required />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="iBrand">Marca/Fabricante</label>
-                            <input type="text" name="brand" id="iBrand" required />
+                            <label htmlFor="registration">Matrícula</label>
+                            <input type="text" name="registration" id="registration" 
+                            required />
                         </div>
                     </div>
 
                     <div className="flex gap-4">
-                    <div className="form-group">
-                            <label htmlFor="iCatergoty">Categoria</label>
-                            <select name="catergoty" id="iCatergoty" className="w-full cursor-pointer">
-                                <option value="Electrônicos">Electrônicos</option>
-                                <option value="Refrigerantes">Refrigerantes</option>
-                                <option value="Comidas e Bebidas">Comidas e Bebidas</option>
-                                <option value="Gelados">Gelados</option>                                
+                      
+                        <div className="form-group">
+                            <label htmlFor="truckType">Tipo de Camião</label>
+                            <select name="truckType" id="truckType" className="w-full cursor-pointer"> 
+                                <option value="tipperTruck">Camião Basculante</option>
+                                <option value="linkTruck">Camião Link</option>                                
                             </select>
                         </div>   
-                        <div className="form-group">
-                            <label htmlFor="iQuantity">Quantidade</label>
-                            <input type="number" name="quantity" id="iQuantity" required/>
+                        <div 
+                            className="form-group">
+                            <label htmlFor="provider">Fornecedor</label>
+                            <select name="provider" id="provider" className="w-full cursor-pointer"> 
+                                <option value="DL">DL</option>           
+                            </select>
                         </div>    
                         
                     </div> 
 
-                    <div className="flex gap-4">
+                    {/* <div className="flex gap-4">
                         <div className="form-group">
-                            <label htmlFor="iCost">Custo de Unidade(Mzn)</label>
-                            <input type="number" name="cost" id="iCost" required />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="iPrice">Preço de Venda(Mzn)</label>
-                            <input type="number" name="price" id="iPrice" required />
-                        </div>
-
-                    </div> 
-                        <div className="form-group">
-                            <label htmlFor="iPrice">Preço de Venda(Mzn)</label>
-                            <textarea name="decription" id="iDescription"
-                            rows="5"
-                            className="w-full">Descrição</textarea>
-                        </div>
+                            <label htmlFor="weightTruck">Peso (kg)</label>
+                            <input type="number" name="weightTruck" id="weightTruck" required />
+                        </div>                    
+                    </div>  */}
 
                     <button 
                         className="bg-sky-500
                         hover:bg-sky-600 transition-all p-2
                         text-white disabled:bg-zinc-500 
                         w-full">
-                        Criar Producto     
+                        Registrar Frota     
                     </button>  
                 </form>
             </section>

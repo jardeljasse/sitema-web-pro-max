@@ -31,7 +31,7 @@ export default function page(){
             } else{
                 return res.json()
             }
-        }).then(data => {
+        }).then((data) => {
             alert("Usuário "+ userData.email + " criado com Sucesso!")
             setIsLoading(false)//desativar apos o cadastro
             router.push("/users")

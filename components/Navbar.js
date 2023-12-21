@@ -19,7 +19,7 @@ export default function Navbar(){
                         <FontAwesomeIcon icon={faCalendar} className="w-5"/> 
                         <span className="font-bold">Data</span>
                         <span>
-                           {date.getDate()}/{date.getMonth()}/{date.getFullYear()}
+                           {date.getDate()}/{date.getMonth()+1}/{date.getFullYear()}
                         </span>
                     </p>
                 </div>

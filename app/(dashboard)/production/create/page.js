@@ -1,7 +1,46 @@
+"use client"
+
 import PageHeader from "@/components/PageHeader";
+import ProductionForm from "@/components/ProductionForm";
+import { setConfig } from "next/config";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 
 export default function page(){
+
+    const [isLoading, setIsLoading] = useState(false);
+    const router = useRouter();
+
+    const handleAddProduction = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+
+        const productionData = {};
+        for(const [key, value] of formData.entries()){
+            productionData[key] = value;
+        }
+
+        fetch("/api/production",{
+            method: "POST",
+            body: JSON.stringify(productionData),
+        }).then((response) => {
+            if(!response.ok){
+                throw new Error("Ocorreu um erro adicionado a produção");
+            }else{
+                return response.json();
+            }
+        }).then((data) => {
+            alert("Produção do Camião" + productionData.truckId + " adicionado com sucesso!");
+            setIsLoading(false);
+            //router.push("/production");
+        }).catch((error) => {
+            alert("Ocorreu um erro adicionando a produção do Camião " +productionData.truckId);
+            setIsLoading(false);
+        })
+    }
+
     return(
         <>
             <PageHeader title="Registo da Produção">
@@ -9,62 +48,9 @@ export default function page(){
             </PageHeader>
 
             <section className="mt-8">
-                <form className="max-w-md">
-                    <div className="flex gap-4">
-                        <div className="form-group">
-                            <label htmlFor="               ">Nome</label>
-                            <input type="text" name="name" id="name" required />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="iBrand">Marca/Fabricante</label>
-                            <input type="text" name="brand" id="iBrand" required />
-                        </div>
-                    </div>
-
-                    <div className="flex gap-4">
-                    <div className="form-group">
-                            <label htmlFor="iCatergoty">Categoria</label>
-                            <select name="catergoty" id="iCatergoty" className="w-full cursor-pointer">
-                                <option value="Electrônicos">Electrônicos</option>
-                                <option value="Refrigerantes">Refrigerantes</option>
-                                <option value="Comidas e Bebidas">Comidas e Bebidas</option>
-                                <option value="Gelados">Gelados</option>                                
-                            </select>
-                        </div>   
-                        <div className="form-group">
-                            <label htmlFor="iQuantity">Quantidade</label>
-                            <input type="number" name="quantity" id="iQuantity" required/>
-                        </div>    
-                        
-                    </div> 
-
-                    <div className="flex gap-4">
-                        <div className="form-group">
-                            <label htmlFor="iCost">Custo de Unidade(Mzn)</label>
-                            <input type="number" name="cost" id="iCost" required />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="iPrice">Preço de Venda(Mzn)</label>
-                            <input type="number" name="price" id="iPrice" required />
-                        </div>
-
-                    </div> 
-                        <div className="form-group">
-                            <label htmlFor="iPrice">Preço de Venda(Mzn)</label>
-                            <textarea name="decription" id="iDescription"
-                            rows="5"
-                            className="w-full">Descrição</textarea>
-                        </div>
-
-                    <button 
-                        className="bg-sky-500
-                        hover:bg-sky-600 transition-all p-2
-                        text-white disabled:bg-zinc-500 
-                        w-full">
-                        Criar Producto     
-                    </button>  
-                </form>
+               {/* Importing the 'Form' */}
+               <ProductionForm onSubmit={handleAddProduction} isLoading={isLoading}/>
             </section>
         </>
     )
-}
+};

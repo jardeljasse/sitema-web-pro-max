@@ -6,8 +6,8 @@ import React from "react"
 export default function page(){
     return(
         <>
-         <PageHeader title="Listar Productos">
-         <p>Aqui voçê pode listar e visulizar os productos registados no banco de dados</p>
+         <PageHeader title="Listar Frotas">
+         <p>Aqui voçê pode listar e visulizar as Frotas Cadastradas</p>
          </PageHeader>
 
         <section className="mt-8">
