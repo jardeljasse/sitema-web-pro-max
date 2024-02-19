@@ -86,6 +86,7 @@ export default function UsersTable(){
                }
             </tbody>
         </table>
+        {/* rodando icon antes de carregar a tabela */}
         {isLoadingUsers && (
             <p className="mt-16 text-center">
                 <FontAwesomeIcon icon={faCircleNotch} 

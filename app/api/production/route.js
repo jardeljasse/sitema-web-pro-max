@@ -4,6 +4,28 @@ import { connectToDB } from "@/utils/DAO";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
+export async function GET(request){
+    try {
+        await connectToDB();
+
+        //para pegar, basta utilizar o metodo 'find() do mongosh'
+
+        const production = await Production_Model.find();
+
+        //para nao lancar um erro, basta retornar o 'NextResponse'
+
+        return NextResponse.json({production});
+    } catch (error) {
+        console.log(error);
+
+        return NextResponse.json({
+            message: "Ocorreu um erro tentando Listar a Produção dos camiões!",
+            status: 500
+        });
+    };
+};
+
+
 export async function POST(request){
     
     try {
@@ -24,7 +46,8 @@ export async function POST(request){
              createdAt: Date.now(),
              updatedAt: Date.now(),
          });
-        console.log(body);
+        // console.log(body);
+        // console.log(session, user);
 
         //sendig the 'response' to the Frontend
         return NextResponse.json(production, {status: 201});

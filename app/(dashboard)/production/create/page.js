@@ -32,9 +32,10 @@ export default function page(){
                 return response.json();
             }
         }).then((data) => {
-            alert("Produção do Camião" + productionData.truckId + " adicionado com sucesso!");
+            alert("Produção do Camião " + productionData.truckId + " adicionado com sucesso!");
             setIsLoading(false);
-            //router.push("/production");
+            //after adding production in to db, call the viewer page
+            router.push("/production");
         }).catch((error) => {
             alert("Ocorreu um erro adicionando a produção do Camião " +productionData.truckId);
             setIsLoading(false);

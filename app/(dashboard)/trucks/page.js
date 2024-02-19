@@ -1,5 +1,5 @@
 import PageHeader from "@/components/PageHeader"
-import ProductTableRow from "@/components/ProductTableRow"
+import ProductTableRow from "@/components/ProductionTableRow"
 
 import React from "react"
 

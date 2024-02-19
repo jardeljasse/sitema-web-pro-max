@@ -10,6 +10,7 @@ export const nextAuthOptions = {
     session: {
         strategy: "jwt", //token do JSON - Json Web Tokens
     },
+    secret: process.env.NEXTAUTH_SECRET,
     providers: [CredentialsProvider({ 
         async authorize(credentials, request){
             const {email, password} = credentials; 

@@ -19,9 +19,9 @@ const productionSchema = new Schema({
     },
     netMass: {
         type: Number,
-        required: true,
+        required: false,
         default: function(){
-           return this.mass2 - this.mass1
+           return this.mass2 - this.mass1;
         },
     },
     dateIn: {
@@ -49,6 +49,17 @@ const productionSchema = new Schema({
         required: true,
     },
 });
+// Creaitng middleware to update values in table, when theses is updating on the <inpu />
+
+productionSchema.pre("findOneAndUpdate", function(){
+    const update = this.getUpdate();
+    this.set({
+        netMass: update.mass2 - update.mass1,
+    });
+});
+
+
+//this name will be created as a 'collection' in mongodb, but adding apend 's' after the name. Will be so: production_models, intead, production_model
 
 const Production_Model = models.Production_Model || model("Production_Model", productionSchema);
 

@@ -8,7 +8,7 @@ import SidebarItem from "./SidebarItem"
 import { useSession } from "next-auth/react"
 
 export default function Sidebar(){
-
+    
     const {data: session} = useSession()
 
     return(
