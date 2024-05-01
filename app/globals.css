@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root{
+    --color-100: #327991;
+
+    --color-300: #266980;
+
+    --color-500: #195970;
+
+    --color-700: #0D485F;
+
+    --color-900: #00384E;
+}
+
+
 /* componentes do CSS */
 @layer components{
     form input,

@@ -14,7 +14,7 @@ export default function SidebarItem({item}){
                 <p 
                 onClick={() => setOpen(!open)} 
 
-                className="p-2 flex justify-between hover:bg-green-800">
+                className="p-2 flex justify-between hover:bg-skin-cl500">
                     <span className="flex items-center gap-1">
                         <FontAwesomeIcon icon={item.icon} className="w-5"/>
                         {item.name}
@@ -30,7 +30,7 @@ export default function SidebarItem({item}){
                     {
                         item.subMenus.map((subMenu) => {
                             return (
-                            <li className="hover:bg-green-700 pl-6 py-1">
+                            <li className="hover:bg-skin-cl500 pl-6 py-1">
                                 - <Link href={subMenu.href}>{subMenu.name}</Link>
                             </li>
                             )

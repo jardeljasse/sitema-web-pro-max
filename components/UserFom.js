@@ -55,7 +55,7 @@ export default function UserForm({onSubmit, isLoading, user}){
                                 required 
                                 defaultChecked={user?.gender === "F"}/>
                             </label>
-                            <label htmlFor="anonymous">
+                            {/* <label htmlFor="anonymous">
                                 X{" "}
                                 <input type="radio" 
                                 name="gender" 
@@ -63,7 +63,7 @@ export default function UserForm({onSubmit, isLoading, user}){
                                 id="anonymous" 
                                 required 
                                 defaultChecked={user?.gender === "X"}/>
-                            </label>
+                            </label> */}
                         </div>               
                     </div>
                     </div>
@@ -80,7 +80,8 @@ export default function UserForm({onSubmit, isLoading, user}){
                             defaultValue={user?.role}>
                                 <option value="user">Usuário</option>
                                 <option value="admin">Administrador</option>
-                                <option value="production">Produção</option>
+                                <option value="student">Aluno</option>
+                                <option value="teacher">Professor</option>
                             </select>
                         </div>    
                     </div>  
