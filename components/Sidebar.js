@@ -12,7 +12,7 @@ export default function Sidebar(){
     const {data: session} = useSession()
 
     return(
-        <aside className="bg-green-900 h-full p-4 w-[250px] text-white fixed">
+        <aside className="bg-blue-700 h-full p-4 w-[250px] text-white fixed">
             <Link className="text-xl text-center" href="/">
               {/* <Image src="/images/logo-sistema-web-pro-max.png" 
               width={150} 

@@ -6,7 +6,7 @@ export default function RootLayout({children, session}){
     return(
         <html>
             <head>
-                <title>Sistema Web Pro Max</title>
+                <title>PLATFORM-SEN-AUDITIVE-CREI-24</title>
             </head>
 
             {/* Providor de sessao que sera acessado por toda a nossa aplicacao jjj*/}
