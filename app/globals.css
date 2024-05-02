@@ -21,7 +21,7 @@
     form input,
     form textarea,
     form select{
-        @apply border border-zinc-800 py-1 px-2;
+        @apply border border-blue-500 py-1 px-2;
     }
     label{
         @apply font-bold;

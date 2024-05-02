@@ -175,7 +175,7 @@ const items = [
     subMenus: [
       {
         name: "Cadastrar Aluno",
-        href: "/student/create",
+        href: "/students/create",
       },
       {
         name: "Ver Alunos",
@@ -203,11 +203,11 @@ const items = [
     subMenus: [
       {
         name: "Criar Aula",
-        href: "/create/lesson",
+        href: "/lesson/create",
       },
       {
         name: "Listar Aulas",
-        href: "/lessons",
+        href: "/lesson",
       },
     ],
   },
