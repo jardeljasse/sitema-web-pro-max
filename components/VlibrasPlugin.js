@@ -10,7 +10,7 @@ export default function VlibrasPlugin() {
       </div>
       <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
-      <script src="../public/vlibras-local.js"></script>
+      <script src="/vlibras-local.js"></script>
     </div>
   );
 }
