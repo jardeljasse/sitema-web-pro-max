@@ -15,7 +15,37 @@
     --color-900: #00384E;
 }
 
+/* utilitaries-classes */
+.container{
+    max-width: 1100px;
+    margin: auto;
+    padding-inline: 2rem;
+}
+/* utilitaries-classes */
 
+/* nav */
+.nav-color{
+    background-color: var(--color-100);
+}
+
+/* PORTAL-PAGE */
+/* header */
+.progress-bar-item{
+    border-radius: 50%;
+    border: 10px solid var(--color-100);
+    width: 300px;
+    height: 300px;
+    text-align: center
+}
+
+/* STUDENT-PORTAL PAGE */
+.title-underline{
+    width: 10%;
+    height: 4px;
+    background-color: var(--color-100);
+    top: 60px;
+    left: 0;
+}
 /* componentes do CSS */
 @layer components{
     form input,

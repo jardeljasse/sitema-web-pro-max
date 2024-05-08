@@ -209,6 +209,10 @@ const items = [
         name: "Listar Aulas",
         href: "/lesson",
       },
+      {
+        name: "Portal do Aluno",
+        href: "/student-portal",
+      },
     ],
   },
   {
