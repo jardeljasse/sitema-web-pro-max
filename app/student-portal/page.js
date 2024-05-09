@@ -31,9 +31,9 @@ export default function page() {
             {/* <p>Selecione a disciplina que pretende estudar</p> */}
           </PageHeaderPortal>
         </div>
+      <VlibrasPlugin title="PLUGIN VLIBRAS" />
       </main>
 
-      <VlibrasPlugin />
     </>
   );
 }
