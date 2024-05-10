@@ -22,9 +22,9 @@ export default function Sidebar() {
     <aside className="bg-skin-cl700 h-full p-4 w-[250px] text-white fixed">
       <Link className="text-xl text-center" href="/">
         <Image
-          src="/images/sen-logo.png"
-          width={150}
-          height={150}
+          src="/images/sen-logo-white.png"
+          width={170}
+          height={170}
           className="block mx-auto mt-4"
         />
       </Link>

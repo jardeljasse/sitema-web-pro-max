@@ -18,7 +18,7 @@ export default function page() {
       <header className="h-[70vh] bg-skin-cl900 ">
         <div className="container flex h-[70vh] justify-between items-center px-10">
           <div className="image-header">
-            <Image src={"/images/sen-logo.png"} width={300} height={300} />
+            <Image src={"/images/sen-logo-wht.png"} width={400} height={400} />
           </div>
           <div className="progress-bar">
             <h1 className="text-white text-xl text-center pb-4 font-bold">
