@@ -21,7 +21,7 @@ export default function Navbar() {
   const date = new Date();
 
   return (
-    <nav className="bg-skin-cl100 w-full sticky top-0 py-3 px-16 flex justify-between items-center text-white">
+    <nav className="bg-skin-cl100 bg-gray-900 w-full sticky top-0 py-3 px-16 flex justify-between items-center text-white">
       <div>
         <div>
           <p className="flex gap-1 items-center">

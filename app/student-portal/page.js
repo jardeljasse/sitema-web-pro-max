@@ -1,8 +1,14 @@
+'use client'
+
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import PageHeaderPortal from "@/components/PageHeaderPortal";
 import VlibrasPlugin from "@/components/VlibrasPlugin";
 import Image from "next/image";
+// import dynamic from "next/dynamic"
+
+// const VlibrasPlugin = dynamic(() => import('../../components/VlibrasPlugin'),
+// {ssr: true})
 
 export default function page() {
   return (
@@ -25,13 +31,14 @@ export default function page() {
         </div>
       </header>
 
-      <main>
+      <main className="bg-gray-900 text-white h-[80vh] pt-10">
         <div className="container">
           <PageHeaderPortal title="DISCIPLINAS">
-            {/* <p>Selecione a disciplina que pretende estudar</p> */}
+            Selecione a disciplina que pretende estudar
           </PageHeaderPortal>
+
+          <VlibrasPlugin />            
         </div>
-      <VlibrasPlugin title="PLUGIN VLIBRAS" />
       </main>
 
     </>
