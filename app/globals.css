@@ -28,6 +28,9 @@
     background-color: var(--color-100);
     background-color: rgb(17 24 39);
 }
+nav{
+    z-index: 1;
+}
 
 /* PORTAL-PAGE */
 /* header */
@@ -48,6 +51,16 @@
     background-color: var(--color-100);
     top: 60px;
     left: 5px;
+}
+
+.subject-cont{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.image-subject{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 /* componentes do CSS */
 @layer components{
