@@ -13,6 +13,7 @@
     --color-700: #0D485F;
 
     --color-900: #00384E;
+    --dark-gray: #111827;
 }
 
 /* utilitaries-classes */
@@ -26,7 +27,7 @@
 /* nav */
 .nav-color{
     background-color: var(--color-100);
-    background-color: rgb(17 24 39);
+    background-color: #111827;
 }
 nav{
     z-index: 1;
@@ -34,6 +35,10 @@ nav{
 
 /* PORTAL-PAGE */
 /* header */
+header{
+    /* background-image: linear-gradient(80deg, var(--color-900) 10%, var(--dark-gray)); */
+    /* background-image: linear-gradient(130deg, red 40%, yellow); */
+}
 .progress-bar-item{
     border-radius: 50%;
     /* border: 10px solid var(--color-100); */
@@ -62,7 +67,41 @@ nav{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-/* componentes do CSS */
+
+/* HISTORY-PAGE */
+.trimester-item{
+    background-image: linear-gradient(to right, var(--color-900), var(--color-100));
+}
+.trimester-item a h3{
+    font-size: 1.4rem;
+}
+.trimester-time-line{
+    list-style: none;
+}
+.trimester-time-line span::before{
+    content: ".";
+    position: relative;
+    top: 0rem;
+    left: 0;
+    display: block;
+    font-size: 2rem;
+    background-color: var(--color-900);
+    color: var(--color-900);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+/* VLbrasPlugin */
+.enable{
+    border: 2px solid red;
+    padding: 3rem;
+}
+.active{
+    background-color: blue;
+    padding-inline: 3rem;
+}
+/* CSS Components */
 @layer components{
     form input,
     form textarea,
