@@ -15,7 +15,7 @@ export default function Home() {
           height={200}
           className="block mx-auto" />
       </div>
-      <p className='mt-8'>Olá <strong>{session?.user.name}</strong>       , seja bem vindo de volta!</p>
+      <p className='mt-8'>Olá <strong>{session?.user.name}</strong>, seja bem vindo de volta!</p>
     </div>
   )
 }

@@ -25,9 +25,7 @@ export default function layout({ children }) {
         <p>Verificando a sua <strong>Autenticação</strong></p>
       </body>
     );
-  } else if(status === "authenticated"){
-    
-    
+  } else if(status === "authenticated"){    
     return ( 
         <body className='grid [grid-template-columns:250px_1fr] min-h[100vh]'>
           <div className='relative'>
