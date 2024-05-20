@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function StudentsForm({ isLoading }) {
+export default function TeachersForm({ isLoading }) {
     return (
         <form action="" className='max-w-[635px] '>
             <div>
@@ -61,40 +61,30 @@ export default function StudentsForm({ isLoading }) {
                 </div>
             </div>
             <div className=''>
-                <h3 className='text-xl font-light py-1'>Endereço</h3>
+                <h3 className='text-xl font-light py-1'>Formação</h3>
                 <div className="flex-group flex gap-4">
                     <div>
-                        <p className='py-1'><label htmlFor="city">Cidade</label></p>
-                        <input type="text" name="city" id="city"
+                        <p className='py-1'><label htmlFor="formation">Área de Formação</label></p>
+                        <input type="text" name="formation" id="formation"
                             required
                         />
                     </div>
                     <div>
-                        <p className='py-1'><label htmlFor="neighbornhood">Bairro</label></p>
-                        <input type="text" name="neighbornhood" id="neighbornhood"
-                            required
-                        />
+                        <p className='py-1'><label htmlFor="subject">Disciplina</label></p>
+                        <select name="subject" id="subject" className='w-[200px]'>
+                            <option value="Português">Português</option>
+                            <option value="Matemática">Matemática</option>
+                            <option value="Inglês">Inglês</option>
+                            <option value="História">História</option>
+                            <option value="Biologia">Biologia</option>
+                            <option value="Física">Física</option>
+                            <option value="Química">Química</option>
+                            <option value="Ed.Visual">Ed.Visual</option>
+                        </select>
                     </div>
                     <div>
-                        <p className='py-1'><label htmlFor="sponsor-contact">Conctato do Encarregado</label></p>
-                        <input type="number" name="sponsor-contact" id="sponsor-contact"
-                            required
-                        />
-                    </div>
-                </div>
-            </div>
-            <div className=''>
-                <h3 className='text-xl font-light py-1'>Exames Médicos</h3>
-                <div className="flex-group flex gap-4">
-                    <div>
-                        <p className='py-1'><label htmlFor="name">Grau de Surdez</label></p>
-                        <input type="number" name="name" id="name"
-                            required
-                        />
-                    </div>
-                    <div>
-                        <p className='py-1'><label htmlFor="date">Doença Frequente</label></p>
-                        <input type="text" name="date" id="date"
+                        <p className='py-1'><label htmlFor="number">Conctato</label></p>
+                        <input type="number" name="number" id="number"
                             required
                         />
                     </div>
@@ -110,5 +100,6 @@ export default function StudentsForm({ isLoading }) {
                 {/* {user? "Salvar alterações" : "Criar Usuário"} */}
             </button>
         </form>
+
     )
 }

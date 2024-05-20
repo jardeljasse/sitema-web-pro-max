@@ -5,9 +5,12 @@ import Image from "next/image";
 import {
   faBookOpen,
   faBookOpenReader,
+  faChalkboardTeacher,
+  faList,
   faPlusCircle,
   faReceipt,
   faSpinner,
+  faUserGraduate,
   faUsersViewfinder,
   faWarehouse,
 } from "@fortawesome/free-solid-svg-icons";
@@ -171,7 +174,7 @@ const items = [
   },
   {
     name: "Alunos",
-    icon: faBookOpen,
+    icon: faUserGraduate,
     subMenus: [
       {
         name: "Cadastrar Aluno",
@@ -180,6 +183,20 @@ const items = [
       {
         name: "Ver Alunos",
         href: "/students",
+      },
+    ],
+  },
+  {
+    name: "Professor",
+    icon: faChalkboardTeacher,
+    subMenus: [
+      {
+        name: "Cadastrar Professor",
+        href: "/teachers/create",
+      },
+      {
+        name: "Ver Professores",
+        href: "/teachers",
       },
     ],
   },

@@ -101,6 +101,11 @@ header{
     background-color: blue;
     padding-inline: 3rem;
 }
+/* STUDENTS FORM - COMPONENT */
+.grid-group{
+    /* grid-template-columns: repeat(3, 200px); */
+    flex-flow: flex wrap;
+}
 /* CSS Components */
 @layer components{
     form input,
