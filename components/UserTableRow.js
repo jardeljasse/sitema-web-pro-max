@@ -20,16 +20,16 @@ export default function UserTableRow({user, i, handleDeleteUser}){
             //linha vermelha quando deletar
             data-disabled={isDeleting}
             data-index={i % 2} 
-            className="bg-zinc-300
-            data-[index='0']:bg-zinc-100
+            className="bg-zinc-100
+            data-[index='0']:bg-zinc-200
             data-[disabled=true]:bg-red-300"> 
             <td>{i}.</td>
-            <td className="p-2">{user.firstName + " " + user.lastName}</td>
+            <td className="p-2">{user.firstName /*+ " " + user.lastName*/}</td>
             <td>{user.email}</td>
             <td>{user.role}</td>
-            <td>{calculateAge(user.birthday)}</td>
+            {/* <td>{calculateAge(user.birthday)}</td>
             <td>{user.gender}</td>
-            <td>+(258) {user.phone}</td>
+            <td>+(258) {user.phone}</td> */}
             <td className="flex gap-2 p-2">
                 <Link href={"/users/" + user.email} className="
                 bg-sky-500 rounded-md p-1 w-8 h-8

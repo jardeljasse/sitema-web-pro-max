@@ -6,10 +6,6 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    lastName:{
-        type: String,
-        required: true
-    },
     email: {
         type: String,
         lowercase: true,
@@ -20,19 +16,6 @@ const userSchema = new Schema({
         type: String,
         required: true,
         select: false
-    },
-    birthday:{
-        type: Date,
-        required: true
-    },
-    gender:{
-        type: String,
-        enum: ["M", "F", "X"],
-        required: true
-    },
-    phone:{
-        type: Number,
-        required: true
     },
     role:{
         type: String,

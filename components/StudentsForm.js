@@ -1,8 +1,8 @@
-import React from 'react'
+"use client"
 
-export default function StudentsForm({ isLoading }) {
+export default function StudentsForm({ onSubmit, isLoading }) {
     return (
-        <form action="" className='max-w-[635px] '>
+        <form className='max-w-[635px] ' onSubmit={onSubmit} >
             <div>
                 <h3 className='text-xl font-light py-1'>Dados Pessoais</h3>
                 <div className="grid-group flex gap-4">
@@ -14,7 +14,7 @@ export default function StudentsForm({ isLoading }) {
                     </div>
                     <div>
                         <p className='py-1'><label htmlFor="birth-day">Data de Nascimento</label></p>
-                        <input type="date" name="birth-day" id="birth-day"
+                        <input type="date" name="birthDay" id="birth-day"
                             required
                             className='block w-[200px]'
                         />
@@ -29,7 +29,7 @@ export default function StudentsForm({ isLoading }) {
                 <div className="flex gap-4">
                     <div>
                         <p className='py-1'><label htmlFor="born-place">Local de Nascimento</label></p>
-                        <input type="text" name="born-place" id="born-place"
+                        <input type="text" name="bornPlace" id="born-place"
                             required
                         />
                     </div>
@@ -77,7 +77,7 @@ export default function StudentsForm({ isLoading }) {
                     </div>
                     <div>
                         <p className='py-1'><label htmlFor="sponsor-contact">Conctato do Encarregado</label></p>
-                        <input type="number" name="sponsor-contact" id="sponsor-contact"
+                        <input type="number" name="sponsorContact" id="sponsor-contact"
                             required
                         />
                     </div>
@@ -87,14 +87,14 @@ export default function StudentsForm({ isLoading }) {
                 <h3 className='text-xl font-light py-1'>Exames Médicos</h3>
                 <div className="flex-group flex gap-4">
                     <div>
-                        <p className='py-1'><label htmlFor="name">Grau de Surdez</label></p>
-                        <input type="number" name="name" id="name"
+                        <p className='py-1'><label htmlFor="healthExame">Grau de Surdez</label></p>
+                        <input type="number" name="healthExame" id="healthExame"
                             required
                         />
                     </div>
                     <div>
-                        <p className='py-1'><label htmlFor="date">Doença Frequente</label></p>
-                        <input type="text" name="date" id="date"
+                        <p className='py-1'><label htmlFor="desease">Doença Frequente</label></p>
+                        <input type="text" name="desease" id="desease"
                             required
                         />
                     </div>

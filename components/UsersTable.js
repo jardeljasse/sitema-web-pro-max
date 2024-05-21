@@ -59,15 +59,15 @@ export default function UsersTable(){
     <>
      <p className="mb-4">Usuários totais: {users.length}</p>
         <table className="w-full">
-            <thead className="bg-zinc-700 text-white">
+            <thead className="bg-skin-cl700 text-white">
                 <tr className="text-left">
                     <th></th>
                     <th className="p-2">Nome</th>
                     <th>Email</th>
                     <th>Função</th>
-                    <th>Idade</th>
+                    {/* <th>Idade</th>
                     <th>Género</th>
-                    <th>Telefone</th>
+                    <th>Telefone</th> */}
                     <th>Acções</th>
                 </tr>
             </thead>
