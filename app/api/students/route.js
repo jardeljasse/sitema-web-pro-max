@@ -4,6 +4,21 @@ import { connectToDB } from "@/utils/DAO";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
+export async function GET(request) {
+  try {
+    await connectToDB();
+
+    const students = await Student_Model.find();
+    // console.log(users)
+
+    return NextResponse.json({ students });
+  } catch (error) {
+    return NextResponse.json(
+        {message: "Ocorreu um erro ao tentar visulalizar a lista dos alunos!"},
+        {status: 500})
+  }
+}
+
 export async function POST(request) {
   try {
     await connectToDB();

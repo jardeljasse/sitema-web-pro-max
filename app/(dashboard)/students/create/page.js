@@ -22,6 +22,7 @@ export default function page() {
             studentsData[key] = value
         }
 
+
         fetch("/api/students",{ 
             method: "POST",
             body: JSON.stringify(studentsData),
