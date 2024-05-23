@@ -107,6 +107,27 @@ header{
     flex-flow: flex wrap;
 }
 /* CSS Components */
+
+/* TRIMESTER PAGE/TRIMESTER COMPONENT */
+.container-video{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 5px 5%;
+}
+.main-video{
+    background-color: var(--color-900);
+    border-radius: 5px;
+    padding: 10px;
+}
+.main-video h3{
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500px;
+    padding: 0.7rem;
+}
+/* END TRIMESTER PAGE/TRIMESTER COMPONENT */
 @layer components{
     form input,
     form textarea,

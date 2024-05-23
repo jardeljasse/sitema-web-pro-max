@@ -7,8 +7,16 @@ export default function UserForm({ onSubmit, isLoading, user }) {
                     <input type="text" name="firstName" id="firstName" required
                         defaultValue={user?.firstName} />
                     {/* 'user?.firstName' para verificar se existe o nome e colocar no campo */}
-                </div>               
+                </div>
+                <div className="flex gap-4">
+                <div className="form-group">
+                    <label htmlFor="lastName">Apelido</label>
+                    <input type="text" name="lastName" id="lastName" required
+                        defaultValue={user?.lastName} />
+                    {/* 'user?.firstName' para verificar se existe o nome e colocar no campo */}
+                </div>
             </div>
+            </div>            
 
             <div className="form-group">
                 <label htmlFor="email">Email</label>
@@ -22,9 +30,9 @@ export default function UserForm({ onSubmit, isLoading, user }) {
                     id="password"
                     required={user ? undefined : true}
                     autoComplete="new-password" />
-            </div>            
+            </div>
 
-            <div className="flex gap-4">                
+            <div className="flex gap-4">
                 <div className="form-group">
                     <label htmlFor="role">Função</label>
                     <select name="role" id="role" className="w-full cursor-pointer"

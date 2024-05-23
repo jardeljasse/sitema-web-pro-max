@@ -24,7 +24,7 @@ export default function UserTableRow({user, i, handleDeleteUser}){
             data-[index='0']:bg-zinc-200
             data-[disabled=true]:bg-red-300"> 
             <td>{i}.</td>
-            <td className="p-2">{user.firstName /*+ " " + user.lastName*/}</td>
+            <td className="p-2">{user.firstName + " " + user.lastName}</td>
             <td>{user.email}</td>
             <td>{user.role}</td>
             {/* <td>{calculateAge(user.birthday)}</td>

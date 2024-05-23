@@ -1,6 +1,7 @@
 import HeaderPortal from '@/components/HeaderPortal'
 import Navbar from '@/components/Navbar'
 import PageHeaderPortal from '@/components/PageHeaderPortal'
+import VlibrasPlugin from '@/components/VlibrasPlugin'
 import Link from 'next/link'
 import React from 'react'
 
@@ -21,7 +22,7 @@ export default function page() {
                             <li className='trimester-time-line flex gap-5'>
                                 <span></span>
                                 <div className="trimester-item text-right p-5 w-[100%] text-white rounded-[10px]">
-                                    <Link href="/">
+                                    <Link href="/student-portal/history-subject/l-trimester">
                                         <h3>Iº Trimestre</h3>
                                     </Link>
                                 </div>
@@ -54,6 +55,7 @@ export default function page() {
                     </div>
                 </div>
             </main>
+                <VlibrasPlugin />
         </>
 
     )

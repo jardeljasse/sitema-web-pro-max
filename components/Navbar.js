@@ -37,11 +37,11 @@ export default function Navbar() {
       <div className="flex gap-6">
         <p>
             <FontAwesomeIcon icon={faHouse} className="w-6" />
-            <Link href={"/Home"} className="hover:text-skin-cl900 transition-all hover:-translate-y-[2px]">Principal</Link>
+            <Link href={"/student-portal"} className="hover:text-skin-cl900 transition-all hover:-translate-y-[2px]">Principal</Link>
         </p>
         <p>
             <FontAwesomeIcon icon={faBookOpen} className="w-6" />
-            <Link href={"/Home"} className="hover:text-skin-cl900 transition-all hover:-translate-y-[2px]">Biblioteca</Link>
+            <Link href={"/library"} className="hover:text-skin-cl900 transition-all hover:-translate-y-[2px]">Biblioteca</Link>
         </p>
         <p>
             <FontAwesomeIcon icon={faQuestionCircle} className="w-6" />
