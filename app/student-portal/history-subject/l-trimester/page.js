@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import TabLesson from "@/components/TabLesson";
 
 
 export default function page() {
@@ -42,6 +43,7 @@ export default function page() {
                     </div>
                 </div>
             </main>
+            <TabLesson />
         </>
     )
 }
