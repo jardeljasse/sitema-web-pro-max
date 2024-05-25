@@ -3,15 +3,15 @@
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import PageHeaderPortal from "@/components/PageHeaderPortal";
-import VlibrasPlugin from "@/components/VlibrasPlugin";
+// import VlibrasPlugin from "@/components/VlibrasPlugin";
 import Image from "next/image";
-// import dynamic from "next/dynamic"+
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Subjects from "@/components/Subjects";
 import HeaderPortal from "@/components/HeaderPortal";
 
-// const VlibrasPlugin = dynamic(() => import('../../components/VlibrasPlugin'),
-//   { ssr: false })
+const VlibrasPlugin = dynamic(() => import('../../components/VlibrasPlugin'),
+  { ssr: true })
 
 export default function page() {
   return (
