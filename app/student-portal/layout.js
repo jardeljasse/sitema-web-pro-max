@@ -1,14 +1,19 @@
+"use client"
+
+import { SessionProvider } from "next-auth/react";
 
 
-  export default function RootLayout({ children }) {
+  export default function RootLayout({ children, session }) {
     return (
       <html lang="pt">
         <head>
             <title>Portal dos alunos</title>
         </head>
-        <body>
-          {children}
-        </body>
+        <SessionProvider session={session}>
+            <body>
+                {children}
+            </body>
+            </SessionProvider>
       </html>
     );
   }

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import {signIn} from "next-auth/react";
+import {signIn, useSession} from "next-auth/react";
 import React, {useRef, useState} from "react";
 import { useRouter } from "next/navigation";
 
@@ -11,11 +11,16 @@ export default function LoginForm(){
     
     const emailRef = useRef()
     const passwordRef = useRef()
+    const roleRef = useRef()
     const router = useRouter()
 
     //para mudanca do botao ao carregar
     const [isLoading, setIsLoading] = useState(false);
     const [message, setMessage] = useState("")
+
+    const { data: session } = useSession()
+       
+    
 
 
     const handleSubmit = (e) => {
@@ -27,19 +32,22 @@ export default function LoginForm(){
         signIn("credentials", {
             email: emailRef.current.value,
             password: passwordRef.current.value,
+            role: roleRef,
             redirect: false, //nao ser redericionado a uma outra page
             
         }).then((res) =>{            
             setIsLoading(false)
-
             //palavra passe incorrecta
             if(res.status === 401){ 
                return setMessage("Email ou Palavra-passe Errada!")
             }else if(res.error){
                 return setMessage("Ocorreu um erro no Servidor, tente novamente")
-            }            
+            } else if(session?.user.role == "admin" || session?.user.role == "teacher"){
+                router.push("/") 
+            }else if(session?.user.role == "student"){                
+                router.push("/student-portal") 
+            }
 
-            router.push("/") 
         }).catch((err) => alert(err))
     }
     return (
