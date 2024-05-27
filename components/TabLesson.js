@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function TabLesson() {
 
-
+    
     useEffect(() => {
         const tabs = document.querySelectorAll(".tab-btn");
         const elContentItem = document.querySelectorAll(".content-item");

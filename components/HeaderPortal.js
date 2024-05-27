@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function HeaderPortal() {
   return (
-    <header className="h-[100vh] bg-skin-cl900 ">
+    <header className="h-[70vh] bg-skin-cl900 ">
         <div className="container flex h-[80vh] justify-between items-center px-10">
           <div className="image-header">
             <Image src={"/images/sen-logo-wht.png"} width={400} height={400} />
