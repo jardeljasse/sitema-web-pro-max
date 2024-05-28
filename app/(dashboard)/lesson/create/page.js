@@ -8,7 +8,7 @@ export default function page() {
             <PageHeader title="Adicionar Aula">
                 <p>Adione uma nova aula.</p>
             </PageHeader>
-            <section className='mt-[4rem]'>
+            <section className='mt-[2rem]'>
                 <LessonForm />
             </section>
         </>

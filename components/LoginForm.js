@@ -39,20 +39,20 @@ export default function LoginForm(){
             setIsLoading(false)
             //palavra passe incorrecta
             if(res.status === 401){ 
-               return setMessage("Email ou Palavra-passe Errada!")
+               return setMessage("Email ou Palavra-passe Incorrecta!")
             }else if(res.error){
                 return setMessage("Ocorreu um erro no Servidor, tente novamente")
-            } else if(session?.user.role == "admin" || session?.user.role == "teacher"){
-                router.push("/") 
-            }else if(session?.user.role == "student"){                
-                router.push("/student-portal") 
+            } else if(session?.user.role !== "admin" || session?.user.role == "teacher"){
+                router.push("/student-portal")
+            }else {                
+                router.push("/")
             }
 
         }).catch((err) => alert(err))
     }
     return (
-    <form onSubmit={handleSubmit} className="mt-8 w-full">
-        <label htmlFor="email" className="block text-green-700">
+    <form onSubmit={handleSubmit} className="pr-8 w-full">
+        <label htmlFor="email" className="block text-white">
             Email
         </label>
         <input
@@ -60,7 +60,7 @@ export default function LoginForm(){
         type="email" 
         name="email" id="email" 
         className="w-full p-2 " />
-        <label htmlFor="email" className="block text-green-700 mt-4">
+        <label htmlFor="email" className="block text-white mt-4">
             Password
         </label>
         <input 
@@ -71,19 +71,19 @@ export default function LoginForm(){
         className="w-full p-2" />
         <button 
         disabled={isLoading}
-        className="bg-green-900
-            hover:bg-sky-600 transition-all p-2
-            text-white disabled:bg-green-300 
+        className="bg-skin-cl100
+            hover:bg-skin-cl900 transition-all p-2
+            text-white disabled:bg-skin-cl300 
             w-full mt-6">Entrar
             
             </button>  
             {
-                message && <p className="text-red-800 text-center mt-4 ">
+                message && <p className="text-red-400 text-center mt-4 ">
                     {message}
                 </p>
             }
 
-        <Link href="/auth/forget-password" className="text-center mt-4 block text-green-600 hover:underline">Esqueceu a palavra passe?</Link>
+        <Link href="/auth/forget-password" className="text-center mt-4 block text-white hover:underline">Esqueceu a palavra passe?</Link>
     </form>
     
     );

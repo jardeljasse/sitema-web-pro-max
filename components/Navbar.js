@@ -8,6 +8,7 @@ import {
   faQuestionCircle,
   faReply,
   faUser,
+  faUserGraduate,
   faUserShield,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -54,7 +55,8 @@ export default function Navbar() {
           <span className="flex mr-1 bg-skin-cl900 rounded-full text-sky-500 w-8 h-8 items-center justify-center">
             <FontAwesomeIcon
               //mudancas de icones para os =! niveis de acesso
-              icon={session?.user.role == "admin" ? faUserShield : faUser}
+              icon={session?.user.role == "admin" ? faUserShield : faUser }
+              
               className="w-6"
             />
           </span>

@@ -47,6 +47,9 @@ user: {
     required: true,
     ref: "User",
 },
+progress:{
+    type: Number,
+},
 createdAt:{
     type: Date,
     required: true,
