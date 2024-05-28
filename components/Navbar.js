@@ -50,7 +50,7 @@ export default function Navbar() {
         </p>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 ">
         <p className="flex items-center">
           <span className="flex mr-1 bg-skin-cl900 rounded-full text-sky-500 w-8 h-8 items-center justify-center">
             <FontAwesomeIcon
@@ -62,7 +62,7 @@ export default function Navbar() {
           </span>
           <Link
             href={"/users/" + session?.user.email}
-            className="hover:text-skin-cl900 transition-all hover:-translate-y-[2px]"
+            className="hover:text-skin-cl900 w-full transition-all hover:-translate-y-[2px]"
           >
             {session?.user.name}
           </Link>
