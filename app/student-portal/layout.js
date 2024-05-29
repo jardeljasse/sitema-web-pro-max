@@ -1,16 +1,10 @@
 "use client";
 
-//import '../globals.css'
-import Sidebar from "@/components/Sidebar";
-import Navbar from "@/components/Navbar";
 import { useSession } from "next-auth/react";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
-import Subjects from "@/components/Subjects";
-import PageHeaderPortal from "@/components/PageHeaderPortal";
-import VlibrasPlugin from "@/components/VlibrasPlugin";
-import HeaderPortal from "@/components/HeaderPortal";
+
 
 export default function layout({ children }) {
   const {data: session, status} = useSession();

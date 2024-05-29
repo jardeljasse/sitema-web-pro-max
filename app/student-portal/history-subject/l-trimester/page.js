@@ -85,27 +85,7 @@ export default function page() {
                             </video>
                             <h3 className="vid-title">02. Google forms</h3>
                         </div>
-                        <div className="video-item">
-                            <video autoPlay={false} controls>
-                                <source src="/videos/azagaia.mp4" type="video/mp4" />
-                                Seu navegador não é combatível com este video
-                            </video>
-                            <h3 className="vid-title">01. Sistema Protestante</h3>
-                        </div>
-                        <div className="video-item">
-                            <video autoPlay={false} controls>
-                                <source src="/videos/azagaia.mp4" type="video/mp4" />
-                                Seu navegador não é combatível com este video
-                            </video>
-                            <h3 className="vid-title">01. Sistema Protestante</h3>
-                        </div>
-                        <div className="video-item">
-                            <video autoPlay={false} controls>
-                                <source src="/videos/azagaia.mp4" type="video/mp4" />
-                                Seu navegador não é combatível com este video
-                            </video>
-                            <h3 className="vid-title">01. Sistema Protestante</h3>
-                        </div>
+                        
                     </div>
                 </main>
             </section>

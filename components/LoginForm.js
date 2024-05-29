@@ -79,7 +79,7 @@ export default function LoginForm() {
         disabled={isLoading}
         className="bg-skin-cl100
             hover:bg-skin-cl900 transition-all p-2
-            text-white disabled:bg-skin-cl300 
+            text-white disabled:bg-zinc-500 
             w-full mt-6"
       >
         Entrar
