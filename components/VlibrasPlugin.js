@@ -1,6 +1,6 @@
-"use client";
+
 // import VLibras from "@djpfs/react-vlibras";
-import VLibras from "react-vlibras";
+// import VLibras from "react-vlibras";
 
 export default function VlibrasPlugin() {
   return (
