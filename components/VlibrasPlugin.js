@@ -1,18 +1,16 @@
-
+"use client";
+// import VLibras from "@djpfs/react-vlibras";
+import VLibras from "react-vlibras";
 
 export default function VlibrasPlugin() {
   return (
     <>
-      <div vw="" className="enabled">
-        <div vw-access-button="" className="active"></div>
-        <div vw-plugin-wrapper="">
-          <div className="vw-plugin-top-wrapper"></div>
-        </div>
-      </div>
-
-      {/* <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script> */}
-      <script src="/vlibras-plugin.js"></script>
-      <script src="/vlibras-local.js"></script>
+     <div className="App">
+       <VLibras safeInit />
+      <header className="App-header">
+        {/* <h1>Teste</h1> */}
+      </header>
+    </div>
     </>
   );
 }

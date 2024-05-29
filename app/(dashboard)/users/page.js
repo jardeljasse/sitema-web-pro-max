@@ -1,6 +1,5 @@
 import PageHeader from "@/components/PageHeader"
 import UsersTable from "@/components/UsersTable"
-import React from "react"
 
 export default function page(){
  //criando um 'FRAGMENTO EM REACT <>...</> OU <React.Fragment></React.Fragment>'   
