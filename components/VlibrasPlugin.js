@@ -6,7 +6,7 @@ export default function VlibrasPlugin() {
   return (
     <>
      <div className="App">
-       <VLibras safeInit />
+       {/* <VLibras safeInit /> */}
       <header className="App-header">
         {/* <h1>Teste</h1> */}
       </header>

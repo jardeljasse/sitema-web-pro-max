@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
 import TeachersTableRow from './TeachersTableRow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -61,10 +63,11 @@ export default function TeachersTable() {
                      <th>Idade</th>
                      <th>Nacionalidade</th>
                      <th>Provincia</th>
-                     <th>Género</th>
                      <th>Area de Formação</th>
+                     <th>Género</th>
                      <th>Disciplina</th>
                      <th>Contacto</th>                     
+                     <th>Acções</th>                     
                  </tr>
              </thead>
              <tbody>
@@ -85,7 +88,7 @@ export default function TeachersTable() {
          {/* rodando icon antes de carregar a tabela */}
          {isLoadingUsers && (
              <p className="mt-16 text-center">
-                 <FontAwesomeIcon icon={faCircleNotchh} 
+                 <FontAwesomeIcon icon={faCircleNotch} 
                  className="animate-spin w-6"/>
              </p>
          )}

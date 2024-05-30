@@ -1,7 +1,7 @@
 "use client"
 
 import PageHeader from '@/components/PageHeader'
-import TeachersTableRow from '@/components/TeachersTableRow'
+import TeachersTable from '@/components/TeachersTable'
 import React from 'react'
 
 export default function page() {
@@ -12,7 +12,7 @@ export default function page() {
     </PageHeader>
 
     <section>
-      <TeachersTableRow />
+      <TeachersTable />
     </section>
     </>
 
