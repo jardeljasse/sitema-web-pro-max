@@ -54,7 +54,7 @@ export default function TeachersTable() {
   return (
      //pegando dados na base de dados
      <>
-      <p className="mb-4">Total de Alunos: {teachers.length}</p>
+      <p className="mb-4">Total de Professores: {teachers.length}</p>
          <table className="w-full">
              <thead className="bg-skin-cl700 text-white">
                  <tr className="text-left">
@@ -89,7 +89,7 @@ export default function TeachersTable() {
          {isLoadingUsers && (
              <p className="mt-16 text-center">
                  <FontAwesomeIcon icon={faCircleNotch} 
-                 className="animate-spin w-6"/>
+                 className="animate-spin w-6 text-skin-cl100"/>
              </p>
          )}
      </>

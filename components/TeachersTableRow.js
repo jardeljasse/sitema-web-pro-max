@@ -34,7 +34,7 @@ export default function TeachersTableRow({teacher, i, handleDeleteUser}){
             <td>{teacher.contact}</td>            
             
             <td className="flex gap-2 p-2">
-                <Link href={"/users/" + teacher._id} className="
+                <Link href={"/teachers/" + teacher._id} className="
                 bg-sky-500 rounded-md p-1 w-8 h-8
                 hover:bg-sky-600 text-zinc-900 transition-all"
                 >
