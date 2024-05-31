@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function TabLesson() {
@@ -34,7 +35,7 @@ export default function TabLesson() {
             <div className="tab-box">
                 <button className="tab-btn">Transcrição</button>
                 <button className="tab-btn">Dúvida</button>
-                <button className="tab-btn">Mais</button>
+                <button className="tab-btn">Ver Resposta(s)</button>
             </div>
             <div className="content-box">
                 <div className="content-item">
@@ -51,18 +52,23 @@ export default function TabLesson() {
                     <textarea name="doubt" id="doubt" rows={8} className="w-full text-xl"></textarea>
                     <button
                         disabled={isLoading}
-                        className="bg-skin-cl100 hover:bg-skin-cl900 transition-all p-2 text-white disabled:bg-skin-cl700 `w-full mt-6 rounded-lg">
+                        className="bg-skin-cl100 hover:bg-skin-cl900 transition-all p-2 text-white disabled:bg-skin-cl700 w-full mt-6 rounded-lg">
                             Enviar
                     </button>
                 </div>
 
 
                 <div className="content-item">
-                    <h2>Mais</h2>
-                    {/* <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed debitis quidem officiis, accusamus reprehenderit sint exercitationem tenetur sit? Dolore molestias beatae quaerat numquam laborum modi voluptate accusamus labore? Quam, ipsum?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed debitis quidem officiis, accusamus reprehenderit sint exercitationem tenetur sit? Dolore molestias beatae quaerat numquam laborum modi voluptate accusamus labore? Quam, ipsum?
-                    </p> */}
+                    <h2>Resposta(s)</h2>
+                    <p className="italic mb-8">
+                        Não entendi em relação às proposicoes?
+                    </p>
+                    <p>
+                        <strong>
+                            Nas, proposicoes, salientamos que os memos apenas tem uma grande funcao quando...
+                            para melhor entendimento pesquise neste link
+                        </strong> <Link href="/" className="underline text-blue-700" >proposicoes em lignua portuguesa</Link>
+                    </p>
                 </div>
             </div>
 

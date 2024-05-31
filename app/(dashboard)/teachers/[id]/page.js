@@ -43,7 +43,7 @@ export default function page() {
             <ul>
               <li>
                 <b>Professor(a) cadastrado por: </b>
-                {teachers.user?.firstName}
+                {teachers.user?.firstName + " " + teachers.user?.lastName}
               </li>
               <li>
                 <b>Função: </b>

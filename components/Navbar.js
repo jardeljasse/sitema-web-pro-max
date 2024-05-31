@@ -42,7 +42,7 @@ export default function Navbar() {
         </p>
         <p>
             <FontAwesomeIcon icon={faBookOpen} className="w-6" />
-            <Link href={"/library"} className="hover:text-skin-cl900 transition-all hover:-translate-y-[2px]">Biblioteca</Link>
+            <Link href={"/student-portal/library"} className="hover:text-skin-cl900 transition-all hover:-translate-y-[2px]">Biblioteca</Link>
         </p>
         <p>
             <FontAwesomeIcon icon={faQuestionCircle} className="w-6" />
@@ -62,7 +62,7 @@ export default function Navbar() {
           </span>
           <Link
             href={"/users/" + session?.user.email}
-            className="hover:text-skin-cl900 w-[100px] transition-all"
+            className="hover:text-skin-cl900 min-w-[150px] transition-all"
           >
             {session?.user.name}
           </Link>
