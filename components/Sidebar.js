@@ -205,13 +205,13 @@ const items = [
     icon: faBookOpenReader,
     subMenus: [
       {
-        name: "Verificar Dúvidas",
+        name: "Verificar & Responder Dúvidas",
         href: "/doubts",
       },
-      {
-        name: "Responder Dúvida",
-        href: "/create/doubts",
-      },
+      // {
+      //   name: "Responder Dúvida",
+      //   href: "/create/doubts",
+      // },
     ],
   },
   {

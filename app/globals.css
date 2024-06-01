@@ -310,6 +310,13 @@ header{
     min-height: 220px;
 }
 /* END LIBRARY MAIN */
+/* TABLE DETAILS */
+
+table{
+    cursor: pointer;
+}
+
+/* END TABLE DETAILS */
 @layer components{
     form input,
     form textarea,
@@ -317,7 +324,10 @@ header{
         @apply border border-blue-500 py-1 px-2;
     }
     label{
-        @apply font-bold;
+        @apply font-bold text-skin-cl900;
+    }
+    b{
+        @apply text-skin-cl900;
     }
     .form-group{
         @apply w-full mb-2;

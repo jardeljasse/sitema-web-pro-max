@@ -22,7 +22,11 @@ export default function TeachersTableRow({teacher, i, handleDeleteUser}){
             data-index={i % 2} 
             className="bg-zinc-100
             data-[index='0']:bg-zinc-200
-            data-[disabled=true]:bg-red-300"> 
+            data-[index='0']:hover:bg-skin-cl100
+            data-[disabled=true]:bg-red-300
+            hover:bg-skin-cl100
+            hover:text-white
+            transition-all"> 
             <td>{i}.</td>
             <td className="p-2">{teacher.name}</td>
             <td>{calculateAge(teacher.birthDay)}</td>
