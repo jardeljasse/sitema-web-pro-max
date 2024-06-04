@@ -306,8 +306,22 @@ header{
 
 .books-items .book-item{
     box-shadow: 0px 5px 10px 5px rgba(0, 0, 0,.1);
-    background-image: linear-gradient(to top, var(--color-100), var(--color-900));
     min-height: 220px;
+}
+.book-item span{
+    display: inline-block;
+    width: 100px;
+}
+.book-item span:first-child{
+    background-color: red;
+    margin-right: 0.5rem;
+}
+.book-item span:last-child{
+    background-color: var(--dark-gray);
+}
+.book-item span:hover{
+    background-color: var(--color-300);
+    transition: all 0.3s;
 }
 /* END LIBRARY MAIN */
 /* TABLE DETAILS */
