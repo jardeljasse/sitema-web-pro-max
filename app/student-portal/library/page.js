@@ -36,10 +36,7 @@ export default function page() {
               <Link
                 href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
                 target="_blank">
-                <span
-                  className="bg-skin-cl100 p-1 text-white text-[13px]"
-
-                >
+                <span className="bg-skin-cl100 p-1 text-white text-[13px]">
                   Descarregar <FontAwesomeIcon icon={faDownload} />
                 </span>
               </Link>

@@ -35,12 +35,13 @@ export default function Sidebar() {
       <nav className="mt-10">
         <ul>
           {items.map((item, i) => {
-            //niveis de acesso, ocultando e retornando no <SidebarItem />
-            if (session?.user.role != "admin" && item.name == "Usuários") {
+            if (session?.user.role !== "admin" && item.name == "Professor"            
+            ) {
               return;
             } else {
               return <SidebarItem item={item} />;
             }
+          
           })}
         </ul>
       </nav>
@@ -243,17 +244,27 @@ const items = [
     ],
   },
   {
-    name: "Gerar Relatório",
-    icon: faReceipt,
+    name: "Manual do Sistema",
+    icon: faBookOpenReader,
     subMenus: [
-      {
-        name: "Criar Relatório",
-        href: "/create/report",
-      },
-      {
-        name: "Listar Relatório",
-        href: "/reports",
+      {        
+        name: "Baixar",
+        href: "/progress",
       },
     ],
   },
+  // {
+  //   name: "Gerar Relatório",
+  //   icon: faReceipt,
+  //   subMenus: [
+  //     {
+  //       name: "Criar Relatório",
+  //       href: "/create/report",
+  //     },
+  //     {
+  //       name: "Listar Relatório",
+  //       href: "/reports",
+  //     },
+  //   ],
+  // },
 ];

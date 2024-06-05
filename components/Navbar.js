@@ -58,7 +58,7 @@ export default function Navbar() {
 
       <div className="flex items-center gap-4 ">
         <p className="flex items-center">
-          <span className="flex bg-skin-cl900 gap-1 rounded-full text-sky-500 w-8 h-8 items-center justify-center">
+          <span className="flex bg-skin-cl900 gap-1 rounded-full text-sky-500 w-8 h-8 items-center text-center justify-center">
             <FontAwesomeIcon
               //mudancas de icones para os =! niveis de acesso
               icon={session?.user.role == "admin" ? faUserShield : faUser && session?.user.role == "student" ? faUserGraduate : faUser  && session?.user.role == "teacher" ? faChalkboardTeacher : faUser}

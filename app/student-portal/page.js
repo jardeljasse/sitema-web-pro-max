@@ -7,7 +7,7 @@ import Image from "next/image";
 // import dynamic from "next/dynamic";
 import Subjects from "@/components/Subjects";
 import HeaderPortal from "@/components/HeaderPortal";
-// import VlibrasPlugin from "@/components/VlibrasPlugin";
+import VlibrasPlugin from "@/components/VlibrasPlugin";
 // import VLibras from "react-vlibras";
 
 // const VlibrasPlugin = dynamic(() => import('../../components/VlibrasPlugin'),
@@ -22,7 +22,7 @@ export default function page() {
 
       <main className="bg-gray-900 text-white p-10">
           {/* <VLibras forceOnload={true} />   */}
-          {/* <VlibrasPlugin /> */}
+          <VlibrasPlugin />
           {/* <VLibras safeInit /> */}
         <div className="container">
 
