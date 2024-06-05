@@ -17,8 +17,9 @@ export default function layout({ children }) {
       h-[100vh] justify-center'>
         <FontAwesomeIcon 
         icon={faCircleNotch} 
-        className='w-8 h-8 animate-spin'/>
-        <p>Verificando a sua <strong>Autenticação</strong></p>
+        className='w-8 h-8 animate-spin text-skin-cl700 '/>
+        {/* <p>Verificando a sua <strong>Autenticação</strong></p> */}
+        <p className='text-skin-cl700 text-3xl'>Verificando a sua <strong>Autenticação</strong></p>
       </body>
     );
   } else if(status === "authenticated"){    

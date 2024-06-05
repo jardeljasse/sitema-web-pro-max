@@ -3,6 +3,7 @@
 import {
   faBookOpen,
   faCalendarDays,
+  faChalkboardTeacher,
   faHouse,
   faQuestion,
   faQuestionCircle,
@@ -36,33 +37,37 @@ export default function Navbar() {
       </div>
 
       <div className="flex gap-6">
-        <p>
+
+        {session?.user.role == "student" &&
+          <p>
             <FontAwesomeIcon icon={faHouse} className="w-6" />
             <Link href={"/student-portal"} className="hover:text-skin-cl900 transition-all hover:-translate-y-[2px]">Principal</Link>
-        </p>
-        <p>
+          </p>}
+        {session?.user.role == "student" &&
+          <p>
             <FontAwesomeIcon icon={faBookOpen} className="w-6" />
             <Link href={"/student-portal/library"} className="hover:text-skin-cl900 transition-all hover:-translate-y-[2px]">Biblioteca</Link>
-        </p>
-        <p>
+          </p>
+        }
+
+        {/* <p>
             <FontAwesomeIcon icon={faQuestionCircle} className="w-6" />
             <Link href={"/Home"} className="hover:text-skin-cl900 transition-all hover:-translate-y-[2px]">Ajuda</Link>
-        </p>
+        </p> */}
       </div>
 
       <div className="flex items-center gap-4 ">
         <p className="flex items-center">
-          <span className="flex mr-1 bg-skin-cl900 rounded-full text-sky-500 w-8 h-8 items-center justify-center">
+          <span className="flex bg-skin-cl900 gap-1 rounded-full text-sky-500 w-8 h-8 items-center justify-center">
             <FontAwesomeIcon
               //mudancas de icones para os =! niveis de acesso
-              icon={session?.user.role == "admin" ? faUserShield : faUser }
-              
-              className="w-6"
+              icon={session?.user.role == "admin" ? faUserShield : faUser && session?.user.role == "student" ? faUserGraduate : faUser  && session?.user.role == "teacher" ? faChalkboardTeacher : faUser}
+              className="w-6 mr-2 block"
             />
           </span>
           <Link
             href={"/users/" + session?.user.email}
-            className="hover:text-skin-cl900 w-[180px] font-bold transition-all"
+            className="hover:text-skin-cl900 min-w-[180px] font-bold transition-all"
           >
             {session?.user.name}
           </Link>

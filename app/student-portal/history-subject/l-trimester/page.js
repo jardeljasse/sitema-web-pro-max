@@ -63,8 +63,8 @@ export default function page() {
                     <div className="main-video w-full basis-[70%] aspect-ratio">
                         <div className="video aspect-w-16 aspect-h-9">
                             <video autoPlay={false} controls>
-                                <source src="https://drive.google.com/file/d/1ycXWi7VoXY-g31_HVAlJVAmygfja0UbD/view?usp=drive_link"/>
-                                {/* <source src="/videos/azagaia.mp4" type="video/mp4" /> */}
+                                {/* <source src="https://drive.google.com/file/d/1ycXWi7VoXY-g31_HVAlJVAmygfja0UbD/view?usp=drive_link"/> */}
+                                <source src="/videos/azagaia.mp4" type="video/mp4" />
                                 Seu navegador não é combatível com este video
                             </video>
                             <h3>01. Sistema Protestante</h3>
