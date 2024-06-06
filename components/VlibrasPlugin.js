@@ -5,7 +5,7 @@ export default function VlibrasPlugin() {
   return (
     <>
      <div className="App">
-       <VLibras  />
+       <VLibras forceOnload />
     </div>
     </>
   );
