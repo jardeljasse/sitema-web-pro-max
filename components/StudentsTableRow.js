@@ -32,7 +32,7 @@ export default function StudentsTableRow({student, i, handleDeleteUser}){
             <td>{student.city}</td>
             <td>{student.neighbornhood}</td>
             <td>{student.sponsorContact}</td>
-            <td>{student.healthExame}</td>
+            {/* <td>{student.healthExame}</td> */}
             <td>{student.desease}</td>
             
             <td className="flex gap-2 p-2">

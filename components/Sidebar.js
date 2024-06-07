@@ -28,21 +28,35 @@ export default function Sidebar() {
           src="/images/sen-logo-white.png"
           width={170}
           height={170}
-          className="block mx-auto mt-4"
+          className="block mx-auto mt-2"
         />
       </Link>
 
       <nav className="mt-10">
         <ul>
           {items.map((item, i) => {
-            if (session?.user.role !== "admin" && item.name == "Professor"            
-            ) {
+            if (session?.user.role !== "admin" && item.name == "Professor"
+              && item.name == "Usuários") {
               return;
-            } else {
+            } else  {
               return <SidebarItem item={item} />;
             }
-          
+
           })}
+          {/* {items.map((item, i) => {
+            if (session?.user.role !== "admin" && item.name == "Professor"
+              || item.name == "Usuários") {
+              return;
+            } else if(session?.user.role !== "teacher" 
+              && item.name == "Usuários"
+              || item.name == "Manual do Sistema"
+              || item.name == "Professor"
+              || item.name == "Alunos"
+              ) {
+              return <SidebarItem item={item} />;
+            }
+
+          })} */}
         </ul>
       </nav>
     </aside>
@@ -247,7 +261,7 @@ const items = [
     name: "Manual do Sistema",
     icon: faBookOpenReader,
     subMenus: [
-      {        
+      {
         name: "Baixar",
         href: "/progress",
       },

@@ -61,13 +61,13 @@ export default function TabLesson() {
                 <div className="content-item">
                     <h2>Resposta(s)</h2>
                     <p className="italic mb-8">
-                        Não entendi em relação às proposicoes?
+                        Não entendi o que é um curriculum Vitae, tornar a me explicar?
                     </p>
                     <p>
                         <strong>
-                            Nas, proposicoes, salientamos que os memos apenas tem uma grande funcao quando...
-                            para melhor entendimento pesquise neste link
-                        </strong> <Link href="/" className="underline text-blue-700" >proposicoes em lignua portuguesa</Link>
+                            O Curriculim Vitae ou CV, é um documento que permite ao individuo, descrever o seu perfil de uma forma profissional, na qual contará suas experiências, formações,etc.
+                            Geralmente este documento tem uma grande utilidade, quando se pretende concorrer a uma vaga de emprego, a pessoa é exigida o seu curriculo para ser observado o seu perfil.
+                        </strong>
                     </p>
                 </div>
             </div>

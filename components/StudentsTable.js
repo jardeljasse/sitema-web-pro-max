@@ -70,7 +70,7 @@ export default function StudentsTable(){
                     <th>Cidade</th>
                     <th>Bairro</th>
                     <th>Conct - Encarregado</th>
-                    <th>Grau de surdez</th>
+                    {/* <th>Grau de surdez</th> */}
                     <th>Doença Frequente</th>
                     <th>Funções</th>
                 </tr>

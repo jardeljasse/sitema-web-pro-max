@@ -23,129 +23,146 @@ export default function page() {
           <h2 className="text-3xl">Livros</h2>
           <hr className="w-[100px] h-8 text-skin-cl900" />
           <div className="books-items flex flex-wrap gap-8">
-            <div className="book-item text-white ">
+            <div className="book-item flex flex-col text-white ">
               <Image
-                src="/images/subjects/biologia.webp"
+                 src="/images/subjects/fraces.png"
                 width={170}
                 height={200}
-                className="cursor-pointer"
-              />
-              <h3 className="p-2 text-black font-bold text-2xl">
-                BIOLOGIA 9ª classe
-              </h3>
-              <Link
-                href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
-                target="_blank">
-                <span className="bg-skin-cl100 p-1 text-white text-[13px]">
-                  Descarregar <FontAwesomeIcon icon={faDownload} />
-                </span>
-              </Link>
-            </div>
-            <div className="book-item text-white ">
-              <Image
-                src="/images/subjects/portugues.webp"
-                width={170}
-                height={200}
-                className="cursor-pointer"
-              />
-              <h3 className="p-2 text-black font-bold uppercase text-2xl">
-                PORTUGUêS 9ª classe
-              </h3>
-              <Link
-                href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
-                target="_blank">
-                <span
-                  className="bg-skin-cl100 p-1 text-white text-[13px]"
-
-                >
-                  Descarregar <FontAwesomeIcon icon={faDownload} />
-                </span>
-              </Link>
-            </div>
-            <div className="book-item text-white ">
-              <Image
-                src="/images/subjects/frances.webp"
-                width={170}
-                height={200}
-                className="cursor-pointer"
+                className="cursor-pointer block m-auto"
               />
               <h3 className="p-2 text-black font-bold text-2xl uppercase">
-                Francês 9ª classe
+                FRANCêS
               </h3>
-              <Link
-                href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
-                target="_blank">
-                <span
-                  className="bg-skin-cl100 p-1 text-white text-[13px]"
-
-                >
-                  Descarregar <FontAwesomeIcon icon={faDownload} />
-                </span>
-              </Link>
-            </div>
-            <div className="book-item text-white ">
+              <div className="p-2">
+                <Link
+                  href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
+                  target="_blank">
+                  <span className="bg-skin-cl100 p-1 text-white text-[13px]">
+                    Descarregar <FontAwesomeIcon icon={faDownload} />
+                  </span>
+                </Link>
+              </div>
+            </div>          
+            <div className="book-item flex flex-col text-white ">
               <Image
-                src="/images/subjects/maths.webp"
+                 src="/images/subjects/gografia.png"
                 width={170}
                 height={200}
-                className="cursor-pointer"
+                className="cursor-pointer block m-auto"
               />
               <h3 className="p-2 text-black font-bold text-2xl uppercase">
-                matemática 9ª classe
+                GEOGRAFIA
               </h3>
-              <Link
-                href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
-                target="_blank">
-                <span
-                  className="bg-skin-cl100 p-1 text-white text-[13px]"
-
-                >
-                  Descarregar <FontAwesomeIcon icon={faDownload} />
-                </span>
-              </Link>
-            </div>
-            <div className="book-item text-white ">
+              <div className="p-2">
+                <Link
+                  href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
+                  target="_blank">
+                  <span className="bg-skin-cl100 p-1 text-white text-[13px]">
+                    Descarregar <FontAwesomeIcon icon={faDownload} />
+                  </span>
+                </Link>
+              </div>
+            </div>          
+            <div className="book-item flex flex-col text-white ">
               <Image
-                src="/images/subjects/Geografia.webp"
+                 src="/images/subjects/historia.png"
                 width={170}
                 height={200}
-                className="cursor-pointer"
+                className="cursor-pointer block m-auto"
               />
-              <h3 className="p-2 text-black font-bold text-2xl">
-                GEOGRAFIA 9ª classe
+              <h3 className="p-2 text-black font-bold text-2xl uppercase">
+                HISTORIA
               </h3>
-              <Link
-                href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
-                target="_blank">
-                <span
-                  className="bg-skin-cl100 p-1 text-white text-[13px]"
-
-                >
-                  Descarregar <FontAwesomeIcon icon={faDownload} />
-                </span>
-              </Link>
-            </div>
-            <div className="book-item text-white ">
+              <div className="p-2">
+                <Link
+                  href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
+                  target="_blank">
+                  <span className="bg-skin-cl100 p-1 text-white text-[13px]">
+                    Descarregar <FontAwesomeIcon icon={faDownload} />
+                  </span>
+                </Link>
+              </div>
+            </div>          
+            <div className="book-item flex flex-col text-white ">
               <Image
-                src="/images/subjects/biologia.webp"
+                 src="/images/subjects/igles.png"
                 width={170}
                 height={200}
-                className="cursor-pointer"
+                className="cursor-pointer block m-auto"
               />
-              <h3 className="p-2 text-black font-bold text-2xl">
-                HISTORIA 9ª classe
+              <h3 className="p-2 text-black font-bold text-2xl uppercase">
+                Inglês
               </h3>
-              <Link
-                href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
-                target="_blank">
-                <span
-                  className="bg-skin-cl100 p-1 text-white text-[13px]"
-
-                >
-                  Descarregar <FontAwesomeIcon icon={faDownload} />
-                </span>
-              </Link>
-            </div>
+              <div className="p-2">
+                <Link
+                  href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
+                  target="_blank">
+                  <span className="bg-skin-cl100 p-1 text-white text-[13px]">
+                    Descarregar <FontAwesomeIcon icon={faDownload} />
+                  </span>
+                </Link>
+              </div>
+            </div>          
+            <div className="book-item flex flex-col text-white ">
+              <Image
+                 src="/images/subjects/iologia.png"
+                width={170}
+                height={200}
+                className="cursor-pointer block m-auto"
+              />
+              <h3 className="p-2 text-black font-bold text-2xl uppercase">
+                BIOLOGIA
+              </h3>
+              <div className="p-2">
+                <Link
+                  href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
+                  target="_blank">
+                  <span className="bg-skin-cl100 p-1 text-white text-[13px]">
+                    Descarregar <FontAwesomeIcon icon={faDownload} />
+                  </span>
+                </Link>
+              </div>
+            </div>          
+            <div className="book-item flex flex-col text-white ">
+              <Image
+                 src="/images/subjects/maths.png"
+                width={170}
+                height={200}
+                className="cursor-pointer block m-auto"
+              />
+              <h3 className="p-2 text-black font-bold text-2xl uppercase">
+                matemática
+              </h3>
+              <div className="p-2">
+                <Link
+                  href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
+                  target="_blank">
+                  <span className="bg-skin-cl100 p-1 text-white text-[13px]">
+                    Descarregar <FontAwesomeIcon icon={faDownload} />
+                  </span>
+                </Link>
+              </div>
+            </div>          
+            <div className="book-item flex flex-col text-white ">
+              <Image
+                 src="/images/subjects/portugues.png"
+                width={170}
+                height={200}
+                className="cursor-pointer block m-auto"
+              />
+              <h3 className="p-2 text-black font-bold text-2xl uppercase">
+                Português
+              </h3>
+              <div className="p-2">
+                <Link
+                  href={"https://drive.google.com/file/d/1IAY5JKpcV95PF7Pq5c34WUkkxK1PpBjY/view?usp=drive_link"}
+                  target="_blank">
+                  <span className="bg-skin-cl100 p-1 text-white text-[13px]">
+                    Descarregar <FontAwesomeIcon icon={faDownload} />
+                  </span>
+                </Link>
+              </div>
+            </div>          
           </div>
 
         </div>

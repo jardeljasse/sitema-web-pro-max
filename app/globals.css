@@ -118,7 +118,7 @@ header{
     background-color: goldenrod;
 }
 .active{
-    background-color: blue;
+    /* background-color: blue; */
     padding-inline: 3rem;
     border-radius: 50%;
     width: 50px;
@@ -311,8 +311,8 @@ header{
     box-shadow: 0px 5px 10px 5px rgba(0, 0, 0,.1);
     display: inline;
     /* min-height: 220px; */
-    width: 250px;
-    height: 100%;
+    width: 200px;
+    /* height: 300px; */
 }
 .book-item:hover{
     box-shadow: 0px 5px 10px 5px rgba(50, 121, 145, 0.744);

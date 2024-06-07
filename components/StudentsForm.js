@@ -86,12 +86,12 @@ export default function StudentsForm({ onSubmit, isLoading }) {
             <div className=''>
                 <h3 className='text-xl font-light py-1'>Exames Médicos</h3>
                 <div className="flex-group flex gap-4">
-                    <div>
+                    {/* <div>
                         <p className='py-1'><label htmlFor="healthExame">Grau de Surdez</label></p>
                         <input type="number" name="healthExame" id="healthExame"
                             required
                         />
-                    </div>
+                    </div> */}
                     <div>
                         <p className='py-1'><label htmlFor="desease">Doença Frequente</label></p>
                         <input type="text" name="desease" id="desease"

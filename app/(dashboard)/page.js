@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
-import Vlibras from '@/components/VlibrasPlugin'
 import {globals} from '../globals.css'
 
 export default function Home() {
@@ -18,7 +17,6 @@ export default function Home() {
           className=" block mx-auto  p-1 " />
       </div>
       <p className='mt-8 text-skin-cl700'>Olá <strong>{session?.user.name}</strong>, seja bem vindo de volta!</p>
-      <Vlibras />
     </div>
   )
 }

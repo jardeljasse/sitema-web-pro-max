@@ -62,12 +62,12 @@ export default function page() {
                     {/* <h1>Streaming</h1> */}
                     <div className="main-video w-full basis-[70%] aspect-ratio">
                         <div className="video aspect-w-16 aspect-h-9">
-                            <video autoPlay={false} controls>
+                            <video autoPlay={false} poster="/images/thumbnailVideoPortugues.jpg" controls>
                                 {/* <source src="https://drive.google.com/file/d/1ycXWi7VoXY-g31_HVAlJVAmygfja0UbD/view?usp=drive_link"/> */}
                                 <source src="/videos/azagaia.mp4" type="video/mp4" />
                                 Seu navegador não é combatível com este video
                             </video>
-                            <h3>01. Sistema Protestante</h3>
+                            <h3>01. Curriculim Vitae</h3>
                         </div>
                 <TabLesson />
                     </div>
@@ -77,14 +77,14 @@ export default function page() {
                                 <source src="/videos/azagaia.mp4" type="video/mp4" />
                                 Seu navegador não é combatível com este video
                             </video>
-                            <h3 className="vid-title">01. Sistema Protestante</h3>
+                            <h3 className="vid-title">02. T.P.C</h3>
                         </div>
                         <div className="video-item">
                             <video autoPlay={false} controls>
                                 <source src="/videos/form.mp4" type="video/mp4" />
                                 Seu navegador não é combatível com este video
                             </video>
-                            <h3 className="vid-title">02. Google forms</h3>
+                            <h3 className="vid-title">03. Exercícios</h3>
                         </div>
                         
                     </div>

@@ -34,10 +34,10 @@ sponsorContact:{
     type: Number,
     required: true,
 },
-healthExame:{
+/*healthExame:{
     type: String,
     required: true,
-},
+},*/
 desease:{
     type: String,
     required: true,
