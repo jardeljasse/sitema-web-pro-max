@@ -14,7 +14,7 @@ export default function page() {
 
             <main className='h-[70vh] mb-[4rem]'>
                 <div className="container trimester-cont ">
-                    <PageHeaderPortal className="text-center" title="Disciplina de História">
+                    <PageHeaderPortal className="text-center" title="Disciplina de Português">
                         Selecione o Trimestre
                     </PageHeaderPortal>
                     
