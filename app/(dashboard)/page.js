@@ -14,9 +14,9 @@ export default function Home() {
           src="/images/sen-logo-white.png"
           width={200}
           height={200}
-          className=" block mx-auto  p-1 " />
+          className=" block mx-auto  p-1 object-cover" />
       </div>
-      <p className='mt-8 text-skin-cl700'>Olá <strong>{session?.user.name}</strong>, seja bem vindo de volta!</p>
+      <p className='mt-8 text-skin-cl700'>Olá <strong>{session?.user.name}</strong>, seja bem vindo(a) de volta!</p>
     </div>
   )
 }

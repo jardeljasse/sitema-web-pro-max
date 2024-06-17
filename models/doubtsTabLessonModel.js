@@ -1,9 +1,10 @@
 import {model, models, Schema} from "mongoose";
 
 
-const lessonSchema = new Schema({
-    doubts: {
-        type: String
+const doubtsLessonSchema = new Schema({
+    doubt: {
+        type: String,
+        required: true,
     },
     user:{
         type: Schema.Types.ObjectId,
@@ -18,4 +19,8 @@ const lessonSchema = new Schema({
         type: Date,
         required: true,
     }
-})
+});
+
+const DoubtsLesson_Model = models.DoubtsLesson_Model || model("DoubtsLesson_Model", doubtsLessonSchema);
+export default DoubtsLesson_Model;
+

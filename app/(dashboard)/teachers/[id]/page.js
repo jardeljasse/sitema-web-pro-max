@@ -23,6 +23,7 @@ export default function page() {
         setTeachers(data.teachers);
         setIsLoadingTeachers(false);
         // console.log(data.users)
+        // router.push("/teachers")
       })
       .catch((error) => {
         alert("Ocorreu um erro tentando editar os dados do professor!" + error);

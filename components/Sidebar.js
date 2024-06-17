@@ -225,7 +225,7 @@ const items = [
       },
       // {
       //   name: "Responder Dúvida",
-      //   href: "/create/doubts",
+      //   href: "/doubts/create",
       // },
     ],
   },

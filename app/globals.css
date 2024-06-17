@@ -353,6 +353,18 @@ iframe{
 /* END LIBRARY MAIN */
 /* TABLE DETAILS */
 
+/* DOUTBSTABLEROW */
+.td-doubts td:nth-child(3){
+    min-width: 150px;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+ .doubts-box{
+    box-shadow: 0px 5px 10px 5px rgba(50, 121, 145, 0.744);
+    padding: 0.5rem;
+ }
+/* END DOUTBSTABLEROW */
+
 table{
     cursor: pointer;
 }

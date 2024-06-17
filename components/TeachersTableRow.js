@@ -3,7 +3,7 @@ import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 
-export default function TeachersTableRow({teacher, i, handleDeleteUser}){
+export default function TeachersTableRow({teacher, i, handleDeleteTeacher}){
 
     const calculateAge = (birthDay) => {
 
@@ -35,7 +35,7 @@ export default function TeachersTableRow({teacher, i, handleDeleteUser}){
             <td>{teacher.formation}</td>
             <td>{teacher.gender}</td>
             <td>{teacher.subject}</td>
-            <td>{teacher.contact}</td>            
+            <td>{teacher.number}</td>            
             
             <td className="flex gap-2 p-2">
                 <Link href={"/teachers/" + teacher._id} className="
@@ -46,7 +46,7 @@ export default function TeachersTableRow({teacher, i, handleDeleteUser}){
                 </Link>
                 {/* CRUD: DELETING */}
                 <button
-                // onClick={() => handleDeleteUser(user.email, setIsDeleting)} 
+                onClick={() => handleDeleteTeacher(teacher._id, setIsDeleting)}
                 className="
                 bg-red-500 rounded-md p-1 w-8 h-8
                 hover:bg-sky-600 text-zinc-900 transition-all"

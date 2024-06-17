@@ -2,11 +2,46 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import DoubtsForm from "./DoubtsForm";
+import { useRouter } from "next/navigation";
+import DoubtsTable from "./DoubtsTable";
 
 export default function TabLesson() {
 
     const [isLoading, setIsLoading] = useState(false)
+    const router = useRouter()
 
+    const handleAddDoubts = (e) =>{
+        setIsLoading(true)
+        //quando o formulario for submetido devera travar o reload da pagina
+        e.preventDefault();
+
+        const formData = new FormData(e.target)
+
+        const doubtsData = {}
+        for(const [key, value] of formData.entries()){
+            doubtsData[key] = value
+        }
+
+
+        fetch("/api/doubts",{ 
+            method: "POST",
+            body: JSON.stringify(doubtsData),
+        }).then( (res) => {
+            if(!res.ok){
+                throw new Error("Ocorreu um erro ao tentar responder à dúvida do aluno "+ doubtsData.name)
+            } else{
+                return res.json()
+            }
+        }).then((data) => {
+            alert("Dúvida "+ doubtsData.name + " respondida com Sucesso!")
+            setIsLoading(false)//desativar apos o cadastro
+            // router.push("/doubts")
+        }).catch(err => {
+            alert("Ocorreu um erro ao tentar responder à dúvida do aluno "+ doubtsData.name)
+            setIsLoading(false);
+        }) 
+    }
 
     useEffect(() => {
         const tabs = document.querySelectorAll(".tab-btn");
@@ -49,25 +84,17 @@ export default function TabLesson() {
 
                 <div className="content-item doubt">
                     <h2>Dúvida</h2>
-                    <textarea name="doubt" id="doubt" rows={8} className="w-full text-xl"></textarea>
-                    <button
-                        disabled={isLoading}
-                        className="bg-skin-cl100 hover:bg-skin-cl900 transition-all p-2 text-white disabled:bg-skin-cl700 w-full mt-6 rounded-lg">
-                            Enviar
-                    </button>
+                    <DoubtsForm onSubmit={handleAddDoubts} isLoading={isLoading} />
                 </div>
 
 
                 <div className="content-item">
                     <h2>Resposta(s)</h2>
-                    <p className="italic mb-8">
+                    {/* <p className="italic mb-8">
                         Não entendi o que é um curriculum Vitae, tornar a me explicar?
-                    </p>
+                    </p> */}
                     <p>
-                        <strong>
-                            O Curriculim Vitae ou CV, é um documento que permite ao individuo, descrever o seu perfil de uma forma profissional, na qual contará suas experiências, formações,etc.
-                            Geralmente este documento tem uma grande utilidade, quando se pretende concorrer a uma vaga de emprego, a pessoa é exigida o seu curriculo para ser observado o seu perfil.
-                        </strong>
+                        <DoubtsTable />
                     </p>
                 </div>
             </div>

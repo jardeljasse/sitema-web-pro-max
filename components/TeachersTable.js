@@ -8,49 +8,51 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 export default function TeachersTable() {
 
     const [teachers, setTeachers] = useState([])
-     const [isLoadingUsers, setIsLoadingUsers] = useState(false)
+     const [isLoadingTeachers, setIsLoadingTeachers] = useState(false)
      
  
      //evitar efeitos colaterais (side effects) 'useEffect'
     useEffect(() =>{
-     setIsLoadingUsers(true);
+     setIsLoadingTeachers(true);
      fetch("/api/teachers").then((response) => response.json()).then((data) => {
          setTeachers(data.teachers)
-         setIsLoadingUsers(false);
+         setIsLoadingTeachers(false);
          // console.log(data.users)
      }).catch((error) => {
          alert("Ocorreu um erro, tentando listar os usuários")
-         setIsLoadingUsers(false);
+         setIsLoadingTeachers(false);
      });
  
     }, []);
  
      //   METHOD TO DELETE
-    const handleDeleteUser = (email, setIsDeleting) => {
-     
-     setIsDeleting(true);
- 
-         fetch("/api/users/" + email,{ 
-             method: "DELETE",
-         }).then( (res) => {
-             if(!res.ok){
-                 throw new Error("Ocorreu um erro deletando o usuário com o Email: " + email)
-             } else{
-                 return res;
-                 //return res.json()
-             }
-         }).then((data) => {
-             // alert("Usuário "+ email + " foi deletado com Sucesso!")
-             setIsDeleting(false)//desativar apos o cadastro
-             //router.push("/users")
-             //RELOAD da página apos deletar usuario
-             const newUsers = users.filter((user) => user.email !== email);
-             setSudents(newUsers);
-         }).catch(err => {
-             alert("Ocorreu um erro ao deletar o usuário com o Email: "+ email)
-             setIsDeleting(false);
-         }) 
-    }
+     const handleDeleteTeacher = (id, setIsDeleting) => {
+    
+        setIsDeleting(true);
+    
+            fetch("/api/teachers/" + id,{ 
+                method: "DELETE",
+            }).then( (res) => {
+                if(!res.ok){
+                    throw new Error("Ocorreu um erro removendo o professor com o Id: " + id)
+                } else{
+                    return res;
+                    //return res.json()
+                }
+            }).then((data) => {
+                alert("Professor removido com Sucesso!")
+                setIsDeleting(false)//desativar apos o cadastro
+                //router.push("/users")
+                //RELOAD da Tabela apos deletar usuario
+
+                const newTeachers = teachers.filter((teachers2) => teachers2._id !== id);
+
+                setTeachers(newTeachers);
+            }).catch(err => {
+                alert("Ocorreu um erro removendo o professor com o Id: "+ id)
+                setIsDeleting(false);
+            }) 
+       }
   return (
      //pegando dados na base de dados
      <>
@@ -74,19 +76,20 @@ export default function TeachersTable() {
                  {/* CRUD: READING */}
                  {/* mapeando os dados na BD */}
                 {
-                 teachers.map((teacher, i) => {
+                teachers && teachers.map((teacher, i) => {
                      return (
                      <TeachersTableRow teacher={teacher} 
                      key={teacher._id}// chave do React que utiliza para controlar 'chaves' semelhantes
-                     i={i + 1} 
-                     handleDeleteUser={handleDeleteUser}/>
+                     i={i + 1}
+                     teachers={teacher} 
+                     handleDeleteTeacher={handleDeleteTeacher}/>
                      )
                  })
                 }
              </tbody>
          </table>
          {/* rodando icon antes de carregar a tabela */}
-         {isLoadingUsers && (
+         {isLoadingTeachers && (
              <p className="mt-16 text-center">
                  <FontAwesomeIcon icon={faCircleNotch} 
                  className="animate-spin w-6 text-skin-cl100"/>
