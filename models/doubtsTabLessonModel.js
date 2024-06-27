@@ -3,7 +3,7 @@ import {model, models, Schema} from "mongoose";
 const answerLessonSchema = new Schema({
 
     answer:{
-        type: String,
+        type: Object,
     },
     user:{
         type: Schema.Types.ObjectId,
@@ -12,7 +12,7 @@ const answerLessonSchema = new Schema({
     },
     createdAt:{
         type: Date,
-        required: true,
+        required: true, 
     },
     updatedAt: {
         type: Date,

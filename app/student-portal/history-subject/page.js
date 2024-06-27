@@ -1,7 +1,8 @@
+"use client"
 import HeaderPortal from '@/components/HeaderPortal'
 import Navbar from '@/components/Navbar'
 import PageHeaderPortal from '@/components/PageHeaderPortal'
-// import VlibrasPlugin from '@/components/VlibrasPlugin'
+import VlibrasPlugin from '@/components/VlibrasPlugin'
 import Link from 'next/link'
 import React from 'react'
 
@@ -18,6 +19,7 @@ export default function page() {
                         Selecione o Trimestre
                     </PageHeaderPortal>
                     
+                    <VlibrasPlugin forceOnload={false} />
                     <div className="trimester-items mt-10">
                         <ul>
                             <li className='trimester-time-line flex gap-5'>

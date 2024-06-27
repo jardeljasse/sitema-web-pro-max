@@ -1,6 +1,7 @@
 "use client"
 import Navbar from "@/components/Navbar";
 import TabLesson from "@/components/TabLesson";
+import VlibrasPlugin from "@/components/VlibrasPlugin";
 import { useEffect } from "react";
 
 
@@ -58,7 +59,7 @@ export default function page() {
             <section className="bg-skin-cl700 h-[100] m-auto pb-14 spect-ratio">
                 {/* <main className="container-video h-full container aspect-ratio pt-[5rem]   "> */}
                 <main className="container-video md:flex md:space-x-6  pt-[5rem]">
-                    
+                <VlibrasPlugin />
                     {/* <h1>Streaming</h1> */}
                     <div className="main-video w-full basis-[70%] aspect-ratio">
                         <div className="video aspect-w-16 aspect-h-9">
@@ -87,7 +88,7 @@ export default function page() {
                             <h3 className="vid-title">03. Exercícios</h3>
                         </div>
                         
-                    </div>
+                    </div>                    
                 </main>
             </section>
         </>

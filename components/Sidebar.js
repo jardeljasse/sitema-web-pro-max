@@ -32,18 +32,18 @@ export default function Sidebar() {
         />
       </Link>
 
-      <nav className="mt-10">
+      {/* <nav className="mt-10">
         <ul>
           {items.map((item, i) => {
             if (session?.user.role !== "admin" && item.name == "Professor"
               && item.name == "Usuários") {
               return;
-            } else  {
+            } else {
               return <SidebarItem item={item} />;
             }
 
           })}
-          {/* {items.map((item, i) => {
+          { {items.map((item, i) => {
             if (session?.user.role !== "admin" && item.name == "Professor"
               || item.name == "Usuários") {
               return;
@@ -56,7 +56,39 @@ export default function Sidebar() {
               return <SidebarItem item={item} />;
             }
 
+          })} }
+        </ul>
+      </nav> */}
+
+      <nav className="mt-10">
+        <ul>
+          {/* {items.map((item, i) => {
+            if (session?.user.role == "admin") {
+              return item.name;
+            } else {
+              return <SidebarItem item={item} />;
+            }
+
           })} */}
+          {items.map((item, i) => {
+            if (session?.user.role !== "teacher"
+              && item.name == "Manual do Sistema"
+              || item.name == "Alunos"
+              || item.name == "Professor"
+              || item.name == "Usuários") {
+              return <SidebarItem item={item} />;
+            } else if (session?.user.role !== "admin"
+              && item.name == "Manual do Sistema"
+              || item.name == "Adicionar Aula"
+              || item.name == "Ver Progresso"
+              || item.name == "Alunos"
+              || item.name == "Manual do Sistema"
+              || item.name == "Dúvidas"
+            ) {
+              return <SidebarItem item={item} />;
+            }
+
+          })}
         </ul>
       </nav>
     </aside>

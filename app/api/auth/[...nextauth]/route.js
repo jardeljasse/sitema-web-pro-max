@@ -23,7 +23,7 @@ export const nextAuthOptions = {
 
            if(!user || !(await bcrypt.compare(password, user.password))) return;
             
-            // console.log(credentials)
+            console.log(credentials)
             // console.log("entrou")
 
            return{

@@ -38,17 +38,15 @@ export default function LoginForm() {
           return setMessage("Email ou Palavra-passe Incorrecta!");
         } else if (res.error) {
           return setMessage("Ocorreu um erro no Servidor, tente novamente");
-        } else if (session?.user.role == "admin") {
-          router.push("/")
+        } else if (session?.user.role === "admin" || session?.user.role === "teacher") {
+          return router.push("/")
           alert("é um: " + session?.user.role);
-        } else if (session?.user.role == "teacher") {
-          router.push("/")
-          alert("é um: " + session?.user.role);
-        } else if (session?.user.role == "student") {
-          alert("é um: " + session?.user.role);
+        } else if (session.user.role === "student") {
+          alert("é um: " + session.user.role);
           router.push("/student-portal")
+          console.log(session?.user.role)
         } else {
-          alert("Não pode acesseder a plataforma, a funcao acutal é: " +session?.user.role);
+          alert("Não pode acesseder a plataforma, a funcao actual é: " +session?.user.role);
         }
       })
       .catch((err) => alert(err));
