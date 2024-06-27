@@ -1,11 +1,11 @@
 "use client"
 
-export default function DoubtsForm({onSubmit, isLoading, doubts}) {
+export default function DoubtsForm({onSubmit, isLoading, doubts, handleUpdateDoubts}) {
 
     // const [isLoading, setIsLoading] = useState(false)
     return (
         <div>
-            <form action="" onSubmit={onSubmit}>
+            <form action="" onSubmit={onSubmit} handleUpdateDoubts={handleUpdateDoubts}>
                 <textarea required name="doubt" id="doubt" rows={8} className="w-full text-xl"
                 defaultValue={doubts?.doubt}></textarea>
                 <button

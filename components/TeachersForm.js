@@ -108,8 +108,7 @@ export default function TeachersForm({ isLoading, onSubmit, teachers }) {
         className="bg-sky-500
                      hover:bg-sky-600 transition-all p-2
                       text-white disabled:bg-zinc-500 
-                      w-full mt-4"
-      >
+                      w-full mt-4" >
         
         {teachers ? "Salvar alterações" : "Cadastrar Professor"}
       </button>

@@ -42,7 +42,7 @@ export async function POST(request) {
   } catch (error) {
     console.log(error);
     return NextResponse.json(
-      { message: "Ocorreu um erro ao cadastrar o aluno " },
+      { message: "Ocorreu um erro ao cadastrar o(a) professor(a) " },
       { status: 500 }
     );
   }

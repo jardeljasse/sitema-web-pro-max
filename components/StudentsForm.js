@@ -1,6 +1,6 @@
 "use client"
 
-export default function StudentsForm({ onSubmit, isLoading }) {
+export default function StudentsForm({ onSubmit, isLoading, students }) {
     return (
         <form className='max-w-[635px] ' onSubmit={onSubmit} >
             <div>
@@ -10,6 +10,7 @@ export default function StudentsForm({ onSubmit, isLoading }) {
                         <p className='py-1'><label htmlFor="name">Nome Completo</label></p>
                         <input type="text" name="name" id="name"
                             required
+                            defaultValue={students?.name}
                         />
                     </div>
                     <div>
@@ -17,12 +18,14 @@ export default function StudentsForm({ onSubmit, isLoading }) {
                         <input type="date" name="birthDay" id="birth-day"
                             required
                             className='block w-[200px]'
+                            defaultValue={students?.birthDay.split("T")[0]}
                         />
                     </div>
                     <div>
                         <p className='py-1'><label htmlFor="nacionality">Nacionalidade</label></p>
                         <input type="text" name="nacionality" id="nacionality"
                             required
+                            defaultValue={students?.nacionality}
                         />
                     </div>
                 </div>
@@ -31,6 +34,7 @@ export default function StudentsForm({ onSubmit, isLoading }) {
                         <p className='py-1'><label htmlFor="born-place">Local de Nascimento</label></p>
                         <input type="text" name="bornPlace" id="born-place"
                             required
+                            defaultValue={students?.bornPlace}
                         />
                     </div>
                     <div>
@@ -43,7 +47,7 @@ export default function StudentsForm({ onSubmit, isLoading }) {
                                     value="M"
                                     id="male"
                                     required
-                                /*defaultChecked={user?.gender === "M"}*/
+                                    defaultChecked={students?.gender === "M"}
                                 />
                             </label>
                             <label htmlFor="male" className="mx-4">
@@ -53,7 +57,7 @@ export default function StudentsForm({ onSubmit, isLoading }) {
                                     value="F"
                                     id="male"
                                     required
-                                /*defaultChecked={user?.gender === "F"}*/
+                                    defaultChecked={students?.gender === "F"}
                                 />
                             </label>
                         </div>
@@ -67,18 +71,21 @@ export default function StudentsForm({ onSubmit, isLoading }) {
                         <p className='py-1'><label htmlFor="city">Cidade</label></p>
                         <input type="text" name="city" id="city"
                             required
+                            defaultValue={students?.city}
                         />
                     </div>
                     <div>
                         <p className='py-1'><label htmlFor="neighbornhood">Bairro</label></p>
                         <input type="text" name="neighbornhood" id="neighbornhood"
                             required
+                            defaultValue={students?.neighbornhood}
                         />
                     </div>
                     <div>
                         <p className='py-1'><label htmlFor="sponsor-contact">Conctato do Encarregado</label></p>
                         <input type="number" name="sponsorContact" id="sponsor-contact"
                             required
+                            defaultValue={students?.sponsorContact}
                         />
                     </div>
                 </div>
@@ -96,6 +103,7 @@ export default function StudentsForm({ onSubmit, isLoading }) {
                         <p className='py-1'><label htmlFor="desease">Doença Frequente</label></p>
                         <input type="text" name="desease" id="desease"
                             required
+                            defaultValue={students?.desease}
                         />
                     </div>
                 </div>
@@ -106,8 +114,8 @@ export default function StudentsForm({ onSubmit, isLoading }) {
                      hover:bg-sky-600 transition-all p-2
                       text-white disabled:bg-zinc-500 
                       w-full mt-4">
-                Cadastrar Aluno
-                {/* {user? "Salvar alterações" : "Criar Usuário"} */}
+                
+                {students ? "Salvar alterações" : "Cadastrar Aluno"}
             </button>
         </form>
     )

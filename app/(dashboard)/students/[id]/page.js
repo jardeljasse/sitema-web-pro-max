@@ -1,109 +1,108 @@
 "use client";
 
 import PageHeader from "@/components/PageHeader";
-import TeachersForm from "@/components/TeachersForm";
+import StudentsForm from "@/components/StudentsForm";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function page() {
-  const [teachers, setTeachers] = useState();
-  const [isLoadingTeachers, setIsLoadingTeachers] = useState(false);
+  const [students, setStudents] = useState();
+  const [isLoadingStudents, setIsLoadingStudents] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const params = useParams();
   const router = useRouter();
 
   useEffect(() => {
-    setIsLoadingTeachers(true);
+    setIsLoadingStudents(true);
     //'params._id', chamara directamente o link que esta sendo acessado
-    fetch("/api/teachers/" + params.id)
+    fetch("/api/students/" + params.id)
       .then((response) => response.json())
       .then((data) => {
-        setTeachers(data.teachers);
-        setIsLoadingTeachers(false);
+        setStudents(data.students);
+        setIsLoadingStudents(false);
         // console.log(data.users)
         // router.push("/teachers")
       })
       .catch((error) => {
-        alert("Ocorreu um erro tentando editar os dados do professor!" + error);
-        setIsLoadingTeachers(false);
+        alert("Ocorreu um erro tentando editar os dados do aluno(a)!" + error);
+        setIsLoadingStudents(false);
       });
   }, []);
 
-  const handleUpdateTeachers = (e) =>{
+  const handleUpdateStudents = (e) =>{
     setIsLoading(true)
     //quando o formulario for submetido devera travar o reload da pagina
     e.preventDefault();
 
     const formData = new FormData(e.target)
 
-    const teachersData = {}
+    const studentData = {}
     for(const [key, value] of formData.entries()){
-        teachersData[key] = value
+        studentData[key] = value
     }
 
     
     // CRUD: UPDATING/ ROUTA PARA ACTUALIZA USUARIOS
-    fetch("/api/teachers/" + params.id, { 
+    fetch("/api/students/" + params.id, { 
         method: "PATCH",
-        body: JSON.stringify(teachersData),
+        body: JSON.stringify(studentData),
     }).then( (res) => {
         if(!res.ok){
-            throw new Error("Ocorreu um erro alterando os dados do professor(a) com o Email: " + params.id)
+            throw new Error("Ocorreu um erro alterando os dados do aluno(a) com o Identificador: " + params.id)
         } else{
             return res.json()
         }
     }).then(data => {
-        alert("Dado(s) do professor(a) com o Identificador - "+ params.id + " alterado(s) com Sucesso!")
+        alert("Dado(s) do aluno(a) com o Identificador - "+ params.id + " alterado(s) com Sucesso!")
         setIsLoading(false)//desativar apos o cadastro
-        router.push("/teachers")
+        router.push("/students")
     }).catch(err => {
-        alert("Ocorreu um erro tentando alterar os dados do professor(a) com o Id: " + params.id)
+        alert("Ocorreu um erro tentando alterar os dados do aluno(a) com o Id: " + params.id)
         setIsLoading(false);
     }) 
    }
 
-
   return (
     <>
       <PageHeader title="Editar e Visualizar Professor">
-        Aqui voçê pode Editar e Visualizar a lista dos Professores no sistema!
+        Aqui voçê pode Editar e Visualizar a lista dos Alunos no sistema!
       </PageHeader>
 
-      {teachers && (
+      {students && (
         <section className="mt-8  flex gap-[5rem]">
-          <TeachersForm teachers={teachers} onSubmit={handleUpdateTeachers} />
+          <StudentsForm students={students} onSubmit={handleUpdateStudents} />
 
           <div>
             <ul>
               <li>
-                <b>Professor(a) cadastrado por: </b>
-                {teachers.user?.firstName + " " + teachers.user?.lastName}
+                <b>Aluno(a) cadastrado por: </b>
+                {students.user?.firstName + " " + students.user?.lastName}
               </li>
               <li>
                 <b>Função: </b>
-                {teachers.user?.role}
+                {students.user?.role}
               </li>
               <li>
                 <b>Email do Usuário: </b>
-                {teachers.user?.email}
+                {students.user?.email}
               </li>
               <li>
                 <b>Dia: </b>
-                {teachers.createdAt.split("T")[0]}
+                {students.createdAt.split("T")[0]}
               </li>
               <li>-------------------</li>
               <li>
                 <b>Última Alteração: </b>
-                {teachers.updatedAt.split("T")[0]}
+                {students.updatedAt.split("T")[0]}
               </li>                       
             </ul>
           </div>
         </section>
       )}
 
-      {isLoadingTeachers && (
+      {isLoadingStudents && (
         <p className="mt-6 text-center">
           <FontAwesomeIcon
             icon={faCircleNotch}

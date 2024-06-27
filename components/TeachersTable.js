@@ -34,15 +34,15 @@ export default function TeachersTable() {
                 method: "DELETE",
             }).then( (res) => {
                 if(!res.ok){
-                    throw new Error("Ocorreu um erro removendo o professor com o Id: " + id)
+                    throw new Error("Ocorreu um erro removendo o(a) professor(a) com o Identificador - : " + id)
                 } else{
                     return res;
                     //return res.json()
                 }
             }).then((data) => {
-                alert("Professor removido com Sucesso!")
+                alert("Professor(a) removido(a) com Sucesso!")
                 setIsDeleting(false)//desativar apos o cadastro
-                //router.push("/users")
+                // router.push("/teacher")
                 //RELOAD da Tabela apos deletar usuario
 
                 const newTeachers = teachers.filter((teachers2) => teachers2._id !== id);

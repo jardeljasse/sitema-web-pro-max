@@ -3,7 +3,7 @@ import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 
-export default function StudentsTableRow({student, i, handleDeleteUser}){
+export default function StudentsTableRow({student, i, handleDeleteStudents}){
 
     const calculateAge = (birthDay) => {
 
@@ -22,7 +22,12 @@ export default function StudentsTableRow({student, i, handleDeleteUser}){
             data-index={i % 2} 
             className="bg-zinc-100
             data-[index='0']:bg-zinc-200
-            data-[disabled=true]:bg-red-300"> 
+            data-[index='0']:hover:bg-skin-cl100
+            data-[disabled=true]:bg-red-300
+            hover:bg-skin-cl100
+            hover:text-white
+            transition-all"
+            > 
             <td>{i}.</td>
             <td className="p-2">{student.name}</td>
             <td>{calculateAge(student.birthDay)}</td>
@@ -36,7 +41,7 @@ export default function StudentsTableRow({student, i, handleDeleteUser}){
             <td>{student.desease}</td>
             
             <td className="flex gap-2 p-2">
-                <Link href={"/"} /*href={"/users/" + user.email}*/ className="
+                <Link href={"/students/" + student._id} className="
                 bg-sky-500 rounded-md p-1 w-8 h-8
                 hover:bg-sky-600 text-zinc-900 transition-all"
                 >
@@ -44,7 +49,7 @@ export default function StudentsTableRow({student, i, handleDeleteUser}){
                 </Link>
                 {/* CRUD: DELETING */}
                 <button
-                // onClick={() => handleDeleteUser(user.email, setIsDeleting)} 
+                onClick={() => handleDeleteStudents(student._id, setIsDeleting)}
                 className="
                 bg-red-500 rounded-md p-1 w-8 h-8
                 hover:bg-sky-600 text-zinc-900 transition-all"

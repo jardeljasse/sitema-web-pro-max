@@ -29,22 +29,23 @@ export async function PATCH(request, {params}){
         await connectToDB();
 
         const body = await request.json()
-        const production = await Production_Model.findByIdAndUpdate(params.id, {
+        const doubts = await DoubtsLesson_Model.findByIdAndUpdate(params.id, {
             ...body,
             updatedAt: Date.now(),
         });// this 'id' it comes from ou route [id]
 
-        return NextResponse.json({production})
+        return NextResponse.json({doubts})
     } catch (error) {
         console.log(error)
         return NextResponse.json(
             {
-                message: "Ocorreu um erro alterando a produção com o Id: -" + params.id},
+                message: "Ocorreu um erro ao tentar responder a dúvida do aluno(a)!"},
             {status: 500}
         )
         
     }
 }
+
 export async function DELETE(request, {params}){
     try {
         await connectToDB();

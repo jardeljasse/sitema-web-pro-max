@@ -67,7 +67,7 @@ export default function DoubtsTable() {
                         <th>Data</th>
                         <th>Horas(AM/PM)</th>
                         {
-                            session?.user.role == "teacher" || session?.user.role == "admin" &&
+                            session?.user.role == "admin" || session?.user.role == "teacher" &&
                         <th>Acções</th>
                         }
                     </tr>

@@ -18,22 +18,22 @@ export default function DoubtsTableRow({doubt, i, handleDeleteDoubts}){
 
   const { data: session } = useSession()
 
-  // useEffect(() => {
-  //   setIsLoadingTeachers(true);
-  //   //'params._id', chamara directamente o link que esta sendo acessado
-  //   fetch("/api/doubts/" + params.id)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setTeachers(data.teachers);
-  //       setIsLoadingTeachers(false);
-  //       // console.log(data.users)
-  //       // router.push("/teachers")
-  //     })
-  //     .catch((error) => {
-  //       alert("Ocorreu um erro tentando editar os dados do professor!" + error);
-  //       setIsLoadingTeachers(false);
-  //     });
-  // }, []);
+  /*useEffect(() => {
+    setIsLoadingTeachers(true);
+    //'params._id', chamara directamente o link que esta sendo acessado
+    fetch("/api/doubts/" + params.id)
+      .then((response) => response.json())
+      .then((data) => {
+        setTeachers(data.teachers);
+        setIsLoadingTeachers(false);
+        // console.log(data.users)
+        // router.push("/teachers")
+      })
+      .catch((error) => {
+        alert("Ocorreu um erro tentando editar os dados do professor!" + error);
+        setIsLoadingTeachers(false);
+      });
+  }, []);*/
 
     return (
         <tr 
@@ -51,10 +51,10 @@ export default function DoubtsTableRow({doubt, i, handleDeleteDoubts}){
             <td>{i}.</td>
             <td>{doubt.doubt}</td>                    
             <td>{doubt.createdAt.split("T")[0]}</td>
-            <td>{doubt.createdAt.split("T")[1]}</td>
+            <td>{doubt.createdAt.split("T")[1]}</td>            
             
             {
-              session?.user.role == "teacher" || session?.user.role == "admin" &&
+              session?.user.role == "admin" || session?.user.role == "teacher" &&
               <td className="flex gap-2 p-2">
                 <Link href={"/doubts/" + doubt._id} className="
                 bg-sky-500 rounded-md p-1 w-8 h-8

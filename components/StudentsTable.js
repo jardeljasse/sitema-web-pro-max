@@ -11,49 +11,51 @@ export default function StudentsTable(){
 
     //pegando dados na base de dados
     const [students, setSudents] = useState([])
-    const [isLoadingUsers, setIsLoadingUsers] = useState(false)
+    const [isLoadingStudents, setIsLoadingStudents] = useState(false)
     
 
     //evitar efeitos colaterais (side effects) 'useEffect'
    useEffect(() =>{
-    setIsLoadingUsers(true);
+    setIsLoadingStudents(true);
     fetch("/api/students").then((response) => response.json()).then((data) => {
         setSudents(data.students)
-        setIsLoadingUsers(false);
+        setIsLoadingStudents(false);
         // console.log(data.users)
     }).catch((error) => {
         alert("Ocorreu um erro, tentando listar os usuários")
-        setIsLoadingUsers(false);
+        setIsLoadingStudents(false);
     });
 
    }, []);
 
     //   METHOD TO DELETE
-   const handleDeleteUser = (email, setIsDeleting) => {
+    const handleDeleteStudents = (id, setIsDeleting) => {
     
-    setIsDeleting(true);
+        setIsDeleting(true);
+    
+            fetch("/api/students/" + id,{ 
+                method: "DELETE",
+            }).then( (res) => {
+                if(!res.ok){
+                    throw new Error("Ocorreu um erro removendo o(a) aluno(a) com o Identificador - : " + id)
+                } else{
+                    return res;
+                    //return res.json()
+                }
+            }).then((data) => {
+                alert("Aluno(a) removido(a) com Sucesso!")
+                setIsDeleting(false)//desativar apos o cadastro
+                // router.push("/students")
+                //RELOAD da Tabela apos deletar usuario
 
-        fetch("/api/users/" + email,{ 
-            method: "DELETE",
-        }).then( (res) => {
-            if(!res.ok){
-                throw new Error("Ocorreu um erro deletando o usuário com o Email: " + email)
-            } else{
-                return res;
-                //return res.json()
-            }
-        }).then((data) => {
-            // alert("Usuário "+ email + " foi deletado com Sucesso!")
-            setIsDeleting(false)//desativar apos o cadastro
-            //router.push("/users")
-            //RELOAD da página apos deletar usuario
-            const newUsers = users.filter((user) => user.email !== email);
-            setSudents(newUsers);
-        }).catch(err => {
-            alert("Ocorreu um erro ao deletar o usuário com o Email: "+ email)
-            setIsDeleting(false);
-        }) 
-   }
+                const newStudents = students.filter((students2) => students2._id !== id);
+
+                setSudents(newStudents);
+            }).catch(err => {
+                alert("Ocorreu um erro removendo o(a) aluno(a) com o Identificador: "+ id + "   " + err)
+                setIsDeleting(false);
+            }) 
+       }
       
     return (
     <>
@@ -84,14 +86,14 @@ export default function StudentsTable(){
                     <StudentsTableRow student={student} 
                     key={student._id}// chave do React que utiliza para controlar 'chaves' semelhantes
                     i={i + 1} 
-                    handleDeleteUser={handleDeleteUser}/>
+                    handleDeleteStudents={handleDeleteStudents}/>
                     )
                 })
                }
             </tbody>
         </table>
         {/* rodando icon antes de carregar a tabela */}
-        {isLoadingUsers && (
+        {isLoadingStudents && (
             <p className="mt-16 text-center">
                 <FontAwesomeIcon icon={faCircleNotch} 
                 className="animate-spin w-6"/>

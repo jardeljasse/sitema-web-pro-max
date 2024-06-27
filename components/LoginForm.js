@@ -52,7 +52,7 @@ export default function LoginForm() {
       .catch((err) => alert(err));
   };
   return (
-    <form onSubmit={handleSubmit} className="pr-8 w-full">
+    <form onSubmit={handleSubmit} className="w-full">
       <label htmlFor="email" className="block text-white">
         Email
       </label>

@@ -28,16 +28,16 @@ export default function page() {
             body: JSON.stringify(teachersData),
         }).then( (res) => {
             if(!res.ok){
-                throw new Error("Ocorreu um erro ao cadastrar o professor com o nome "+ teachersData.name)
+                throw new Error("Ocorreu um erro ao cadastrar o(a) professor(a) com o nome "+ teachersData.name)
             } else{
                 return res.json()
             }
         }).then((data) => {
-            alert("Professor "+ teachersData.name + " cadastrado com Sucesso!")
+            alert("Professor(a) "+ teachersData.name + " cadastrado(a) com Sucesso!")
             setIsLoading(false)//desativar apos o cadastro
             router.push("/teachers")
         }).catch(err => {
-            alert("Ocorreu um erro ao cadastrar o professor com o nome "+ teachersData.name)
+            alert("Ocorreu um erro ao cadastrar o(a) professor(a) com o nome "+ teachersData.name)
             setIsLoading(false);
         }) 
     }

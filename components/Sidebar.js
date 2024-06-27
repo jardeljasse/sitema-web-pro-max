@@ -32,178 +32,34 @@ export default function Sidebar() {
         />
       </Link>
 
-      {/* <nav className="mt-10">
-        <ul>
-          {items.map((item, i) => {
-            if (session?.user.role !== "admin" && item.name == "Professor"
-              && item.name == "Usuários") {
-              return;
-            } else {
-              return <SidebarItem item={item} />;
-            }
-
-          })}
-          { {items.map((item, i) => {
-            if (session?.user.role !== "admin" && item.name == "Professor"
-              || item.name == "Usuários") {
-              return;
-            } else if(session?.user.role !== "teacher" 
-              && item.name == "Usuários"
-              || item.name == "Manual do Sistema"
-              || item.name == "Professor"
-              || item.name == "Alunos"
-              ) {
-              return <SidebarItem item={item} />;
-            }
-
-          })} }
-        </ul>
-      </nav> */}
-
       <nav className="mt-10">
-        <ul>
-          {/* {items.map((item, i) => {
-            if (session?.user.role == "admin") {
-              return item.name;
-            } else {
-              return <SidebarItem item={item} />;
-            }
-
-          })} */}
+        <ul>         
           {items.map((item, i) => {
-            if (session?.user.role !== "teacher"
-              && item.name == "Manual do Sistema"
-              || item.name == "Alunos"
-              || item.name == "Professor"
-              || item.name == "Usuários") {
-              return <SidebarItem item={item} />;
-            } else if (session?.user.role !== "admin"
-              && item.name == "Manual do Sistema"
-              || item.name == "Adicionar Aula"
-              || item.name == "Ver Progresso"
-              || item.name == "Alunos"
-              || item.name == "Manual do Sistema"
-              || item.name == "Dúvidas"
+            if (
+              session?.user.role === "teacher" &&
+              (item.name === "Dúvidas" ||
+                item.name === "Alunos" ||
+                item.name === "Adicionar Aula" ||
+                item.name === "Ver Progresso" ||
+                item.name === "Manual do Sistema")
             ) {
-              return <SidebarItem item={item} />;
+              return <SidebarItem item={item} key={i} />;
+            } else if (
+              session?.user.role === "admin" &&
+              (item.name === "Usuários" ||
+                item.name === "Alunos" ||
+                item.name === "Professor")
+            ) {
+              return <SidebarItem item={item} key={i} />;
+            } else{
+              return;
             }
-
           })}
         </ul>
       </nav>
     </aside>
   );
 }
-// const items = [
-//     {
-//         name: "Usuários",
-//         icon: faUsers,
-//         //criando sub-menus
-//         subMenus: [
-//             {
-//                 name: "-Criar Usuário",
-//                 href: "/users/create"
-//             },
-//             {
-//                 name: "-Listar Usuários",
-//                 href: "/users"
-//             }
-//         ]
-//     },
-//     // {
-//     //     name: "Funcionário",
-//     //     icon: faCartShopping,
-//     //     subMenus: [
-//     //         {
-//     //             name: "-Cadastrar Funcionário",
-//     //             //name: "-Semanal",
-//     //             href: "/products/create"
-//     //         },
-//     //         {
-//     //             name: "-Listar Funcionário",
-//     //             href: "/products"
-//     //         }
-//     //     ]
-//     // },
-//      {
-//          name: "Camiões",
-//         icon: faTruckFast,
-//         subMenus: [
-//              {
-//                  name: "-Cadastrato de Frota",
-//                  href: "/trucks/create"
-//              },
-//              {
-//                  name: "-Lista de Frotas",
-//                  href: "/trucks"
-//              }
-//          ]
-//      },
-//     // {
-//     //     name: "Fornecedores",
-//     //     icon: faUsers,
-//     //     subMenus: [
-//     //         {
-//     //             name: "-Criar Usuário",
-//     //             href: "/user/creat"
-//     //         },
-//     //         {
-//     //             name: "-Listar Usuários",
-//     //             href: "/users"
-//     //         }
-//     //     ]
-//     // },
-//     {
-//         name: "Proudução",
-//         icon: faWarehouse,
-//         subMenus: [
-//             {
-//                 name: "-Diária",
-//                 href: "/production/create"
-//             },
-//             {
-//                 name: "-Listar Produção",
-//                 href: "/production"
-//             }
-//         ]
-//       },
-//     // {
-//     //     name: "Finanças",
-//     //     icon: faWarehouse,
-//     //     subMenus: [
-//     //         {
-//     //             name: "-Folha de salário",
-//     //             href: "/user/creat"
-//     //         },
-//     //         {
-//     //             name: "-Folha de pagamento",//-> contas a pagar
-//     //             href: "/user/creat"
-//     //         },
-//     //         {
-//     //             name: "-Listar Produção",
-//     //             href: "/users"
-//     //         }
-//     //     ]
-//     // },
-//     // {
-//     //     name: "Administração",
-//     //     icon: faWarehouse,
-//     //     subMenus: [
-//     //         {
-//     //             name: "-Folha de salário",
-//     //             href: "/user/creat"
-//     //         },
-//     //         {
-//     //             name: "-Folha de pagamento",//-> contas a pagar
-//     //             href: "/user/creat"
-//     //         },
-//     //         {
-//     //             name: "-Listar Produção",
-//     //             href: "/users"
-//     //         }
-//     //     ]
-//     // }
-// ]
 const items = [
   {
     name: "Usuários",

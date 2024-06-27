@@ -12,6 +12,7 @@ export default function page() {
   const [isLoadingDoubts, setIsLoadingDoubts] = useState(false);
   const [isLoading, setIsLoading] = useState(false)
   const params = useParams();
+  const router = useRouter()
 
   const handleAddDoubts = (e) =>{
     setIsLoading(true)
@@ -31,16 +32,16 @@ export default function page() {
         body: JSON.stringify(doubtsData),
     }).then( (res) => {
         if(!res.ok){
-            throw new Error("Ocorreu um erro ao tentar responder à dúvida do aluno "+ doubtsData.name)
+            throw new Error("Ocorreu um erro ao tentar responder à dúvida do aluno ")
         } else{
             return res.json()
         }
     }).then((data) => {
-        alert("Dúvida "+ doubtsData.name + " respondida com Sucesso!")
+        alert("Dúvida respondida com Sucesso!")
         setIsLoading(false)//desativar apos o cadastro
         router.push("/doubts")
     }).catch(err => {
-        alert("Ocorreu um erro ao tentar responder à dúvida do aluno "+ doubtsData.name)
+        alert("Ocorreu um erro ao tentar responder à dúvida do aluno "+ err)
         setIsLoading(false);
     }) 
 }
@@ -61,6 +62,42 @@ export default function page() {
         setIsLoadingDoubts(false);
       });
   }, []);
+
+
+  /*const handleUpdateDoubts = (e) =>{
+    setIsLoading(true)
+    //quando o formulario for submetido devera travar o reload da pagina
+    e.preventDefault();
+
+    const formData = new FormData(e.target)
+
+    const doubtsData = {}
+    for(const [key, value] of formData.entries()){
+        doubts[key] = value
+    }
+
+    
+    // CRUD: UPDATING/ ROUTA PARA ACTUALIZA USUARIOS
+    fetch("/api/doubts/" + params.id, { 
+        method: "PATCH",
+        body: JSON.stringify(doubtsData),
+    }).then( (res) => {
+        if(!res.ok){
+            throw new Error("Ocorreu ao tentar responder a dúvida do aluno(a)!")
+        } else{
+            return res.json()
+        }
+    }).then(data => {
+        alert("Dúvida do aluno(a) respondida com Sucesso!")
+        setIsLoading(false)//desativar apos o cadastro
+        router.push("/doubts")
+    }).catch(err => {
+        alert("Ocorreu um erro aoresponder a dúvida do aluno(a)! " +err)
+        setIsLoading(false);
+    }) 
+   }*/
+
+
   return (
     <>
       <PageHeader title="Responder às dúvidas">
