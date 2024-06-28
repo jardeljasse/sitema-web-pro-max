@@ -20,7 +20,7 @@ export default function page() {
 
       <HeaderPortal />
 
-      <main className="bg-gray-900 text-white p-10">
+      <main className="bg-gray-900 text-white">
           {/* <VLibras forceOnload={true} />   */}
           <VlibrasPlugin />
           {/* <VLibras safeInit /> */}

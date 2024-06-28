@@ -29,6 +29,9 @@ module.exports = {
           "cl700": "var(--color-700)",
           "cl900": "var(--color-900)",
         }
+      },
+      screens:{
+        'max-sm': {"max-width": "640px"},
       }
     },
   },

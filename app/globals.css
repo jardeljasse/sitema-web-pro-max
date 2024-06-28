@@ -24,7 +24,7 @@
 }
 /* utilitaries-classes */
 
-/* nav */
+/* NAVBAR COMPONENT */
 .nav-color{
     background-color: var(--color-100);
     background-color: #111827;
@@ -32,7 +32,21 @@
 nav{
     z-index: 1;
 }
-
+@media screen and (max-width: 768px){
+    #navbar .date,
+    #navbar .icons p a span,
+    #navbar nav div:last-child span{
+        display: none;
+    }
+    #navbar nav{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    #navbar nav > div{
+        gap: 0;
+    }
+}
 /* PORTAL-PAGE */
 /* header */
 
@@ -43,7 +57,22 @@ nav{
     /* border: 10px solid #111827; */
     width: 300px;
     height: 300px;
-    text-align: center
+    text-align: center;
+}
+@media screen and (max-width: 786px){
+    .image-header{
+        display: none;
+    }
+    .header-portal div{ 
+        justify-content: center;
+        align-items: center;
+    }
+    .progress-bar-item{       
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        margin: auto;
+    }
 }
 
 /* MAIN PAGE VISUALIZATION */
