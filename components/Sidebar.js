@@ -33,7 +33,7 @@ export default function Sidebar() {
       </Link>
 
       <nav className="mt-10">
-        <ul>         
+        <ul>
           {items.map((item, i) => {
             if (
               session?.user.role === "teacher" &&
@@ -41,7 +41,8 @@ export default function Sidebar() {
                 item.name === "Alunos" ||
                 item.name === "Adicionar Aula" ||
                 item.name === "Ver Progresso" ||
-                item.name === "Manual do Sistema")
+                item.name === "Manual do Sistema"
+              )
             ) {
               return <SidebarItem item={item} key={i} />;
             } else if (
@@ -51,7 +52,9 @@ export default function Sidebar() {
                 item.name === "Professor")
             ) {
               return <SidebarItem item={item} key={i} />;
-            } else{
+            } else if(session?.user.role === "teacher" && item.subMenus.name === "Cadastrar Aluno"){
+              return;
+            }else{
               return;
             }
           })}

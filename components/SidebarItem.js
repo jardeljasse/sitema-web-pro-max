@@ -2,12 +2,14 @@
 
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useSession } from "next-auth/react";
 import Link from "next/link"
 import React, { useState } from "react"
 
 export default function SidebarItem({item}){
 
     const [open, setOpen] = useState(false)
+    const { data: session } = useSession();
 
     return (
             <li className="border-b border-dashed cursor-pointer">
@@ -29,11 +31,16 @@ export default function SidebarItem({item}){
                     className="hidden data-[hidden=true]:block">                    
                     {
                         item.subMenus.map((subMenu) => {
-                            return (
-                            <li className="hover:bg-skin-cl500 pl-6 py-1">
-                                - <Link href={subMenu.href}>{subMenu.name}</Link>
-                            </li>
-                            )
+                            
+                                if(session?.user.role === "teacher" && subMenu.name === "Cadastrar Aluno"){
+                                    return;
+                                }else{
+                                    
+                                    return <li className="hover:bg-skin-cl500 pl-6 py-1">
+                                    - <Link href={subMenu.href}>{subMenu.name}</Link>
+                                </li>
+                                }
+                            
                         })
                     }
                 </ul>
