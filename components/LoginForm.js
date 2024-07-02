@@ -40,9 +40,9 @@ export default function LoginForm() {
           return setMessage("Ocorreu um erro no Servidor, tente novamente");
         } else if (session?.user.role === "admin" || session?.user.role === "teacher") {
           return router.push("/")
-          alert("é um: " + session?.user.role);
-        } else if (session.user.role === "student") {
-          alert("é um: " + session.user.role);
+          // alert("é um: " + session?.user.role);
+        } else if (session?.user.role === "student") {
+          // alert("é um: " + session.user.role);
           router.push("/student-portal")
           console.log(session?.user.role)
         } else {
