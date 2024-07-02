@@ -45,9 +45,9 @@ export default function LoginForm() {
           // alert("é um: " + session.user.role);
           router.push("/student-portal")
           console.log(session?.user.role)
-        } else {
+        } /*else {
           alert("Não pode acesseder a plataforma, a funcao actual é: " +session?.user.role);
-        }
+        }*/
       })
       .catch((err) => alert(err));
   };
