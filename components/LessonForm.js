@@ -12,7 +12,11 @@ export default function LessonForm() {
                 <div className="form-lesson-container flex gap-10">
                     <div>
                         <p><label htmlFor="title">Título</label></p>
-                        <input type="text" required className='w-full' />
+                        <input type="text" name='title' id='title' required className='w-full' />
+
+                        <p><label htmlFor="file-url">Url da aula</label></p>
+                        <input type="text" required name='file-url' id='file-url' className='w-full' />
+
                         <p><label htmlFor="description">Descrição</label></p>
                         <textarea name="description" id="description" className='w-full' cols="70" rows="10"></textarea>
                         <button
