@@ -14,8 +14,8 @@ export default function LessonForm() {
                         <p><label htmlFor="title">Título</label></p>
                         <input type="text" name='title' id='title' required className='w-full' />
 
-                        <p><label htmlFor="file-url">Url da aula</label></p>
-                        <input type="text" required name='file-url' id='file-url' className='w-full' />
+                        <p><label htmlFor="file_url">Url da aula</label></p>
+                        <input type="text" required name='file_url' id='file_url' className='w-full' />
 
                         <p><label htmlFor="description">Descrição</label></p>
                         <textarea name="description" id="description" className='w-full' cols="70" rows="10"></textarea>

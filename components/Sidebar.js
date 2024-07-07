@@ -153,8 +153,8 @@ const items = [
     icon: faBookOpenReader,
     subMenus: [
       {
-        name: "Baixar",
-        href: "/progress",
+        name: "Ler | Baixar",
+        href: "https://drive.google.com/file/d/1lZOplvhxW1ZcEcTT6EsgTlyvbu81Aj5Z/view?usp=drive_link",
       },
     ],
   },
