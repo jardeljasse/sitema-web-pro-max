@@ -50,7 +50,7 @@ export default function page() {
             </PageHeader>
             <section className='mt-[2rem] flex gap-[50px]'>
                 {/* <LessonFormVercel handleAddLessons={handleAddLessons} /> */}
-                <LessonFormVercel onSubmit={handleAddLessons} />
+                <LessonFormVercel handleAddLessons={handleAddLessons} />
                 {/* <LessonForm /> */}
             </section>
         </>
