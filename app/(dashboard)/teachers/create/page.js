@@ -12,7 +12,6 @@ export default function page() {
 
     const handleAddTeachers = (e) =>{
         setIsLoading(true)
-        //quando o formulario for submetido devera travar o reload da pagina
         e.preventDefault();
 
         const formData = new FormData(e.target)
@@ -48,7 +47,9 @@ export default function page() {
         <p>Aqui voçê pode cadastrar um professor ao sistema</p>
     </PageHeader>
     <section>
-        <TeachersForm onSubmit={handleAddTeachers} isLoading={isLoading} />
+        <TeachersForm 
+        onSubmit={handleAddTeachers} 
+        isLoading={isLoading} />
     </section>
     </>
   )

@@ -2,20 +2,20 @@
 
 import React, { useState } from 'react'
 
-export default function LessonForm() {
+export default function LessonForm({onSubmit, isLoading}) {
 
-    const [isLoading, setIsLoading] = useState(false)
+    // const [isLoading, setIsLoading] = useState(false)
 
     return (
         <>
-            <form action="">
+            <form onSubmit={onSubmit} action="">
                 <div className="form-lesson-container flex gap-10">
                     <div>
                         <p><label htmlFor="title">Título</label></p>
                         <input type="text" name='title' id='title' required className='w-full' />
 
                         <p><label htmlFor="file_url">Url da aula</label></p>
-                        <input type="text" required name='file_url' id='file_url' className='w-full' />
+                        <input type="text" required name='file' id='file_url' className='w-full' />
 
                         <p><label htmlFor="description">Descrição</label></p>
                         <textarea name="description" id="description" className='w-full' cols="70" rows="10"></textarea>
@@ -26,7 +26,7 @@ export default function LessonForm() {
                              text-white disabled:bg-skin-cl700 
                              w-full mt-6 rounded-lg">
 
-                            Adicionar
+                            Adicionar Aula
                         </button>
                     </div>
                     <div className='flex flex-col'>

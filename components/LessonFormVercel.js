@@ -4,32 +4,21 @@
 import { upload } from '@vercel/blob/client';
 import { useState, useRef } from 'react';
 
-export default function LessonFormVercel({ handleAddLessons, onSubmit }) {
+export default function LessonFormVercel({ handleAddLessons }) {
 
     const [subject, setSubject] = useState('');
     const [trimester, setTrimester] = useState('');
     const [data, setData] = useState('');
 
-
     const inputFileRef = useRef(null);
     const [blob, setBlob] = useState(null);
     const [isLoading, setIsLoading] = useState("")
 
-
-    //    async function PUT(request) {
-    //         const form = await request.formData();
-    //         const file = form.get('file');
-    //         const blob = await put(file.name, file, { access: 'public' });
-
-
-    //         return Response.json(blob);
-    //       }
-
     return (
         <>
-
             {/* <h1>Escolher Aula</h1> */}
-            <form onSubmit={onSubmit} /*onSubmit={async (event) => {
+            <form handleAddLessons={handleAddLessons} 
+            /*onSubmit={async (event) => {
                 event.preventDefault();
                 setIsLoading(true)
 
@@ -42,8 +31,6 @@ export default function LessonFormVercel({ handleAddLessons, onSubmit }) {
                 setIsLoading(false)
                 setBlob(newBlob);
             }}*/
-           
-
             >
                 <div className="max-w-wd form-lesson-container flex gap-10">
                     <div>
@@ -64,6 +51,14 @@ export default function LessonFormVercel({ handleAddLessons, onSubmit }) {
 
                             Adicionar
                         </button> */}
+                        <button 
+                             disabled={isLoading}
+                                className='bg-cyan-700 hover:bg-skin-cl500 transition cursor-pointer
+                                text-white w-full
+                                rounded-lg
+                                disabled:bg-zinc-500' type="submit"
+                                
+                                >Adicionar Aula</button>
                     </div>
                     <div className='flex flex-col'>
                         <p><label htmlFor="subject">Selecione a Disciplina</label></p>
@@ -90,13 +85,10 @@ export default function LessonFormVercel({ handleAddLessons, onSubmit }) {
                             <p><label htmlFor="file">Selecione a aula</label></p>
                             <input className='w-full min-h-[200px] cursor-pointer' id='file' name="file" ref={inputFileRef} type="file" require />
                             <br /><br />
-                            <button 
-                             disabled={isLoading}
-                                className='bg-cyan-700 hover:bg-skin-cl500 transition cursor-pointer text-white w-full
-                            disabled:bg-zinc-500' type="submit">Adicionar Aula</button>
-                            <button
+                            
+                            {/* <button
                                 className='bg-cyan-400 hover:bg-skin-cl700 transition cursor-pointer text-white w-full' type="reset">Limpar
-                            </button>
+                            </button> */}
 
                             {
                                 blob && (

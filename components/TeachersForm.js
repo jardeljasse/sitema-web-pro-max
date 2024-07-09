@@ -69,7 +69,7 @@ export default function TeachersForm({ isLoading, onSubmit, teachers }) {
               </label>
             </div>
           </div>
-        </div>
+        </div>        
       </div>
       <div className="">
         <h3 className="text-xl font-light py-1">Formação</h3>
