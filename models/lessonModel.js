@@ -5,7 +5,7 @@ const lessonsSchema = new Schema({
         type: String,
         required: true,
     },
-    file:{
+    file_url:{
         type: String,
         required: true,
     },

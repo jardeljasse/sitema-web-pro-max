@@ -6,6 +6,10 @@ export default function LessonForm({onSubmit, isLoading}) {
 
     // const [isLoading, setIsLoading] = useState(false)
 
+    const [subject, setSubject] = useState('');
+    const [trimester, setTrimester] = useState('');
+    const [data, setData] = useState('');
+
     return (
         <>
             <form onSubmit={onSubmit} action="">
@@ -31,7 +35,8 @@ export default function LessonForm({onSubmit, isLoading}) {
                     </div>
                     <div className='flex flex-col'>
                         <p><label htmlFor="subject">Selecione a Disciplina</label></p>
-                        <select name="subject" id="subject">
+                        <select onChange={(e) => setSubject(e.target.value)}
+                        name="subject" id="subject">
                             <option value="Português">Português</option>
                             <option value="Matemática">Matemática</option>
                             <option value="Inglês">Inglês</option>
@@ -42,7 +47,8 @@ export default function LessonForm({onSubmit, isLoading}) {
                             <option value="Ed.Visual">Ed.Visual</option>
                         </select>
                         <p><label htmlFor='trimester'>Selecione o Trimestre</label></p>
-                        <select name="trimester" id="trimester" className='w-[200px]'>
+                        <select onChange={(e) => setTrimester(e.target.value)}
+                        name="trimester" id="trimester" className='w-[200px]'>
                             <option value="Iº Trimestre">Iº Trimestre</option>
                             <option value="IIº Trimestre">IIº Trimestre</option>
                             <option value="IIIº Trimestre">IIIº Trimestre</option>
