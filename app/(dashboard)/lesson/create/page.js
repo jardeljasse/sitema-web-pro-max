@@ -35,7 +35,7 @@ export default function page() {
             // body: JSON.stringify({ collectionName, data }),
         }).then((res) => {
             if (!res.ok) {
-                throw new Error("Ocorreu um erro ao adicionar a aula " + lessonsData.title)
+                throw new Error("Ocorreu um erro ao adicionar a aula " + lessonsData.title +res)
             } else {
                 return res.json()
             }
@@ -54,15 +54,15 @@ export default function page() {
                 <p>Adione uma nova aula.</p>
             </PageHeader>
             <section className='mt-[2rem] flex gap-[50px]'>
-                {/* <LessonFormVercel 
-                handleAddLessons={handleAddLessons} /> */}
                 <LessonForm 
                 onSubmit={handleAddLessons}
                 isLoading={isLoading} />
 
-                {/* <LessonFormVercel handleAddLessons={handleAddLessons} /> */}
-                <LessonFormVercel handleAddLessons={handleAddLessons} />
-                {/* <LessonForm /> */}
+                {/* <LessonFormVercel
+                    onSubmit={handleAddLessons}
+                    isLoading={isLoading}
+                    setIsLoading={setIsLoading}
+                /> */}
             </section>
         </>
     )

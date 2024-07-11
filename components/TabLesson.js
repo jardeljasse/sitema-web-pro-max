@@ -10,6 +10,21 @@ export default function TabLesson() {
 
     const [isLoading, setIsLoading] = useState(false)
     const router = useRouter()
+    const [lessons, setLessons] = useState([])
+    const [isLoadingLessons, setIsLoadingLessons] = useState(false)
+
+    useEffect(() =>{
+        setIsLoadingLessons(true);
+        fetch("/api/lessons").then((response) => response.json()).then((data) => {
+            setLessons(data.lessons)
+            setIsLoadingLessons(false);
+            // console.log(data.users)
+        }).catch((error) => {
+            alert("Ocorreu um erro, tentando listar as aulas")
+            setIsLoadingLessons(false);
+        });
+    
+       }, []);
 
     const handleAddDoubts = (e) =>{
         setIsLoading(true)
@@ -75,9 +90,9 @@ export default function TabLesson() {
             <div className="content-box">
                 <div className="content-item">
                     <h2>Transcrição</h2>
-                    <p className="text-xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed debitis quidem officiis, accusamus reprehenderit sint exercitationem tenetur sit? Dolore molestias beatae quaerat numquam laborum modi voluptate accusamus labore? Quam, ipsum?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed debitis quidem officiis, accusamus reprehenderit sint exercitationem tenetur sit? Dolore molestias beatae quaerat numquam laborum modi voluptate accusamus labore? Quam, ipsum?
+                    <p className="text-xl">                    
+                    {lessons?.description}
+                    {/* {alert(lessons)} */}
                     </p>
                 </div>
 

@@ -3,15 +3,8 @@ import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 
-export default function LessonsTableRow({teacher, i, handleDeleteTeacher}){
+export default function LessonsTableRow({lessons, i, handleDeleteLessons}){
 
-    const calculateAge = (birthDay) => {
-
-        const date = new Date()
-        const birthdayDate = new Date(birthDay)
-        const age = Math.abs(date.getUTCFullYear() - birthdayDate.getUTCFullYear());
-        return age;
-    };
 
     const [isDeleting, setIsDeleting] = useState(false)
 
@@ -28,12 +21,12 @@ export default function LessonsTableRow({teacher, i, handleDeleteTeacher}){
             hover:text-white
             transition-all"> 
             <td>{i}.</td>
-            <td className="p-2">{teacher.name}</td>
-            <td>{calculateAge(teacher.birthDay)}</td>
-            <td>{teacher.nacionality}</td>
-            <td>{teacher.province}</td>
+            <td>{lessons.subject}</td>
+            <td className="p-2">{lessons.title}</td>
+            <td className="border-r">{lessons.trimester}</td>
+            <td className='w-[600px] text-justify'>{lessons.description}</td>
             <td className="flex gap-2 p-2">
-                <Link href={"/teachers/" + teacher._id} className="
+                <Link href={"/lessonss/" + lessons._id} className="
                 bg-sky-500 rounded-md p-1 w-8 h-8
                 hover:bg-sky-600 text-zinc-900 transition-all"
                 >
@@ -41,7 +34,7 @@ export default function LessonsTableRow({teacher, i, handleDeleteTeacher}){
                 </Link>
                 {/* CRUD: DELETING */}
                 <button
-                onClick={() => handleDeleteTeacher(teacher._id, setIsDeleting)}
+                onClick={() => handleDeleteLessons(lessons._id, setIsDeleting)}
                 className="
                 bg-red-500 rounded-md p-1 w-8 h-8
                 hover:bg-sky-600 text-zinc-900 transition-all"

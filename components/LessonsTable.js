@@ -1,92 +1,90 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import TeachersTableRow from './TeachersTableRow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import LessonsTableRow from './LessonsTableRow';
 
+
 export default function LessonsTable() {
 
-    const [teachers, setTeachers] = useState([])
-     const [isLoadingTeachers, setIsLoadingTeachers] = useState(false)
+    const [lessons, setLessons] = useState([])
+     const [isLoadingLessons, setIsLoadingLessons] = useState(false)
      
  
      //evitar efeitos colaterais (side effects) 'useEffect'
     useEffect(() =>{
-     setIsLoadingTeachers(true);
-     fetch("/api/teachers").then((response) => response.json()).then((data) => {
-         setTeachers(data.teachers)
-         setIsLoadingTeachers(false);
+     setIsLoadingLessons(true);
+     fetch("/api/lessons").then((response) => response.json()).then((data) => {
+         setLessons(data.lessons)
+         setIsLoadingLessons(false);
          // console.log(data.users)
      }).catch((error) => {
-         alert("Ocorreu um erro, tentando listar os usuários")
-         setIsLoadingTeachers(false);
+        //  alert("Ocorreu um erro, tentando listar as aulas")
+         setIsLoadingLessons(false);
      });
  
     }, []);
  
      //   METHOD TO DELETE
-     const handleDeleteTeacher = (id, setIsDeleting) => {
+     const handleDeleteLessons = (id, setIsDeleting) => {
     
         setIsDeleting(true);
     
-            fetch("/api/teachers/" + id,{ 
+            fetch("/api/lessons/" + id,{ 
                 method: "DELETE",
             }).then( (res) => {
                 if(!res.ok){
-                    throw new Error("Ocorreu um erro removendo o(a) professor(a) com o Identificador - : " + id)
+                    throw new Error("Ocorreu um erro removendo a aula com o id - : " + id + " " + res)
                 } else{
                     return res;
                     //return res.json()
                 }
             }).then((data) => {
-                alert("Professor(a) removido(a) com Sucesso!")
+                alert("Aula removida com sucesso")
                 setIsDeleting(false)//desativar apos o cadastro
                 // router.push("/teacher")
                 //RELOAD da Tabela apos deletar usuario
 
-                const newTeachers = teachers.filter((teachers2) => teachers2._id !== id);
+                const newLessons = lessons.filter((lessons2) => lessons2._id !== id);
 
-                setTeachers(newTeachers);
+                setLessons(newLessons);
             }).catch(err => {
-                alert("Ocorreu um erro removendo o professor com o Id: "+ id)
+                alert("Ocorreu um erro removendo a aula com o id: "+ id)
                 setIsDeleting(false);
             }) 
        }
   return (
      //pegando dados na base de dados
      <>
-      <p className="mb-4">Total de Trimestres: {teachers.length}</p>
+      <p className="mb-4">Total de Trimestres: {lessons.length}</p>
          <table className="w-full">
              <thead className="bg-skin-cl700 text-white">
                  <tr className="text-left">
                      <th></th>
-                     <th className="p-2">Trimestre</th>
                      <th>Disciplina</th>
-                     <th>Aulas</th>
+                     <th>Título</th>
+                     <th className="p-2">Trimestre</th>
                      <th>Data</th>                     
                      <th>Acções</th>                     
                  </tr>
              </thead>
-             <tbody>
-                 {/* CRUD: READING */}
-                 {/* mapeando os dados na BD */}
+             <tbody>               
                 {
-                teachers && teachers.map((teacher, i) => {
+                lessons && lessons.map((lessons, i) => {
                      return (
-                     <LessonsTableRow teacher={teacher} 
-                     key={teacher._id}// chave do React que utiliza para controlar 'chaves' semelhantes
+                     <LessonsTableRow teacher={lessons} 
+                     key={lessons._id}// chave do React que utiliza para controlar 'chaves' semelhantes
                      i={i + 1}
-                     teachers={teacher} 
-                     handleDeleteTeacher={handleDeleteTeacher}/>
+                     lessons={lessons} 
+                     handleDeleteLessons={handleDeleteLessons}/>
                      )
                  })
                 }
              </tbody>
          </table>
          {/* rodando icon antes de carregar a tabela */}
-         {isLoadingTeachers && (
+         {isLoadingLessons && (
              <p className="mt-16 text-center">
                  <FontAwesomeIcon icon={faCircleNotch} 
                  className="animate-spin w-6 text-skin-cl100"/>

@@ -15,7 +15,7 @@ export default function page() {
 
       <section>
         {/* <TeachersTable /> */}
-        <div className="mb-[10rem] max-w-md">
+        {/* <div className="mb-[10rem] max-w-md">
           <form action="">
             <p>
               <label htmlFor="trimester">Selecione o Trimestre</label>
@@ -36,7 +36,7 @@ export default function page() {
               <option value="Ed.Visual">Ed.Visual</option>
             </select>
           </form>
-        </div>
+        </div> */}
         <LessonsTable />
       </section>
     </>

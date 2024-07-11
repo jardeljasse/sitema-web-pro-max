@@ -1,5 +1,6 @@
 "use client"
 
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
 export default function LessonForm({onSubmit, isLoading}) {
@@ -9,6 +10,7 @@ export default function LessonForm({onSubmit, isLoading}) {
     const [subject, setSubject] = useState('');
     const [trimester, setTrimester] = useState('');
     const [data, setData] = useState('');
+    
 
     return (
         <>
@@ -19,7 +21,7 @@ export default function LessonForm({onSubmit, isLoading}) {
                         <input type="text" name='title' id='title' required className='w-full' />
 
                         <p><label htmlFor="file_url">Url da aula</label></p>
-                        <input type="text" required name='file' id='file_url' className='w-full' />
+                        <input type="text" required name='file_url' id='file_url' className='w-full' />
 
                         <p><label htmlFor="description">Descrição</label></p>
                         <textarea name="description" id="description" className='w-full' cols="70" rows="10"></textarea>
