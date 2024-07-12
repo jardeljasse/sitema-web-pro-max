@@ -435,7 +435,7 @@ button {
 @media screen and (max-width: 640px) {
   .book-item,
   .book-item img {
-    width: 30%;
+    width: 45%;
   }
 }
 
