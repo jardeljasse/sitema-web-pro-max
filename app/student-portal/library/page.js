@@ -15,24 +15,28 @@ export default function page() {
           text-4xl sm:text-5xl text-center md:text-6xl lg:text-7xl font-bold p-2 text-skin-cl500">
             BIBLIOTECA{" "}
             <span className="span-color text-gray font-light">VIRTUAL</span>
-            
+
           </h1>
         </div>
       </div>
 
       <main className="mb-[200px]">
         <div className="container">
-          <h2 className="text-3xl">Livros</h2>
-          <hr className="w-[100px] h-8 text-skin-cl900" />
-          <div className="books-items flex flex-wrap gap-8">
-            <div className="book-item flex flex-col text-white ">
+          <h2 className="text-3xl my-4">Livros</h2>
+          <p className="mb-2">
+            Acesse os livros abaixo listados. Podendo clicar nos botões descarregar.
+          </p>
+          {/* <hr className="w-[100px] h-8 text-skin-cl900" /> */}
+          {/* <div className="books-items flex flex-wrap gap-8"> */}
+          <div className="books-items gap-8">
+            <div className="book-item  flex-col items-center justify-center text-white ">
               <Image
-                 src="/images/subjects/fraces.png"
+                src="/images/subjects/fraces.png"
                 width={170}
                 height={200}
                 className="cursor-pointer block m-auto"
               />
-              <h3 className="sm:text-5xl md:text-6xl lg:text-7xl font-bold p-2 uppercase">              
+              <h3 className="p-2 text-black font-bold text-2xl uppercase">
                 FRANCêS
               </h3>
               <div className="p-2">
@@ -44,15 +48,15 @@ export default function page() {
                   </span>
                 </Link>
               </div>
-            </div>          
+            </div>
             <div className="book-item flex flex-col text-white ">
               <Image
-                 src="/images/subjects/gografia.png"
+                src="/images/subjects/gografia.png"
                 width={170}
                 height={200}
                 className="cursor-pointer block m-auto"
               />
-              <h3 className="sm:text-5xl md:text-6xl lg:text-7xl font-bold p-2 uppercase">              
+              <h3 className="p-2 text-black font-bold text-2xl uppercase">
                 GEOGRAFIA
               </h3>
               <div className="p-2">
@@ -64,10 +68,10 @@ export default function page() {
                   </span>
                 </Link>
               </div>
-            </div>          
+            </div>
             <div className="book-item flex flex-col text-white ">
               <Image
-                 src="/images/subjects/historia.png"
+                src="/images/subjects/historia.png"
                 width={170}
                 height={200}
                 className="cursor-pointer block m-auto"
@@ -84,10 +88,10 @@ export default function page() {
                   </span>
                 </Link>
               </div>
-            </div>          
+            </div>
             <div className="book-item flex flex-col text-white ">
               <Image
-                 src="/images/subjects/igles.png"
+                src="/images/subjects/igles.png"
                 width={170}
                 height={200}
                 className="cursor-pointer block m-auto"
@@ -104,10 +108,11 @@ export default function page() {
                   </span>
                 </Link>
               </div>
-            </div>          
+            </div>
             <div className="book-item flex flex-col text-white ">
+
               <Image
-                 src="/images/subjects/iologia.png"
+                src="/images/subjects/iologia.png"
                 width={170}
                 height={200}
                 className="cursor-pointer block m-auto"
@@ -124,10 +129,10 @@ export default function page() {
                   </span>
                 </Link>
               </div>
-            </div>          
+            </div>
             <div className="book-item flex flex-col text-white ">
               <Image
-                 src="/images/subjects/maths.png"
+                src="/images/subjects/maths.png"
                 width={170}
                 height={200}
                 className="cursor-pointer block m-auto"
@@ -144,10 +149,10 @@ export default function page() {
                   </span>
                 </Link>
               </div>
-            </div>          
+            </div>
             <div className="book-item flex flex-col text-white ">
               <Image
-                 src="/images/subjects/portugues.png"
+                src="/images/subjects/portugues.png"
                 width={170}
                 height={200}
                 className="cursor-pointer block m-auto"
@@ -164,17 +169,20 @@ export default function page() {
                   </span>
                 </Link>
               </div>
-            </div>          
+            </div>
           </div>
-
         </div>
         <div className="container  ">
+        <p className="mt-2">
+            Acesse os vídeos abaixo listados. Quando for acessar o vídeo, terá a opção de escolher se pretende ser  direcionado a plataforma do YouTube.
+          </p>
           <h2 className="text-3xl mt-[20px] ">Videos</h2>
           <hr className="w-[100px] h-8 text-skin-cl900" />
           <div className="video-items flex flex-wrap gap-5">
             
             <div className="video-item">
-              <iframe  src="https://www.youtube.com/embed/Ayg_UzRtAkw?si=AfMCgyrspIJ6uDc9&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe  src="https://www.youtube.com/embed/Ayg_UzRtAkw?si=AfMCgyrspIJ6uDc9&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+              className="inline-block md:w-full"></iframe>
             </div>
 
             <div className="video-items ">
