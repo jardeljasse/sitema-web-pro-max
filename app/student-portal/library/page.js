@@ -22,7 +22,7 @@ export default function page() {
 
       <main className="mb-[200px]">
         <div className="container">
-          <h2 className="text-3xl my-4">Livros</h2>
+          <h2 className="text-3xl my-2">Livros</h2>
           <p className="mb-2">
             Acesse os livros abaixo listados. Podendo clicar nos botões descarregar.
           </p>
@@ -173,25 +173,23 @@ export default function page() {
           </div>
         </div>
         <div className="container  ">
-        <p className="mt-2">
+          <h2 className="text-3xl mt-[20px] ">Videos</h2>          
+          <p className="mb-2">
             Acesse os vídeos abaixo listados. Quando for acessar o vídeo, terá a opção de escolher se pretende ser  direcionado a plataforma do YouTube.
           </p>
-          <h2 className="text-3xl mt-[20px] ">Videos</h2>
-          <hr className="w-[100px] h-8 text-skin-cl900" />
-          <div className="video-items flex flex-wrap gap-5">
-            
-            <div className="video-item">
-              <iframe  src="https://www.youtube.com/embed/Ayg_UzRtAkw?si=AfMCgyrspIJ6uDc9&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-              className="inline-block md:w-full"></iframe>
+          <div className="video-items">
+
+            <div className="video-item relative">
+            <iframe src="https://www.youtube.com/embed/Ayg_UzRtAkw?si=bImlD8Gg1KCoxVDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
-            <div className="video-items ">
-            <div className="video-item">
-            <iframe  src="https://www.youtube-nocookie.com/embed/GFuxGFxz7Cc?si=eozb9NoU2CG4bdHV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <div className="video-item relative">
+              <iframe src="https://www.youtube-nocookie.com/embed/GFuxGFxz7Cc?si=eozb9NoU2CG4bdHV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+              </iframe>
             </div>
           </div>
-          </div>
-         
+
         </div>
       </main>
     </>

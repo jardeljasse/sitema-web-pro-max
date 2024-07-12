@@ -439,18 +439,20 @@ button {
   }
 }
 
-iframe {
-  /* width: 500px; */
-  /* height: 250px; */
+div.video-item {
+  position: relative;
+  background-color: #8cdaf970;
+  /* margin: 0px -20px 30px -20px; */
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 30%;
 }
-.video-items {
-  display: flex;
-  /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(1fr, 250px)); */
-}
-.video-item div {
-  background-color: red;
-  padding: 1rem;
+div.video-item > iframe {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
 }
 /* END LIBRARY MAIN */
 /* TABLE DETAILS */
