@@ -87,6 +87,11 @@ nav{
     top: 60px;
     left: 5px;
 }
+@media screen and (max-width: 637px){
+    .title-underline{
+        display: none;
+    }
+}
 
 .subject-cont{
     display: grid;
@@ -125,10 +130,43 @@ nav{
     background-color: var(--color-900);
 }
 
-/* HISTORY-PAGE */
+/* PORTUGUESE-PAGE */
 .trimester-item{
+    position: relative;
     background-image: linear-gradient(to right, var(--color-900), var(--color-100));
+    transition: all 0.3s;
 }
+.trimester-item:hover{
+    background: #073940;
+}
+.trimester-item::before{
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    background-color: var(--color-100);
+    z-index: -1;
+    border-radius: 5px;
+}
+.trimester-item::after{
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    background-color: var(--color-900);
+    z-index: -2;
+    /* filter: blur(20px); */
+    border-radius: 5px;
+}
+.trimester-item:before,
+.trimester-item:after{
+    background-image: linear-gradient(235deg, var(--color-900), #fff, #073940);
+}
+
 .trimester-item a h3{
     font-size: 1.4rem;
 }
@@ -148,6 +186,14 @@ nav{
     width: 70px;
     height: 70px;
 }
+
+/* EMPTYSUBJECT COMPONENT */
+@media screen and (max-width: 639px){
+    .empty-subject h1{
+        font-size: 20px;
+    }
+}
+/* EMPTYSUBJECT COMPONENT */
 
 /* VLbrasPlugin */
 .enable{
@@ -345,15 +391,18 @@ nav{
 /* END TABLESSON COMPONENT */
 
 /* LIBRARY MAIN */
+.books-items{
+    background-color: #00384E;
+}
 .books-items .book-item{
-    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0,.1);
+    /* box-shadow: 0px 5px 10px 5px rgba(0, 0, 0,.1); */
     display: inline;
     /* min-height: 220px; */
     width: 200px;
     /* height: 300px; */
 }
 .book-item:hover{
-    box-shadow: 0px 5px 10px 5px rgba(50, 121, 145, 0.744);
+    /* box-shadow: 0px 5px 10px 5px rgba(50, 121, 145, 0.744); */
     transform: translateY(-10px);    
     transition: all 0.3s;
     cursor: pointer;
@@ -373,6 +422,11 @@ nav{
 .book-item span:hover{
     background-color: var(--color-300);
     transition: all 0.3s;
+}
+@media screen and (max-width: 640px){
+    .book-item{
+        width: 100%;
+    }
 }
 
 iframe{

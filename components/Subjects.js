@@ -21,7 +21,7 @@ export default function Subjects() {
                             Venha aprender a se comunicar da melhor forma correcta. 
                             <br /><br />
                         </p>
-                        <Link className="bg-gray-900 py-2 px-8 rounded-xl text-center block" href="/student-portal/history-subject/">Entrar e estudar</Link>
+                        <Link className="bg-gray-900 py-2 px-8 rounded-xl text-center block" href="/student-portal/portuguese-subject/">Entrar e estudar</Link>
                     </div>
                 </div>
     

@@ -37,7 +37,7 @@ export default function page() {
                             <li className='trimester-time-line flex gap-5'>
                                 <span></span>
                                 <div className="trimester-item text-right p-5 w-[100%] text-white rounded-[10px]">
-                                <Link href="/student-portal/history-subject/l-trimester">
+                                <Link href="/student-portal/portuguese-subject/l-trimester">
                                         <h3>IIº Trimestre</h3>
                                     </Link>
                                 </div>

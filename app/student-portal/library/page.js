@@ -11,9 +11,11 @@ export default function page() {
       <Navbar />
       <div className="showcase-library bg-skin-cl500 h-[60vh]">
         <div className="container flex items-center justify-center h-[60vh]">
-          <h1 className="text-6xl font-bold text-white">
+          <h1 className="text-white
+          text-4xl sm:text-5xl text-center md:text-6xl lg:text-7xl font-bold p-2 text-skin-cl500">
             BIBLIOTECA{" "}
             <span className="span-color text-gray font-light">VIRTUAL</span>
+            
           </h1>
         </div>
       </div>
@@ -30,7 +32,7 @@ export default function page() {
                 height={200}
                 className="cursor-pointer block m-auto"
               />
-              <h3 className="p-2 text-black font-bold text-2xl uppercase">
+              <h3 className="sm:text-5xl md:text-6xl lg:text-7xl font-bold p-2 uppercase">              
                 FRANCêS
               </h3>
               <div className="p-2">
@@ -50,7 +52,7 @@ export default function page() {
                 height={200}
                 className="cursor-pointer block m-auto"
               />
-              <h3 className="p-2 text-black font-bold text-2xl uppercase">
+              <h3 className="sm:text-5xl md:text-6xl lg:text-7xl font-bold p-2 uppercase">              
                 GEOGRAFIA
               </h3>
               <div className="p-2">
