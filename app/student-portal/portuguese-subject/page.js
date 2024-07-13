@@ -14,13 +14,13 @@ export default function page() {
             <HeaderPortal />
 
             <main className='h-[70vh] mb-[4rem]'>
-                <div className="container trimester-cont ">
+                <div className="container trimester-cont">
                     <PageHeaderPortal className="text-center" title="Disciplina de Português">
                         Selecione o Trimestre
                     </PageHeaderPortal>
                     
                     <VlibrasPlugin forceOnload={false} />
-                    <div className="trimester-items mt-10">
+                    <div className="trimester-items transition mt-7">
                         <ul>
                             <li className='trimester-time-line flex gap-5'>
                                 <span></span>

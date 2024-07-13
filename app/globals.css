@@ -17,7 +17,8 @@
 
 /* utilitaries-classes */
 .container {
-  max-width: 1100px;
+  /* max-width: 1100px; */
+  max-width: 1536px;;
   margin: auto;
   padding-inline: 2rem;
 }
@@ -140,30 +141,7 @@ nav {
   transition: all 0.3s;
 }
 .trimester-item:hover {
-  background: #073940;
-}
-.trimester-item::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  bottom: -2px;
-  left: -2px;
-  background-color: var(--color-100);
-  z-index: -1;
-  border-radius: 5px;
-}
-.trimester-item::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  bottom: -2px;
-  left: -2px;
-  background-color: var(--color-900);
-  z-index: -2;
-  /* filter: blur(20px); */
-  border-radius: 5px;
+  background: var(--color-900);
 }
 .trimester-item:before,
 .trimester-item:after {
@@ -226,12 +204,12 @@ nav {
     align-items: flex-start;
     padding: 5px 5%; */
   display: flex;
-  gap: 15px;
+  /* gap: 15px; */
 }
 .main-video {
   background-color: var(--color-900);
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
 }
 .main-video video {
   width: 100%;
@@ -247,8 +225,8 @@ nav {
   aspect-ratio: 16 / 9;
 }
 .container-video .video-list {
-  background-color: var(--color-900);
-  padding: 10px;
+  /* background-color: var(--color-900); */
+  /* padding: 10px; */
   border-radius: 5px;
   max-height: 400px;
   overflow-y: scroll;
@@ -408,6 +386,7 @@ button {
   /* min-height: 220px; */
   width: 100%;
   margin-top: 1rem;
+  margin-inline: auto;
   /* height: 300px; */
 }
 .book-item:hover {
