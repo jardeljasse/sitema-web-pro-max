@@ -63,7 +63,7 @@ export default function page() {
                     <div className="main-video w-full  aspect-ratio">
                         <div className="video aspect-w-16 aspect-h-9">
                             <video autoPlay={false} poster="/images/thumbnailVideoPortugues.jpg" controls>
-                                <source src="/videos/azagaia.mp4" type="video/CV-lesson.mp4" />
+                                <source src="/videos/CV-lesson-mp4" type="video/mp4" />
                                 Seu navegador não é combatível com este video
                             </video>
                             <h3>01. Curriculim Vitae</h3>
