@@ -143,10 +143,6 @@ nav {
 .trimester-item:hover {
   background: var(--color-900);
 }
-.trimester-item:before,
-.trimester-item:after {
-  background-image: linear-gradient(235deg, var(--color-900), #fff, #073940);
-}
 
 .trimester-item a h3 {
   font-size: 1.4rem;
@@ -180,7 +176,7 @@ nav {
 .enable {
   border: 2px solid red;
   padding: 3rem;
-  background-color: goldenrod;
+  /* background-color: goldenrod; */
 }
 .active {
   /* background-color: blue; */
