@@ -56,37 +56,39 @@ export default function page() {
         <>
             <Navbar />
 
-            <section className="bg-skin-cl700 h-[100] m-auto pb-14 spect-ratio">
+            <section className="bg-skin-cl700 h-[100] pb-14">
+                <VlibrasPlugin />
                 {/* <main className="container-video h-full container aspect-ratio pt-[5rem]   "> */}
-                <main className="container-video container md:flex gap-8  pt-5"> {/*md:space-x-6*/}
-                    <VlibrasPlugin />
-                    <div className="main-video w-full  aspect-ratio">
-                        <div className="video aspect-w-16 aspect-h-9">
-                            <video autoPlay={false} poster="/images/thumbnailVideoPortugues.jpg" controls>
-                                <source src="/videos/cv-lesson.mp4" type="video/mp4" />
-                                Seu navegador não é combatível com este video
-                            </video>
-                            <h3>01. Curriculim Vitae</h3>
+                <main className=""> {/*md:space-x-6*/}
+                    <div className="container-video container md:flex md:space-x-6 pt-5">
+                        <div className="main-video w-[100px] bg-red-500 basis-[70%] aspect-video">
+                            <div className="video w-full relative aspect-video">
+                                <video autoPlay={false} poster="/images/thumbnailVideoPortugues.jpg" controls>
+                                    <source src="/videos/cv-lesson.mp4" type="video/mp4" />
+                                    Seu navegador não é combatível com este video
+                                </video>
+                                <h3>01. Curriculim Vitae</h3>
+                            </div>
+                            <div className="tab-lesson max-w-full">
+                            <TabLesson />
+                            </div>
                         </div>
-                        <TabLesson />
-                    </div>
-
-                    <div className="video-list">
-                        <div className="video-item active-vid-item">
-                            <video autoPlay={false} controls>
-                                <source src="/videos/azagaia.mp4" type="video/mp4" />
-                                Seu navegador não é combatível com este video
-                            </video>
-                            <h3 className="vid-title">02. T.P.C</h3>
+                        <div className="video-list">
+                            <div className="video-item active-vid-item">
+                                <video autoPlay={false} controls>
+                                    <source src="/videos/azagaia.mp4" type="video/mp4" />
+                                    Seu navegador não é combatível com este video
+                                </video>
+                                <h3 className="vid-title">02. T.P.C</h3>
+                            </div>
+                            <div className="video-item">
+                                <video autoPlay={false} controls>
+                                    <source src="/videos/form.mp4" type="video/mp4" />
+                                    Seu navegador não é combatível com este video
+                                </video>
+                                <h3 className="vid-title">03. Exercícios</h3>
+                            </div>
                         </div>
-                        <div className="video-item">
-                            <video autoPlay={false} controls>
-                                <source src="/videos/form.mp4" type="video/mp4" />
-                                Seu navegador não é combatível com este video
-                            </video>
-                            <h3 className="vid-title">03. Exercícios</h3>
-                        </div>
-
                     </div>
                 </main>
             </section>

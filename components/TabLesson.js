@@ -83,9 +83,9 @@ export default function TabLesson() {
     return (
         <div className="container-tab">
             <div className="tab-box">
-                <button className="tab-btn md:text-[16px] sm:text-sm">Transcrição</button>
-                <button className="tab-btn md:text-lx sm:text-sm">Dúvida</button>
-                <button className="tab-btn md:text-lx sm:text-sm">Ver Resposta(s)</button>
+                <button className="tab-btn md:text-lg sm:text-sm">Transcrição</button>
+                <button className="tab-btn md:text-lg sm:text-sm">Dúvida</button>
+                <button className="tab-btn md:text-lg sm:text-sm">Ver Resposta(s)</button>
             </div>
             <div className="content-box">
                 <div className="content-item">

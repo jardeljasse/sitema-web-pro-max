@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import VlibrasPlugin from "@/components/VlibrasPlugin";
 
 export default function page() {
   return (
@@ -22,6 +23,7 @@ export default function page() {
 
       <main className="mb-[200px]">
         <div className="container">
+          <VlibrasPlugin />
           <h2 className="text-3xl my-2">Livros</h2>
           <p className="mb-2">
             Acesse os livros abaixo listados. Podendo clicar nos botões descarregar.
