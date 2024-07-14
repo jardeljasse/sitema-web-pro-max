@@ -58,7 +58,7 @@ export default function DoubtsTable() {
     return (
         //pegando dados na base de dados
         <>
-            <p className="mb-4">Total de Dúvidas: {doubts.length}</p>
+            {/* <p className="mb-4">Total de Dúvidas: {doubts.length}</p> */}
             <table className="w-full">
                 <thead className="bg-skin-cl700 text-white">
                     <tr className="text-left">
