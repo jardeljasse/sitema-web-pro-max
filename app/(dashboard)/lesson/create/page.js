@@ -1,7 +1,6 @@
 "use client"
 
 import LessonForm from '@/components/LessonForm';
-import LessonFormVercel from '@/components/LessonFormVercel'
 import PageHeader from '@/components/PageHeader'
 import { useRouter } from 'next/navigation';
 import { useState } from 'react'
