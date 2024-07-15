@@ -64,8 +64,8 @@ export default function DoubtsTable() {
                     <tr className="text-left">
                         <th></th>
                         <th>Dúvida</th>
-                        <th>Data</th>
-                        <th>Horas(AM/PM)</th>
+                        {session?.user.role === "teacher" && <th>Data</th>}
+                        {session?.user.role === "teacher" && <th>Hora</th>}                        
                         {
                             session?.user.role == "admin" || session?.user.role == "teacher" &&
                         <th>Acções</th>

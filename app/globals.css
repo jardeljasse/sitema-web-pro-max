@@ -320,7 +320,7 @@ nav {
 .tab-btn {
   padding: 0.5rem;;
   background-color: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 .tab-box .tab-btn.active-tab {
@@ -336,7 +336,7 @@ nav {
     transition: all 0.3s ease-in-out;
 } */
 .content-box {
-  padding: 1.3rem;
+  padding: 0.5rem;
 }
 .content-box .content-item {
   display: none;

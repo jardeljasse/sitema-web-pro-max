@@ -11,7 +11,7 @@ export default function DoubtsForm({onSubmit, isLoading, doubts, handleUpdateDou
                 <button
                     disabled={isLoading}
                     className="bg-skin-cl100 hover:bg-skin-cl900 transition-all p-2 text-white disabled:bg-skin-cl700 w-full mt-6 rounded-lg">
-                    {doubts ? "Enviar" : "Responder"}
+                    Enviar
                 </button>
             </form>
         </div>

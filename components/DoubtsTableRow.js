@@ -49,9 +49,24 @@ export default function DoubtsTableRow({doubt, i, handleDeleteDoubts}){
             transition-all
             td-doubts"> 
             <td>{i}.</td>
-            <td>{doubt.doubt}</td>                    
-            <td>{doubt.createdAt.split("T")[0]}</td>
-            <td>{doubt.createdAt.split("T")[1]}</td>            
+            {session?.user?.role === "student" ? (
+                <td>{doubt.doubt} - <strong>({doubt.createdAt.split("T")[0]})</strong></td>
+            ) : (                
+                <td>{doubt.doubt}</td>
+              )} 
+            {session?.user?.role === "student" ? (
+                ""
+            ) : (                
+              <td>{doubt.createdAt.split("T")[0]}</td>                
+              )} 
+            {session?.user?.role === "student" ? (
+                ""
+            ) : (                
+              <td>{doubt.createdAt.split("T")[1].replace("Z", " ")}</td>                                      
+              )} 
+
+
+            {/* <td>{doubt.doubt} <strong>({doubt.createdAt.split("T")[0]})</strong></td>                     */}
             
             {
               session?.user.role == "admin" || session?.user.role == "teacher" &&
