@@ -20,7 +20,7 @@ export default function LessonsTable() {
          setIsLoadingLessons(false);
          // console.log(data.users)
      }).catch((error) => {
-        //  alert("Ocorreu um erro, tentando listar as aulas")
+         alert("Ocorreu um erro, tentando listar as aulas")
          setIsLoadingLessons(false);
      });
  

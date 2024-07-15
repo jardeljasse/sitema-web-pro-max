@@ -51,18 +51,18 @@ export default function page() {
     return (
         <>
             <PageHeader title="Adicionar Aula">
-                <p>Adione uma nova aula.</p>
+                Adione uma nova aula.
             </PageHeader>
             <section className='mt-[2rem] flex gap-[50px]'>
-                {/* <LessonForm 
+                <LessonForm 
                 onSubmit={handleAddLessons}
-                isLoading={isLoading} /> */}
+                isLoading={isLoading} />
 
-                <LessonFormVercel
+                {/* <LessonFormVercel
                     onSubmit={handleAddLessons}
                     isLoading={isLoading}
                     setIsLoading={setIsLoading}
-                />
+                /> */}
             </section>
         </>
     )

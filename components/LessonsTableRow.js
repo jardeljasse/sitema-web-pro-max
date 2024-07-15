@@ -26,7 +26,7 @@ export default function LessonsTableRow({lessons, i, handleDeleteLessons}){
             <td className="border-r">{lessons.trimester}</td>
             <td className='w-[600px] text-justify'>{lessons.description}</td>
             <td className="flex gap-2 p-2">
-                <Link href={"/lessonss/" + lessons._id} className="
+                <Link href={"/lesson/" + lessons._id} className="
                 bg-sky-500 rounded-md p-1 w-8 h-8
                 hover:bg-sky-600 text-zinc-900 transition-all"
                 >
