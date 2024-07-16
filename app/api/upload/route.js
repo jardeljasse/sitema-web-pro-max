@@ -24,7 +24,7 @@ export const POST = async (request) => {
 
     const buffer = Buffer.concat(chunks);
     const filename = `${Date.now()}_${file.name}`;
-    const filepath = `public/uploads/${filename}`;
+    const filepath = `react/fileUpload/${filename}`;
 
     await fsPromises.writeFile(path.join(process.cwd(), filepath), buffer);
 
