@@ -13,7 +13,7 @@ export default function page() {
       </PageHeader>
 
       <section>
-        <StudentsTable />
+        <StudentsTable showHeadrs={false} />
       </section>
     </>
   );

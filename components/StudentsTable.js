@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+import { faArrowTrendUp, faArrowUp, faCircleNotch, faPercentage } from "@fortawesome/free-solid-svg-icons";
 import StudentsTableRow from "./StudentsTableRow";
 import { useSession } from "next-auth/react";
 
 
 
-export default function StudentsTable() {
+export default function StudentsTable({ showHeadrs }) {
 
     //pegando dados na base de dados
     const [students, setSudents] = useState([])
@@ -65,21 +65,30 @@ export default function StudentsTable() {
             <table className="w-full">
                 <thead className="bg-skin-cl700 text-white">
                     <tr className="text-left">
+                        {showHeadrs ? (
+                            <>
+                                <th></th>
+                                <th className="p-2">Nome</th>
+                                <th>Idade</th>
+                                <th>Nacionalidade</th>
+                                <th>Provincia</th>
+                                <th>Género</th>
+                                <th>Cidade</th>
+                                <th>Bairro</th>
+                                <th>Conct - Encarregado</th>
+                                {/* <th>Grau de surdez</th> */}
+                                <th>Doença Frequente</th>
+                                {
+                                    session?.user.role == "admin" &&
+                                    <th>Funções</th>
+                                }
+                    </>):(
+                        <>
                         <th></th>
                         <th className="p-2">Nome</th>
-                        <th>Idade</th>
-                        <th>Nacionalidade</th>
-                        <th>Provincia</th>
-                        <th>Género</th>
-                        <th>Cidade</th>
-                        <th>Bairro</th>
-                        <th>Conct - Encarregado</th>
-                        {/* <th>Grau de surdez</th> */}
-                        <th>Doença Frequente</th>
-                        {
-                            session?.user.role == "admin" &&
-                            <th>Funções</th>
-                        }
+                        <th>Progresso <FontAwesomeIcon icon={faArrowTrendUp} className="w-6" /></th>
+                    </>
+                    )}
                     </tr>
                 </thead>
                 <tbody>

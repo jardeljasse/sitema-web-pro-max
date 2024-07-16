@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 import { useSession } from "next-auth/react";
 
-export default function StudentsTableRow({ student, i, handleDeleteStudents }) {
+export default function StudentsTableRow({ student, i, handleDeleteStudents, showHeadrsRow }) {
 
     const calculateAge = (birthDay) => {
 
@@ -30,6 +30,8 @@ export default function StudentsTableRow({ student, i, handleDeleteStudents }) {
             hover:text-white
             transition-all"
         >
+            {showHeadrsRow ? (
+                <>
             <td>{i}.</td>
             <td className="p-2">{student.name}</td>
             <td>{calculateAge(student.birthDay)}</td>
@@ -61,6 +63,15 @@ export default function StudentsTableRow({ student, i, handleDeleteStudents }) {
                         <FontAwesomeIcon icon={faTrash} className="w-4  " />
                     </button>
                 </td>
+            }
+            </>):(
+                <>
+                    <td>{i}.</td>
+            <td className="p-2">{student.name}</td>
+            <td>{calculateAge(student.birthDay)}</td>
+            
+                </>
+            )
             }
         </tr>
     )

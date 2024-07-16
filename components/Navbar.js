@@ -64,7 +64,7 @@ export default function Navbar() {
             </span>
             <Link
               href={"/users/" + session?.user.email}
-              className="hover:text-skin-cl900 min-w-[180px] font-bold transition-all"
+              className="hover:text-skin-cl900 w-[180px]  font-bold transition-all"
             >
               {session?.user.name}
             </Link>
