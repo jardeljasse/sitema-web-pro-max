@@ -24,7 +24,7 @@ export default function page() {
                     mainVideo.src = src;
                     let text = video.children[1].innerHTML;
                     title = text.innerHTML;
-                    alert(title);
+                    // alert(title);
                 } else {
                     console.error('The selected video element is not a valid HTMLElement or is null');
                 }

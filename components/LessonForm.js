@@ -21,13 +21,16 @@ export default function LessonForm({ onSubmit, isLoading, lessons }) {
                         <input type="text" name='title' id='title' required className='w-full'
                         defaultValue={lessons?.title} />
 
-                        <p><label htmlFor="file_url">Url da aula</label></p>
-                        <input type="text" required name='file_url' id='file_url' className='w-full' />
+                        {/* <p><label htmlFor="file_url">Url da aula</label></p>
+                        <input type="text" required name='file_url' id='file_url' className='w-full' /> */}
 
                         <p><label htmlFor="description">Descrição</label></p>
                         <textarea name="description" id="description" className='w-full' cols="70" 
                         rows="10"
                         defaultValue={lessons?.description}></textarea>
+
+                        <p><label htmlFor="file">Escolher ficheiro</label></p>
+                        <input type="file"  required name='file' id='file' className='w-full ' />
                         <button
                             disabled={isLoading}
                             className="bg-sky-500

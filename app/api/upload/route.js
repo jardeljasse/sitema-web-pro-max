@@ -1,48 +1,33 @@
-import formidable, { errors as formidableErrors } from "formidable";
-import { promises as fs } from "fs"
+import fsPromises from "fs/promises"
+import { NextResponse } from "next/server";
 import path from "path"
 
+export const POST = async (request) => {
 
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-};
+    const body = await request.formData();
+    // console.log(body.get("title"), body.get("description"), body.get("file"))
+   
+    const title = body.get("title")
+    const file = body.get("file")
+    const description = body.get("description")
+    const subject = body.get("subject")
+    const trimester = body.get("trimester")
 
-export default async function handler(req, res) {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ message: "Method not allowed" })
+    const chunks = []
+    const reader = file.stream().getReader()
+
+    while(true){
+        const {done, value} = await reader.read();
+        if (done) break;
+        chunks.push(value)
     }
 
-    const form = formidable({ multiples: true });
-    let fields;
-    let files;
+    const buffer = Buffer.concat(chunks);
+    const filename = `${Date.now()}_${file.name}`;
+    const filepath = `public/uploads/${filename}`;
 
-    try {
-        [fields, files] = await form.parse(req);
-        console.log('files ', files)
-        const imageFile = files.file[0];
-        console.log('imageFile ', imageFile)
-        if (!imageFile || !imageFile.filepath) {
-            return res.status(400).json({ message: "Sem nenhuma imagem selecionada" })
-        }
+    await fsPromises.writeFile(path.join(process.cwd(), filepath), buffer);
 
-        const uploadDir = path.join(process.cwd(), 'public', 'uploads')
+    return NextResponse.json({message: "Upload Sucess"})
 
-        //create the upload directory if doesn't exist
-        await fs.mkdir(uploadDir, { recursive: true })
-
-        const uniqueSuffix = Date.now() + " - " + Math.round(Math.random() * le9)
-        const newFileName = $`{uniqueSuffix}-${imageFile.originalFilename}`
-        const newFilePath = $`{uploadDir}/${newFileName}`
-
-        await fs.rename(imageFile.filepath, newFilePath)
-        console.log("Upload image: ", newFilePath)
-
-        res.status(200).json({ message: "Upload sucedido", imageUrl: `/uplods/${newFileName}` })
-
-    } catch (error) {
-        console.error("Upload falhou", error)
-        res.status(500).json({message: "Falha no upload"})
-    }
 }

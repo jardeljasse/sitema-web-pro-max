@@ -28,6 +28,10 @@
   margin: auto;
   padding-inline: 2rem;
 }
+.italic {
+  font-style: italic;
+}
+
 /* utilitaries-classes */
 
 /* NAVBAR COMPONENT */

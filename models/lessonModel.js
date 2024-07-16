@@ -5,11 +5,11 @@ const lessonsSchema = new Schema({
         type: String,
         required: true,
     },
-    file_url:{
+    description:{
         type: String,
         required: true,
     },
-    description:{
+    file:{
         type: String,
         required: true,
     },

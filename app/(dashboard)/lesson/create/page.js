@@ -1,7 +1,7 @@
 "use client"
 
 import LessonForm from '@/components/LessonForm';
-import LessonUploadFile from '@/components/LessonUploadFile';
+import LessonFormFile from '@/components/LessonFormFile';
 import PageHeader from '@/components/PageHeader'
 import { useRouter } from 'next/navigation';
 import { useState } from 'react'
@@ -56,9 +56,8 @@ export default function page() {
             <section className='mt-[2rem] flex gap-[50px]'>
                 {/* <LessonForm 
                 onSubmit={handleAddLessons}
-                isLoading={isLoading} /> */}
-                
-                <LessonUploadFile />
+                isLoading={isLoading} />                         */}
+                <LessonFormFile isLoading={isLoading} />
             </section>
         </>
     )
