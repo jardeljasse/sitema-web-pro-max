@@ -1,6 +1,7 @@
 "use client"
 
 import { useRouter } from 'next/navigation';
+import { NextResponse } from 'next/server';
 import React, { useState } from 'react'
 
 export default function LessonFormFile() {
@@ -17,13 +18,13 @@ export default function LessonFormFile() {
         fetch("/api/upload", {
             method: "POST",
             body: form,
-            // headers: {"Content-Type": "multipart/form-data"},
-        })
+          })
             .then((res) => res.json())
             .then((data) => {
-                alert("Upload realizado com sucesso")
-                setIsLoading(false);
-            })
+              alert("Upload success");
+              setIsLoading(false)
+            });
+
     };
 
     return (
@@ -54,8 +55,18 @@ export default function LessonFormFile() {
 
                             Adicionar Aula
                         </button>
+                        <button
+                            type='reset'
+                            disabled={isLoading}
+                            className="bg-sky-500
+                            hover:bg-sky-600 transition-all p-2
+                            text-white disabled:bg-zinc-500 
+                            w-full mt-4">
+
+                           Limpar
+                        </button>
                     </div>
-                    <div className='flex flex-col'>
+                    {/* <div className='flex flex-col'>
                         <p><label htmlFor="subject">Selecione a Disciplina</label></p>
                         <select
                             name="subject" id="subject"
@@ -79,7 +90,7 @@ export default function LessonFormFile() {
                             <option value="IIIº Trimestre">IIIº Trimestre</option>
                         </select>
 
-                    </div>
+                    </div> */}
                 </div>
             </form>
         </>

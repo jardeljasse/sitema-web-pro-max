@@ -5,7 +5,7 @@ import fs from "fs"
 import mime from "mime-types"
 
 export const GET = async (request, { params }) => {
-    const filePath = path.join(process.cwd(), `react/fileUpload/${params.filename}`)
+    const filePath = path.join(process.cwd(), `/../fileUpload/${params.filename}`)
     const mimeType = mime.lookup(filePath)
     const fileStat = await fsPromises.stat(filePath)
     const fileSize = fileStat.size;
