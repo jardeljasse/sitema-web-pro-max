@@ -39,7 +39,7 @@ export async function POST(request) {
   } catch (error) {
     console.log(error);
     return NextResponse.json(
-      { message: "Ocorreu um erro ao adicionar a aula" },
+      { message: "Ocorreu um erro ao adicionar a aula TENTE NOVAMENTE: " },
       { status: 500 }
     );
   }

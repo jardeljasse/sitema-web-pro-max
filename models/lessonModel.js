@@ -13,14 +13,6 @@ const lessonsSchema = new Schema({
         type: String,
         required: true,
     },
-    // subject:{
-    //     type: String,
-    //     required: true,
-    // },
-    // trimester:{
-    //     type: String,
-    //     required: true,
-    // },
     user: {
         type: Schema.Types.ObjectId,
         required: true,

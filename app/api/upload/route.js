@@ -1,4 +1,8 @@
+import Lesson_Model from "@/models/lessonModel";
+import User from "@/models/userModel";
+import { connectToDB } from "@/utils/DAO";
 import fsPromises from "fs/promises"
+import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 import path from "path"
 
@@ -28,26 +32,34 @@ export const POST = async (request) => {
 
     await fsPromises.writeFile(path.join(process.cwd(), filepath), buffer);
 
-
-    // await fetch("/api/lessons", {
-    //     method: "POST",
-    //     body: JSON.stringify({ title, description, filename }),
-    //     // body: JSON.stringify({ collectionName, data }),
-    // }).then((res) => {
-    //     if (!res.ok) {
-    //         throw new Error("Ocorreu um erro ao adicionar a aula " + title)
-    //     } else {
-    //         return res.json()
-    //     }
-    // }).then((data) => {
-    //     alert("Aula adicionada " + title + " com sucesso")
-    //     setIsLoading(false)//desativar apos o cadastro
-    //     router.push("/lesson")
-    // }).catch(err => {
-    //     alert("Ocorreu um erro ao adicionar a aula " + title + err)
-    //     setIsLoading(false);
-    // })
-
-    return NextResponse.json({ message: "Upload Sucess" })
+    try {
+        await connectToDB();
+        const body = {
+            title,
+            description,
+            file: filename,
+        }
+    
+        const session = await getServerSession();
+        const user = await User.findOne({
+          email: session.user?.email
+        });
+    
+        const lesson = await Lesson_Model.create({
+          ...body,
+          user: user._id,
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+        });
+        console.log(body)
+    
+        return NextResponse.json(lesson, { status: 201 });
+      } catch (error) {
+        console.log(error);
+        return NextResponse.json(
+          { message: "Ocorreu um erro ao adicionar a aula TENTE NOVAMENTE: " },
+          { status: 500 }
+        );
+      }
 
 }
