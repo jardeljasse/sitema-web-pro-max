@@ -91,7 +91,8 @@ export default function TabLesson() {
                 <div className="content-item">
                     <h2>Transcrição</h2>
                     <p className="text-xl">                    
-                    {lessons?.description}
+                    {/* {lessons?.description} */}
+                    O currículo vitae (CV) é um documento detalhado que resume a trajetória profissional e acadêmica de uma pessoa. Ele inclui informações como formação educacional, experiência de trabalho, habilidades, publicações, prêmios, e outras realizações relevantes. Ao contrário de um resumo, que é geralmente mais curto e conciso, o CV pode ser mais extenso e detalhado, especialmente para profissionais em áreas acadêmicas ou científicas onde é importante demonstrar publicamente uma ampla gama de atividades e conquistas
                     {/* {alert(lessons)} */}
                     </p>
                 </div>

@@ -62,10 +62,10 @@ export default function LessonsTable() {
              <thead className="bg-skin-cl700 text-white">
                  <tr className="text-left">
                      <th></th>
-                     <th>Disciplina</th>
-                     <th>Título</th>
-                     <th className="p-2">Trimestre</th>
-                     <th>Data</th>                     
+                     <th>Aula</th>
+                     {/* <th>Disciplina</th> */}
+                     {/* <th className="p-2">Trimestre</th> */}
+                     <th>Descricao</th>                     
                      <th>Acções</th>                     
                  </tr>
              </thead>

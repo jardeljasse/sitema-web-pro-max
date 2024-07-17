@@ -13,7 +13,7 @@ export default function HeaderPortal() {
               SEU PROGRESSO
             </h1>
             <div className="progress-bar-item flex items-center justify-center">
-              <p className="text-white text-5xl text- pb-4 font-bold">10%</p>
+              <p className="text-white text-5xl text- pb-4 font-bold">0%</p>
             </div>
           </div>
         </div>

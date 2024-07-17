@@ -21,9 +21,9 @@ export default function LessonsTableRow({lessons, i, handleDeleteLessons}){
             hover:text-white
             transition-all"> 
             <td>{i}.</td>
-            <td>{lessons.subject}</td>
+            {/* <td>{lessons.subject}</td> */}
             <td className="p-2">{lessons.title}</td>
-            <td className="border-r">{lessons.trimester}</td>
+            {/* <td className="border-r">{lessons.trimester}</td> */}
             <td className='w-[600px] text-justify'>{lessons.description}</td>
             <td className="flex gap-2 p-2">
                 <Link href={"/lesson/" + lessons._id} className="

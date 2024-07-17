@@ -76,14 +76,14 @@ export default function page() {
                         <div className="video-list">
                             <div className="video-item active-vid-item">
                                 <video autoPlay={false} controls>
-                                    <source src="/videos/azagaia.mp4" type="video/mp4" />
+                                    <source src="/videos/cv-lesson.mp4" type="video/mp4" />
                                     Seu navegador não é combatível com este video
                                 </video>
                                 <h3 className="vid-title">02. T.P.C</h3>
                             </div>
                             <div className="video-item">
                                 <video autoPlay={false} controls>
-                                    <source src="/videos/form.mp4" type="video/mp4" />
+                                    <source src="/videos/cv-lesson.mp4" type="video/mp4" />
                                     Seu navegador não é combatível com este video
                                 </video>
                                 <h3 className="vid-title">03. Exercícios</h3>
