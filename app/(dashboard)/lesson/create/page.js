@@ -57,7 +57,7 @@ export default function page() {
                 {/* <LessonForm 
                 onSubmit={handleAddLessons}
                 isLoading={isLoading} />                         */}
-                <LessonFormFile isLoading={isLoading} />
+                <LessonFormFile />
             </section>
         </>
     )

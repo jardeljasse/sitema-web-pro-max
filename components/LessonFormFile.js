@@ -3,10 +3,13 @@
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
-export default function LessonFormFile({ isLoading }) {
+export default function LessonFormFile() {
+
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsLoading(true)
 
         const form = new FormData(e.target)
         // console.log(form.get("title"), form.get("description"), form.get("file"))     
@@ -18,7 +21,8 @@ export default function LessonFormFile({ isLoading }) {
         })
             .then((res) => res.json())
             .then((data) => {
-                alert("Upload com sucesso")
+                alert("Upload realizado com sucesso")
+                setIsLoading(false);
             })
     };
 
