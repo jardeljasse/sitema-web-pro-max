@@ -138,16 +138,16 @@ const items = [
       },
     ],
   },
-  {
-    name: "Ver Progresso",
-    icon: faSpinner,
-    subMenus: [
-      {
-        name: "Listar Progresso",
-        href: "/progress",
-      },
-    ],
-  },
+  // {
+  //   name: "Ver Progresso",
+  //   icon: faSpinner,
+  //   subMenus: [
+  //     {
+  //       name: "Listar Progresso",
+  //       href: "/progress",
+  //     },
+  //   ],
+  // },
   {
     name: "Manual do Sistema",
     icon: faBookOpenReader,

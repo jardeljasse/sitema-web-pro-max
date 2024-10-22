@@ -30,49 +30,48 @@ export default function StudentsTableRow({ student, i, handleDeleteStudents, sho
             hover:text-white
             transition-all"
         >
-            {showHeadrsRow ? (
-                <>
-            <td>{i}.</td>
-            <td className="p-2">{student.name}</td>
-            <td>{calculateAge(student.birthDay)}</td>
-            <td>{student.nacionality}</td>
-            <td>{student.bornPlace}</td>
-            <td>{student.gender}</td>
-            <td>{student.city}</td>
-            <td>{student.neighbornhood}</td>
-            <td>{student.sponsorContact}</td>
-            {/* <td>{student.healthExame}</td> */}
-            <td>{student.desease}</td>
-
-            {
-                session?.user.role == "admin" &&
-                <td className="flex gap-2 p-2">
-                    <Link href={"/students/" + student._id} className="
-                bg-sky-500 rounded-md p-1 w-8 h-8
-                hover:bg-sky-600 text-zinc-900 transition-all"
-                    >
-                        <FontAwesomeIcon icon={faPencil} className="w-5" />
-                    </Link>
-                    {/* CRUD: DELETING */}
-                    <button
-                        onClick={() => handleDeleteStudents(student._id, setIsDeleting)}
-                        className="
-                bg-red-500 rounded-md p-1 w-8 h-8
-                hover:bg-sky-600 text-zinc-900 transition-all"
-                    >
-                        <FontAwesomeIcon icon={faTrash} className="w-4  " />
-                    </button>
-                </td>
-            }
-            </>):(
+            
                 <>
                     <td>{i}.</td>
-            <td className="p-2">{student.name}</td>
-            <td>{calculateAge(student.birthDay)}</td>
-            
+                    <td className="p-2">{student.name}</td>
+                    <td>{calculateAge(student.birthDay)}</td>
+                    <td>{student.nacionality}</td>
+                    <td>{student.bornPlace}</td>
+                    <td>{student.gender}</td>
+                    <td>{student.city}</td>
+                    <td>{student.neighbornhood}</td>
+                    <td>{student.sponsorContact}</td>
+                    {/* <td>{student.healthExame}</td> */}
+                    <td>{student.desease}</td>
+
+                    {
+                        session?.user.role == "admin" &&
+                        <td className="flex gap-2 p-2">
+                            <Link href={"/students/" + student._id} className="
+                bg-sky-500 rounded-md p-1 w-8 h-8
+                hover:bg-sky-600 text-zinc-900 transition-all"
+                            >
+                                <FontAwesomeIcon icon={faPencil} className="w-5" />
+                            </Link>
+                            {/* CRUD: DELETING */}
+                            <button
+                                onClick={() => handleDeleteStudents(student._id, setIsDeleting)}
+                                className="
+                bg-red-500 rounded-md p-1 w-8 h-8
+                hover:bg-sky-600 text-zinc-900 transition-all"
+                            >
+                                <FontAwesomeIcon icon={faTrash} className="w-4  " />
+                            </button>
+                        </td>
+                    }
                 </>
-            )
-            }
+                <>
+                    <td>{i}.</td>
+                    <td className="p-2">{student.name}</td>
+                    <td>{calculateAge(student.birthDay)}</td>
+
+                </>
+            
         </tr>
     )
 }
